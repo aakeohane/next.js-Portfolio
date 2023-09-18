@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --whale-yellow: #e6b342;
+  --whale-blue: #04465d;
+  --inkblot-black: #333;
+  --light-inkblot-black: rgba(51, 51, 51, 0);
+}
+
+@font-face {
+  font-family: "Blastimo Swash";
+  src: url("../../public/fonts/Blastimo Swash.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  position: relative;
+  z-index: 2;
+  font-size: 25px;
+}
+
+nav > a {
+  margin-right: 10px;
+  color: var(--inkblot-black);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.glassomorph {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(220, 220, 220, 0.15);
+  backdrop-filter: blur(6px); /* creates glassomorphism for navbar */
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.nav-logo {
+  /* width: 65px; */
+  max-width: 100%;
+  margin-left: 5px;
+  /* filter: drop-shadow(0 0 1px var(--inkblot-black)); */
+  /* opacity: 0.9; */
+}
