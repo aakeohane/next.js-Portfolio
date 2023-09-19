@@ -38,18 +38,21 @@ const Navbar = ({offset}) => {
         <Link 
           onClick={e => smoothLinkClick(e, '#about')} 
           href={"/#about"}
+          className={styles["nav-link"]}
         >
           about,
         </Link>
         <Link 
           onClick={e => smoothLinkClick(e, '#work')} 
           href={"/#work"}
+          className={styles["nav-link"]}
         >
           work,
         </Link>
         <Link 
           onClick={e => smoothLinkClick(e, '#contact')} 
           href={"/#contact"}
+          className={styles["nav-link"]}
         >
           contact
         </Link>

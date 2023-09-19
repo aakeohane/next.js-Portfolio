@@ -17,3 +17,12 @@
   /* filter: drop-shadow(0 0 1px var(--inkblot-black)); */
   /* opacity: 0.9; */
 }
+
+.nav-link {
+  padding-bottom: 2px;
+}
+
+.nav-link:last-child {
+  margin-right: 15px;
+  margin-left: -2px;
+}

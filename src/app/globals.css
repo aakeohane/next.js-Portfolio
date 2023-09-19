@@ -11,17 +11,20 @@
   --light-inkblot-black: rgba(51, 51, 51, 0);
 }
 
-@font-face {
-  font-family: "Blastimo Swash";
-  src: url("../../public/fonts/Blastimo Swash.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html,
 body {
   margin: 0;
   max-width: 100vw;
+}
+
+h1 {
+  font-family: "Blowbrush", sans-serif;
+  font-size: 40px;
+}
+
+/* allows for vertical margin below fixed header when Link is direct to a section on website */
+section {
+  scroll-margin-top: 90px;
 }
 
 a {

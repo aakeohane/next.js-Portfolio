@@ -3,7 +3,7 @@ import { blowbrushFontClass } from '@/app/layout'
 const Landing = () => {
   
   return (
-    <div id="landing">
+    <section id="landing">
       <h1 className={blowbrushFontClass}>
         Web Developer.<br></br>Biologist.<br></br>Artist.
       </h1>
@@ -14,7 +14,7 @@ const Landing = () => {
         you can be sure I will think imaginatively when finding 
         yours.
       </p>
-    </div>
+    </section>
   )
 }
 

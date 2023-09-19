@@ -1,7 +1,4 @@
-import * as React from 'react'
-import { whale } from './contact.module.css'
-
-
+import { whale, contact } from './contact.module.css'
 
 
 const Contact = () => {
@@ -13,14 +10,14 @@ const Contact = () => {
 
   
   return (
-    <div id="contact">
+    <section id="contact">
       <h1>
         Contact
       </h1>
       <p>
         email: aacunty@gmail.com
       </p>
-    </div>
+    </section>
   )
 }
 

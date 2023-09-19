@@ -30,9 +30,9 @@ export default function Home() {
       <Header offset={offset}/>
       <main className={styles.main}>
         {mainSections.map((page, index) => (
-            <section key={index} style={{minHeight: "100vh"}}>
+            <div key={index} style={{minHeight: "100vh"}}>
               {page}
-            </section>
+            </div>
           ))}
       </main>
     </RootLayout>

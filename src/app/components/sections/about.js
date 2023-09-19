@@ -3,7 +3,7 @@ import * as React from 'react'
 const About = () => {
 
   return (
-    <div id="about">
+    <section id="about">
       <h1>How did I know I was destined for coding?</h1>
       <div>
         I am always the first to google the moment someone asks a question.
@@ -16,7 +16,7 @@ const About = () => {
         living a zero waste lifestyle. When I'm not obsessing about responsive 
         design, you can find me on the tennis courts. Take a peak at my CV below.
       </div>
-    </div>
+    </section>
   )
 }
 
