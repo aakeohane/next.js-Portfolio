@@ -2,12 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './navbar.module.css'
 import logo from 'public/images/logo.png'
+// import logo from 'public/images/initials.png'
 import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '../layout'
 
 const Navbar = ({offset}) => {
   
-  let opacity = offset * .008 //increases glassomorphism behind nav as you scroll up
+  let opacity = offset * .005 //increases glassomorphism behind nav as you scroll up
   
   const smoothLinkClick = (e, target) => {
     if (typeof window !== "undefined") {
@@ -64,12 +65,3 @@ const Navbar = ({offset}) => {
 }
 
 export default Navbar
-
-
-
-
-
-
-
-
-

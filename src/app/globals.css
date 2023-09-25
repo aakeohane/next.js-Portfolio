@@ -14,17 +14,23 @@
 html,
 body {
   margin: 0;
-  max-width: 100vw;
+  width: 100vw;
+  max-width: 100%;
 }
 
 h1 {
   font-family: "Blowbrush", sans-serif;
   font-size: 40px;
+  color: var(--whale-blue);
+  letter-spacing: 2px;
+  line-height: 0.9;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
 section {
   scroll-margin-top: 90px;
+  position: relative;
+  z-index: -1;
 }
 
 a {
@@ -43,7 +49,7 @@ nav {
 
 nav > a {
   margin-right: 10px;
-  color: var(--inkblot-black);
+  color: var(--whale-blue);
 }
 
 a,

@@ -2,15 +2,15 @@
 
 import styles from './page.module.css'
 import Header from './components/header'
-import About from './components/sections/about'
-import Landing from './components/sections/landing'
-import Work from './components/sections/work'
-import Contact from './components/sections/contact'
+import About from './components/pages/about'
+import Landing from './components/pages/landing'
+import Work from './components/pages/work'
+import Contact from './components/pages/contact'
 import RootLayout from './layout'
 import { useState, useEffect } from 'react'
+import { Routes, Route } from "next/router";
 
 export default function Home() {
-
 
   const mainSections = [<Landing/>, <About/>, <Work/>, <Contact/>]
 
@@ -30,7 +30,7 @@ export default function Home() {
       <Header offset={offset}/>
       <main className={styles.main}>
         {mainSections.map((page, index) => (
-            <div key={index} style={{minHeight: "100vh"}}>
+            <div key={index} className={styles.content}>
               {page}
             </div>
           ))}
