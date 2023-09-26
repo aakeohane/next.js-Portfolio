@@ -10,10 +10,26 @@
   z-index: 1;
 }
 
-.nav-logo {
+.logo-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-left: 10px;
+  margin-right: auto;
+  position: relative;
   filter: invert(15%) sepia(55%) saturate(2668%) hue-rotate(172deg)
     brightness(45%) contrast(96%);
+}
+
+.nav-logo-aaron {
+  position: absolute;
+  top: 0px;
+}
+
+.nav-logo-keohane {
+  position: absolute;
+  bottom: 0px;
 }
 
 .nav-link {

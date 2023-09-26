@@ -21,6 +21,7 @@ const Landing = () => {
             alt="personal logo" 
             src={whale}
             className={styles.whale}
+            priority={true}
           />
         </div>
 

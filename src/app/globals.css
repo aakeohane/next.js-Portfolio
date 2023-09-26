@@ -45,6 +45,7 @@ nav {
   position: relative;
   z-index: 2;
   font-size: 25px;
+  overflow: hidden;
 }
 
 nav > a {

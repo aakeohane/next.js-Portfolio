@@ -1,13 +1,60 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './navbar.module.css'
-import logo from 'public/images/logo.png'
-// import logo from 'public/images/initials.png'
+import logo from 'public/images/initials.png'
+import aaron from 'public/images/only-aaron.png'
+import keohane from 'public/images/only-keohane.png'
 import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '../layout'
 
+import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
+
+
 const Navbar = ({offset}) => {
+
+  const aaronRef = useRef(null)
+
+  useEffect(() => {
+
+    
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin()
+
+    const el = aaronRef.current
+
+
+    gsap.set("#keohane", {xPercent: 0, opacity: 1})
+    gsap.set(el, {xPercent: 0, opacity: 1})
+
+
+    gsap.to("#keohane", {
+      xPercent: -150,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#keohane",
+        start: offset = 80,
+        scrub: true,
+      }
+    });
+
+    gsap.to(el, {
+      xPercent: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: el,
+        start: offset = 80,
+        scrub: true,
+      }
+    });
+  }, [])
   
+
+  
+  const logoSize = 65
+
   let opacity = offset * .005 //increases glassomorphism behind nav as you scroll up
   
   const smoothLinkClick = (e, target) => {
@@ -25,16 +72,32 @@ const Navbar = ({offset}) => {
     <div className={blastimoFontClass}>
       <nav>
         <Link 
-          style={{marginRight: "auto", display: "flex", alignItems: "center"}}
           onClick={e => smoothLinkClick(e, '#landing')} 
           href={"/#landing"}
+          className={styles["logo-container"]}
         >
-            <Image
-              alt="personal logo" 
-              src={logo}
-              width={55}
-              className={styles["nav-logo"]}
-            />
+          <Image
+            alt="personal logo" 
+            id="aaron"
+            src={aaron}
+            width={logoSize}
+            className={styles["nav-logo-aaron"]}
+            ref={aaronRef}
+          />
+          <Image
+            alt="personal logo" 
+            src={logo}
+            width={logoSize}
+            className={styles["nav-logo"]}
+          />
+          <Image
+            alt="personal logo" 
+            src={keohane}
+            id="keohane"
+            width={logoSize}
+            className={styles["nav-logo-keohane"]}
+            
+          />
         </Link>
         <Link 
           onClick={e => smoothLinkClick(e, '#about')} 

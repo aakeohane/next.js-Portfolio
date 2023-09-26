@@ -46,9 +46,7 @@ export default function RootLayout({ children }) {
         <meta name='description' content='Portfolio of work, contact info and about Aaron Keohane' />
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
-    <body className={`${inter.className} ${styles.container}`}>
-        {children}
-      </body>
+      <body className={`${inter.className} ${styles.container}`}>{children}</body>
     </html>
   )
 }
