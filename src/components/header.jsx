@@ -1,10 +1,10 @@
 import Navbar from "./navbar"
 
-const Header = ({offset}) => {
+const Header = () => {
 
   return (
     <div style={{position: "sticky", top: 0}}>
-      <Navbar offset={offset}/>
+      <Navbar/>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 const About = () => {
 
   return (
-    <section id="about">
+    <section id="about" data-section>
       <h1>How did I know I was destined for coding?</h1>
       <div>
         I am always the first to google the moment someone asks a question.

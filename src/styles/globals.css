@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --whale-yellow: #e6b342;
+  --whale-blue: #04465d;
+  --inkblot-black: #333;
+  --light-inkblot-black: rgba(51, 51, 51, 0);
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  max-width: 100%;
+  background-image: url(/images/watercolor-paper-background-2.jpg);
+  /* background-color: var(--whale-yellow); */
+  /* box-shadow: -25px 5px 100px #ededed inset; */
+}
+
+h1 {
+  font-family: "Blowbrush", sans-serif;
+  font-size: 40px;
+  color: var(--whale-blue);
+  letter-spacing: 2px;
+  line-height: 0.9;
+}
+
+/* allows for vertical margin below fixed header when Link is direct to a section on website */
+section {
+  scroll-margin-top: 90px;
+  position: relative;
+  z-index: -1;
+  align-self: center;
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  position: relative;
+  z-index: 2;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+nav > a {
+  margin-right: 10px;
+  color: var(--whale-blue);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/* Footer */
+hr {
+  border: none;
+  background-color: #9b9c9d;
+  height: 1px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  hr {
+    width: 100%;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #1d1e20;
+}
+
+.footer-container p {
+  font-size: 0.8rem;
+  color: #9b9c9d;
+}
+
+.footer-container .social_icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.footer-container .social_icons a {
+  color: #9b9c9d;
+  font-size: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.footer-container .social_icons a:hover {
+  color: #dadadb;
+}

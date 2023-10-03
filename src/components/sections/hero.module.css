@@ -25,6 +25,17 @@
   letter-spacing: 1px;
 }
 
+.artista {
+  font-size: 100px;
+  line-height: 0;
+  color: var(--whale-yellow);
+  padding-top: 20px;
+}
+
+.period {
+  color: var(--whale-yellow);
+}
+
 .whale-container {
   height: 30vh;
   position: relative;

@@ -2,7 +2,7 @@
 const Work = () => {
   
   return (
-    <section id="work">
+    <section id="work" data-section>
       <h1>
         Here is my amazing portfolio of werkkkk!
       </h1>

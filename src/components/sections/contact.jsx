@@ -2,7 +2,7 @@
 const Contact = () => {
   
   return (
-    <section id="contact">
+    <section id="contact" data-section>
       <h1>
         Contact
       </h1>
