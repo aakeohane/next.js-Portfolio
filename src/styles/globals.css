@@ -2,7 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  /* Calculation */
+  /* Font Size Calculation */
   --diff: calc(var(--max-size) - var(--min-size));
   --responsive: calc(
     (var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))
@@ -17,6 +17,11 @@
   --viewport-height: 100%;
 }
 
+@font-face {
+  font-family: "BlowBrush";
+  src: url("../../public/fonts/blowbrush.otf");
+}
+
 body {
   margin: 0;
   width: 100vw;
@@ -29,11 +34,15 @@ body {
 }
 
 h1 {
-  font-family: "Blowbrush", sans-serif;
+  font-family: "BlowBrush", sans-serif;
   font-size: 40px;
   color: var(--whale-blue);
   letter-spacing: 2px;
   line-height: 0.9;
+}
+
+p {
+  font-family: "Bebas Neue", sans-serif;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */

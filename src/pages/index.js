@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 export default function Home() {
 
-// runs this when loading, dynamically measure viewport height taking into account browsers builtin bottom and top bars
+// runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
   useEffect(() => {
     if (typeof window !== 'undefined') {
         const sections = document.querySelectorAll('section')
