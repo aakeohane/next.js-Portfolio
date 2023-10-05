@@ -2,7 +2,7 @@ import styles from './hero.module.css'
 import Img from 'next/image';
 import whale from 'public/images/whale-watercolor.png'
 // import paper from 'public/images/torn-edges-4-watercolor.png'
-import { bebasNeueFontClass, blastimoFontClass } from '@/pages/_app.js';
+import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
 
 const Landing = () => {
   
@@ -12,7 +12,7 @@ const Landing = () => {
 
         <div style={{lineHeight: 0.9, marginTop: "10vh"}}>
           <span className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span><br></br>
-          <span className={styles.biologist}>BiolOgist<span className={styles.period}>.</span></span><br></br>
+          <span className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span><br></br>
           <span className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span>
         </div>
 
