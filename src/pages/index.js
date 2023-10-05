@@ -2,10 +2,25 @@ import Hero from '@/components/sections/hero'
 import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
+import { useEffect } from 'react'
 
 import Head from 'next/head'
 
 export default function Home() {
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const appHeight = () => {
+        const sections = document.querySelectorAll('section')
+        sections.forEach((section) => {
+          section.style.setProperty('--viewport-height', `${window.innerHeight}px`)
+        })
+        
+      }
+      window.addEventListener('resize', appHeight)
+      appHeight()
+    }
+  }, [])
 
   return (
     <>

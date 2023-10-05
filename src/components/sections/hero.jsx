@@ -2,26 +2,14 @@ import styles from './hero.module.css'
 import Img from 'next/image';
 import whale from 'public/images/whale-watercolor.png'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
-import { useEffect } from "react";
 
 const Hero = () => {
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const appHeight = () => {
-        const doc = document.getElementById('hero')
-        doc.style.setProperty('--viewport-height', `${window.innerHeight}`)
-      }
-      window.addEventListener('resize', appHeight)
-      appHeight()
-    }
-  }, [])
   
   return (
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
 
-        <div style={{lineHeight: 0.9, marginTop: "10vh"}}>
+        <div style={{lineHeight: 0.9, marginTop: "5vh"}}>
           <span className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span><br></br>
           <span className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span><br></br>
           <span className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span>
