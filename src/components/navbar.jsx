@@ -11,8 +11,6 @@ import gsap from 'gsap'
 import { useEffect, useState, useRef } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-
-
 const Navbar = () => {
 
   const [offset, setOffset] = useState(0)
@@ -85,7 +83,7 @@ const Navbar = () => {
   }, [])
 
   const activeStyle = {
-    fontWeight: 'bold',
+    // filter: 'drop-shadow(0 0 10px var(--whale-blue))',
     color: 'var(--whale-yellow)',
     transition: '2s'
   };

@@ -57,6 +57,7 @@ nav {
 nav > a {
   margin-right: 10px;
   color: var(--whale-blue);
+  transition: 2s;
 }
 
 a,
