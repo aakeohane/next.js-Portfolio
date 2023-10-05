@@ -15,9 +15,7 @@ export default function Home() {
         sections.forEach((section) => {
           section.style.setProperty('--viewport-height', `${window.innerHeight}px`)
         })
-        
       }
-      window.addEventListener('resize', appHeight)
       appHeight()
     }
   }, [])
