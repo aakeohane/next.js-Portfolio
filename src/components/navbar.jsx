@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './navbar.module.css'
-import logo from 'public/images/initials.png'
-import aaron from 'public/images/only-aaron.png'
-import keohane from 'public/images/only-keohane.png'
+import logo from '/public/images/initials.png'
+import aaron from '/public/images/only-aaron.png'
+import keohane from '/public/images/only-keohane.png'
 import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '@/pages/_app'
 
