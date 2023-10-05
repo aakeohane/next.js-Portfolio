@@ -8,15 +8,13 @@ import Head from 'next/head'
 
 export default function Home() {
 
+// runs this when loading, dynamically measure viewport height taking into account browsers builtin bottom and top bars
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const appHeight = () => {
         const sections = document.querySelectorAll('section')
         sections.forEach((section) => {
           section.style.setProperty('--viewport-height', `${window.innerHeight}px`)
         })
-      }
-      appHeight()
     }
   }, [])
 
