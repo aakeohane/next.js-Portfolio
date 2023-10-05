@@ -14,7 +14,7 @@
   --whale-blue: #04465d;
   --inkblot-black: #333;
   --light-inkblot-black: rgba(51, 51, 51, 0);
-  --viewport-height: 100vh;
+  --viewport-height: 100%;
 }
 
 body {
@@ -24,6 +24,8 @@ body {
   background-image: url(/images/watercolor-paper-background-2.jpg);
   /* background-color: var(--whale-yellow); */
   /* box-shadow: -25px 5px 100px #ededed inset; */
+  height: 100vh;
+  height: var(--viewport-height);
 }
 
 h1 {

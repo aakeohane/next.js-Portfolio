@@ -2,23 +2,23 @@ import styles from './hero.module.css'
 import Img from 'next/image';
 import whale from 'public/images/whale-watercolor.png'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const Hero = () => {
 
-  const [windowWidth, setWindowWidth] = useState()
-  const [windowHeight, setWindowHeight] = useState()
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const windowSize = [window.innerWidth, window.innerHeight]
-      setWindowWidth(windowSize[0])
-      setWindowHeight(windowSize[1])
+      const appHeight = () => {
+        const doc = document.getElementById('hero')
+        doc.style.setProperty('--viewport-height', `${window.innerHeight}`)
+      }
+      window.addEventListener('resize', appHeight)
+      appHeight()
     }
   }, [])
   
   return (
-    <section id="hero" data-section style={{height: (windowWidth < 740) ? windowHeight : 'var(--viewport-height)'}}>
+    <section id="hero" data-section>
       <div className={styles["main-content"]}>
 
         <div style={{lineHeight: 0.9, marginTop: "10vh"}}>
