@@ -3,7 +3,7 @@ import Navbar from "./navbar"
 const Header = () => {
 
   return (
-    <div style={{position: "sticky", top: 0}}>
+    <div style={{position: "sticky", top: 0, zIndex: 10}}>
       <Navbar/>
     </div>
   )

@@ -1,13 +1,24 @@
 import styles from './hero.module.css'
 import Img from 'next/image';
 import whale from 'public/images/whale-watercolor.png'
-// import paper from 'public/images/torn-edges-4-watercolor.png'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
+import { useState, useEffect } from "react";
 
-const Landing = () => {
+const Hero = () => {
+
+  const [windowWidth, setWindowWidth] = useState()
+  const [windowHeight, setWindowHeight] = useState()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const windowSize = [window.innerWidth, window.innerHeight]
+      setWindowWidth(windowSize[0])
+      setWindowHeight(windowSize[1])
+    }
+  }, [])
   
   return (
-    <section id="hero" data-section>
+    <section id="hero" data-section style={{height: (windowWidth < 740) ? windowHeight : 'var(--viewport-height)'}}>
       <div className={styles["main-content"]}>
 
         <div style={{lineHeight: 0.9, marginTop: "10vh"}}>
@@ -34,4 +45,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default Hero
