@@ -2,6 +2,11 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  /* Calculation */
+  --diff: calc(var(--max-size) - var(--min-size));
+  --responsive: calc(
+    (var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))
+  ); /* Ranges from 421px to 1199px */
 }
 
 :root {
@@ -50,8 +55,10 @@ nav {
   height: 75px;
   position: relative;
   z-index: 2;
-  font-size: 25px;
   overflow: hidden;
+  --max-size: 28;
+  --min-size: 25;
+  font-size: var(--responsive);
 }
 
 nav > a {

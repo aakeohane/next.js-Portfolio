@@ -41,7 +41,7 @@ const Navbar = () => {
       gsap.registerPlugin(ScrollTrigger);
   
       gsap.set("#aaron", {xPercent: 0, opacity: 1})
-      gsap.set("#keohane", {xPercent: 0, opacity: 1})
+      gsap.set("#keohane", {xPercent: 0, opacity: 1}, )
   
       gsap.to("#aaron", {
         xPercent: 100,
@@ -52,6 +52,7 @@ const Navbar = () => {
           start: 80,
           end: 250,
           scrub: true,
+          
         }
       });
 
@@ -122,7 +123,7 @@ const Navbar = () => {
             alt="personal logo" 
             src={logo}
             width={logoSize}
-            className={styles["nav-logo"]}
+            className={styles["nav-logo-square"]}
           />
           <Image
             alt="personal logo" 
