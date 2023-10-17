@@ -1,3 +1,5 @@
+import Image from "next/image"
+import jelly from 'public/images/jelly.png' 
 
 const Contact = () => {
   
@@ -9,6 +11,12 @@ const Contact = () => {
       <p>
         email: aacunty@gmail.com
       </p>
+      <Image
+            alt="personal logo" 
+            src={jelly}
+            width={350}
+            priority={true}
+      />
     </section>
   )
 }

@@ -26,7 +26,12 @@ body {
   margin: 0;
   width: 100vw;
   max-width: 100%;
-  background-image: url(/images/watercolor-paper-background-2.jpg);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(/images/watercolor-paper-background-2.jpg);
+  /* background-image: url(/images/watercolor-paper-background-2.jpg); */
   /* background-color: var(--whale-yellow); */
   /* box-shadow: -25px 5px 100px #ededed inset; */
   height: 100vh;

@@ -44,9 +44,9 @@
 
 .whale {
   transform: scaleX(-1) rotate(-40deg);
-  width: 100%;
-  max-width: calc(25rem + 2vw);
-  position: absolute;
+  width: 350px;
+  position: relative;
+  top: 0;
   height: unset;
 }
 
