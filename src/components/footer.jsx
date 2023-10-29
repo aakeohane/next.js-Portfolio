@@ -1,11 +1,19 @@
+import {blastimoFontClass } from '@/pages/_app.js';
+import styles from './footer.module.css'
+
+import TwitterIcon from '/public/images/svg/twitter.svg';
+import GithubIcon from '/public/images/svg/github.svg';
+import LinkedinIcon from '/public/images/svg/linkedin.svg';
+
+
 const Footer = () => {
   return (
     <>
-      <hr/>
       <div className="footer-container">
-        <p>
-          © {new Date().getFullYear()} Aaron's Portfolio
-        </p>
+        <div style={{position: "relative"}} className={`${blastimoFontClass}`}>
+          <span style={{fontSize: "2rem", position: "absolute", left: "-17px", top: "-1px"}}>©</span><span style={{fontSize: "1.25rem"}}>{new Date().getFullYear()}</span> Aaron Keohane
+          
+        </div>
         <div className="social_icons">
           <a
             href="https://twitter.com/Aakeocaine"
@@ -13,7 +21,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-twitter"></i>
+            <TwitterIcon className={styles["twitter-icon"]} />
           </a>
           <a
             href="https://github.com/aakeohane"
@@ -21,7 +29,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-github"></i>
+            <GithubIcon className={styles["github-icon"]} />
           </a>
           <a
             href="https://www.linkedin.com/in/aaron-keohane-47112430/"
@@ -29,7 +37,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-linkedin"></i>
+            <LinkedinIcon className={styles["linkedin-icon"]} />
           </a>
         </div>
       </div>

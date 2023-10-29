@@ -108,28 +108,25 @@ hr {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem 0;
-  background-color: #1d1e20;
+  padding-left: 17px;
 }
 
-.footer-container p {
-  font-size: 0.8rem;
-  color: #9b9c9d;
+.footer-container div {
+  font-size: 1.6rem;
+  color: var(--inkblot-black);
 }
 
 .footer-container .social_icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0 1rem;
+  gap: 0 0.25rem;
 }
 
-.footer-container .social_icons a {
-  color: #9b9c9d;
-  font-size: 1.5rem;
-  transition: all 0.5s ease-in-out;
+svg {
+  transition: fill 0.9s;
 }
 
-.footer-container .social_icons a:hover {
-  color: #dadadb;
+svg:hover {
+  fill: #1da1f2;
 }
