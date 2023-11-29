@@ -48,6 +48,9 @@ h1 {
 
 p {
   font-family: "Bebas Neue", sans-serif;
+  line-height: 1.3333;
+  font-size: calc(1rem + 1vw);
+  letter-spacing: 0.025rem;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
@@ -56,8 +59,7 @@ section {
   align-self: center;
   width: 100%;
   max-width: 600px;
-  min-height: 85vh;
-  height: var(--viewport-height);
+  min-height: var(--viewport-height);
 }
 
 a {
@@ -81,6 +83,11 @@ nav > a {
   margin-right: 10px;
   color: var(--whale-blue);
   transition: 2s;
+}
+
+nav > a:hover {
+  color: var(--whale-yellow);
+  transition: 1s;
 }
 
 a,
@@ -122,12 +129,4 @@ hr {
   justify-content: space-between;
   align-items: center;
   gap: 0 0.25rem;
-}
-
-svg {
-  transition: fill 0.9s;
-}
-
-svg:hover {
-  fill: #1da1f2;
 }

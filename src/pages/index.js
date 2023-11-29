@@ -3,10 +3,20 @@ import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
 import { useEffect } from 'react'
+import { getSortedWerkData } from '/lib/work'
 
 import Head from 'next/head'
 
-export default function Home() {
+export async function getStaticProps() {
+  const allWerkData = await getSortedWerkData();
+  return {
+    props: {
+      allWerkData,
+    },
+  };
+}
+
+export default function Home({ allWerkData }) {
 
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
@@ -31,9 +41,11 @@ export default function Home() {
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
         <Hero/>
         <About/>
-        <Work/>
+        <Work allWerkData={allWerkData}/>
         <Contact/>
       </div>
     </>
   )
 }
+
+

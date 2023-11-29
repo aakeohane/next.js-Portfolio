@@ -1,3 +1,4 @@
+import { bebasNeueFontClass } from "@/pages/_app"
 import Image from "next/image"
 import jelly from 'public/images/jelly.png' 
 
@@ -8,7 +9,7 @@ const Contact = () => {
       <h1>
         Contact
       </h1>
-      <p>
+      <p className={`${bebasNeueFontClass}`}>
         email: aacunty@gmail.com
       </p>
       <Image

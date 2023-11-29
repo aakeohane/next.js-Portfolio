@@ -12,7 +12,6 @@ const Footer = () => {
       <div className="footer-container">
         <div style={{position: "relative"}} className={`${blastimoFontClass}`}>
           <span style={{fontSize: "2rem", position: "absolute", left: "-17px", top: "-1px"}}>©</span><span style={{fontSize: "1.25rem"}}>{new Date().getFullYear()}</span> Aaron Keohane
-          
         </div>
         <div className="social_icons">
           <a
