@@ -59,7 +59,7 @@ section {
   width: 100%;
   max-width: 600px;
   min-height: var(--viewport-height);
-  max-height: fit-content;
+  height: fit-content;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */

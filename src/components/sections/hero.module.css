@@ -3,10 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 100%;
   color: var(--whale-blue);
   padding-bottom: 80px;
+  height: 100%;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 1000px) {
+  .main-content {
+    height: auto;
+  }
 }
 
 .developer {
