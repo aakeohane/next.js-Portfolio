@@ -11,10 +11,9 @@ const Work = (props) => {
         Here is my amazing portfolio of werkkkk!
       </h1>
       <p className={`${bebasNeueFontClass}`}></p>
-      <div>
-          {props.allWerkData.map(({ id, title, image }) => (
+      <div style={{padding: 0}}>
+          {props.allWerkData.map(({ id, image }) => (
             <div key={id}>
-              {title}
               <Image
                 alt="example" 
                 src={image}
@@ -22,6 +21,7 @@ const Work = (props) => {
                 style={{
                   width: '100%',
                   height: 'auto',
+                  margin: '-2px 0 -2px 0'
                 }}
                 width={300}
                 height={100}
