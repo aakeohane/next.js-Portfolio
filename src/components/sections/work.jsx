@@ -2,6 +2,8 @@ import { bebasNeueFontClass } from "@/pages/_app"
 import Image from "next/image"
 
 const Work = (props) => {
+
+  console.log(props.allWerkData)
   
   return (
     <section id="work" data-section>
