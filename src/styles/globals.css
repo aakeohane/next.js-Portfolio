@@ -53,13 +53,19 @@ p {
   letter-spacing: 0.025rem;
 }
 
-/* allows for vertical margin below fixed header when Link is direct to a section on website */
 section {
   scroll-margin-top: 90px;
   align-self: center;
   width: 100%;
   max-width: 600px;
   min-height: var(--viewport-height);
+  max-height: fit-content;
+}
+
+/* allows for vertical margin below fixed header when Link is direct to a section on website */
+section:first-child {
+  scroll-margin-top: 90px;
+  height: var(--viewport-height);
 }
 
 a {
