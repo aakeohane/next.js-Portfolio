@@ -42,7 +42,7 @@
 }
 
 .whale-container {
-  height: 30vh;
+  height: fit-content;
   position: relative;
   display: flex;
   justify-content: center;
