@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image"
 
-
 function Workcard(props) {
+  console.log(props.slug)
   return (
     <div key={props.index}>
       
       <h2>{props.title}</h2>
-      <Link href={`work/?=${props.slug}`}>
+      <Link href={`work/${props.slug}`}>
         <Image
           alt="example" 
           src={props.image}

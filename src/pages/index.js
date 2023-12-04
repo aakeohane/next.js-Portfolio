@@ -7,14 +7,7 @@ import { getSortedWerkData } from '/lib/work'
 
 import Head from 'next/head'
 
-export async function getStaticProps({ params }) {
-  const allWerkData = await getSortedWerkData(params);
-  return {
-    props: {
-      allWerkData,
-    },
-  };
-}
+
 
 export default function Home({ allWerkData }) {
 
@@ -46,6 +39,15 @@ export default function Home({ allWerkData }) {
       </div>
     </>
   )
+}
+
+export async function getStaticProps({ params }) {
+  const allWerkData = await getSortedWerkData(params);
+  return {
+    props: {
+      allWerkData,
+    },
+  };
 }
 
 
