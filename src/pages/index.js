@@ -7,8 +7,8 @@ import { getSortedWerkData } from '/lib/work'
 
 import Head from 'next/head'
 
-export async function getStaticProps() {
-  const allWerkData = await getSortedWerkData();
+export async function getStaticProps({ params }) {
+  const allWerkData = await getSortedWerkData(params);
   return {
     props: {
       allWerkData,

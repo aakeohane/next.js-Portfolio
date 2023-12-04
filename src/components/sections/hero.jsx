@@ -9,7 +9,7 @@ const Hero = () => {
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
 
-        <div style={{lineHeight: 0.9, marginTop: "5vh"}}>
+        <div style={{lineHeight: 0.9,marginTop: "15vh"}}>
           <span className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span><br></br>
           <span className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span><br></br>
           <span className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span>

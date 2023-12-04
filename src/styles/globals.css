@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 *,
 *::after,
 *::before {
@@ -44,6 +48,8 @@ h1 {
   color: var(--whale-blue);
   letter-spacing: 2px;
   line-height: 0.9;
+  /* weird tailwind h1 override */
+  margin: 0.8em 0;
 }
 
 p {

@@ -2,9 +2,9 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(220, 220, 220, 0.15);
+  left: -28px;
+  right: -28px;
+  background-color: rgba(220, 220, 220, 0.15);
   backdrop-filter: blur(6px); /* creates glassomorphism for navbar */
   -webkit-backdrop-filter: blur(6px);
 }

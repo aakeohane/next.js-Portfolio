@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@svgr/webpack": "^8.1.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.2",
@@ -18,5 +19,10 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "scroll-to-element": "^2.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.5"
   }
 }
