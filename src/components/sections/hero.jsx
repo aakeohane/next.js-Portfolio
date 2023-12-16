@@ -1,5 +1,5 @@
 import styles from './hero.module.css'
-import Img from 'next/image';
+import Image from 'next/image';
 import whale from 'public/images/whale-watercolor.png'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
 
@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
 
         <div className={styles["whale-container"]}>
-          <Img
+          <Image
             alt="personal logo" 
             src={whale}
             className={styles.whale}

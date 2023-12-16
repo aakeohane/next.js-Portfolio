@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
     "@svgr/webpack": "^8.1.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.2",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "scroll-to-element": "^2.0.3"

@@ -1,16 +1,22 @@
 import Link from "next/link";
 import Image from "next/image"
 
-function Workcard(props) {
-  console.log(props.slug)
+function Workcard({slug, index, title, image}) {
+  
+  
+  
   return (
-    <div key={props.index}>
-      
-      <h2>{props.title}</h2>
-      <Link href={`work/${props.slug}`}>
+    <div key={index} id={slug}>
+      <h2>{title}</h2>
+      <Link 
+        // href="work/[slug]"
+        href={`/?slug=${slug}`}
+        as={`/work/${slug}`}
+        scroll={false}
+        shallow={true}>
         <Image
           alt="example" 
-          src={props.image}
+          src={image}
           sizes="100vw"
           style={{
             width: '100%',

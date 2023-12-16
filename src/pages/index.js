@@ -6,10 +6,13 @@ import { useEffect } from 'react'
 import { getSortedWerkData } from '/lib/work'
 
 import Head from 'next/head'
+import { CustomModal } from '@/components/custom-modal'
 
 
 
 export default function Home({ allWerkData }) {
+
+  console.log(allWerkData.image)
 
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
@@ -23,6 +26,7 @@ export default function Home({ allWerkData }) {
     }
   }, [])
 
+  
   return (
     <>
       <Head>
@@ -32,6 +36,7 @@ export default function Home({ allWerkData }) {
           <link rel="icon" href="/favicon.svg" sizes="any" />
       </Head>
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
+        <CustomModal image={allWerkData.image} />
         <Hero/>
         <About/>
         <Work allWerkData={allWerkData}/>

@@ -2,6 +2,8 @@ import '@/styles/globals.css';
 import Layout from '../components/layout';
 import { Inter, Bebas_Neue } from 'next/font/google'
 import localFont from 'next/font/local'
+import { useRouter } from 'next/router';
+import NoLayout from '@/components/layout-alt';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -37,9 +39,21 @@ export const interFontClass = inter.className
 export const bebasNeueFontClass = bebasNeue.className
 
 export default function App({ Component, pageProps }) {
-  return (
+
+  const router = useRouter();
+  const withoutLayoutArray = [
+    'work'
+  ];
+
+  const isWithoutLayout = router.pathname.includes(withoutLayoutArray);
+
+  return isWithoutLayout ? (
+    <NoLayout>
+      <Component {...pageProps} />
+    </NoLayout>
+  ) : (
     <Layout>
       <Component {...pageProps} />
     </Layout>
-  );
+  )
 }
