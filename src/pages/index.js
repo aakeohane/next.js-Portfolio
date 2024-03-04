@@ -14,14 +14,14 @@ export default function Home({ allWerkData }) {
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
 // 1650 pixels wide (change containers size to prevent wrap)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const sections = document.querySelectorAll('section')
-      sections.forEach((section) => {
-        section.style.setProperty('--viewport-height', `${window.innerHeight}px`)
-      })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const sections = document.querySelectorAll('section')
+  //     sections.forEach((section) => {
+  //       section.style.setProperty('--viewport-height', `${window.innerHeight}px`)
+  //     })
+  //   }
+  // }, [])
 
   
   return (
