@@ -11,6 +11,7 @@
   --responsive: calc(
     (var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))
   ); /* Ranges from 421px to 1199px */
+  margin: 0;
 }
 
 :root {
@@ -37,7 +38,7 @@ body {
   /* background-image: url(/images/watercolor-paper-background-2.jpg); */
   /* background-color: var(--whale-yellow); */
   /* box-shadow: -25px 5px 100px #ededed inset; */
-  height: 100vh;
+  height: 100%;
   height: calc(var(--vh, 1vh) * 100);
 }
 
