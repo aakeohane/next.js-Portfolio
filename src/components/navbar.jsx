@@ -49,7 +49,7 @@ const Navbar = () => {
         duration: 1,
         scrollTrigger: {
           trigger: "#aaron",
-          start: 80,
+          start: 20,
           end: 250,
           scrub: true,
           
@@ -61,7 +61,7 @@ const Navbar = () => {
         opacity: 0,
         scrollTrigger: {
           trigger: "#keohane",
-          start: 80,
+          start: 20,
           end: 250,
           scrub: true,
         }
@@ -89,7 +89,7 @@ const Navbar = () => {
     transition: '2s'
   };
   
-  const logoSize = 65
+  const logoSize = 75
 
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up
   

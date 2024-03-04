@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 import Modal from 'react-modal';
 import styles from "./custom-modal.module.css"
 
-export function CustomModal( {image} ) {
+
+
+export function CustomModal( { children } ) {
 
   Modal.setAppElement('#__next');
 
@@ -17,18 +19,22 @@ export function CustomModal( {image} ) {
       onRequestClose={() => router.push('/', undefined, { scroll: false })}
       contentLabel="Work Modal"
     >
-      <Image
+      
+        {children}
+      
+      {/* <Image
         alt="example" 
-        src={router.query.image}
+        src={image}
         sizes="100vw"
         style={{
-          width: '100%',
+          width: '50%',
           height: 'auto',
           margin: '3px 0 3px 0'
         }}
         width={300}
         height={100}
-      />
+      /> */}
     </Modal>
   );
 }
+

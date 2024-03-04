@@ -3,14 +3,13 @@ import Image from "next/image"
 
 function Workcard({slug, index, title, image}) {
   
-  
-  
   return (
     <div key={index} id={slug}>
       <h2>{title}</h2>
       <Link 
         // href="work/[slug]"
-        href={`/?slug=${slug}`}
+        // href={`work/[slug]?slug=${slug}`}
+        href={`/work/?slug=${slug}`}
         as={`/work/${slug}`}
         scroll={false}
         shallow={true}>

@@ -4,15 +4,12 @@ import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
 import { useEffect } from 'react'
 import { getSortedWerkData } from '/lib/work'
-
-import Head from 'next/head'
 import { CustomModal } from '@/components/custom-modal'
-
-
+import { useRouter } from 'next/router'
 
 export default function Home({ allWerkData }) {
 
-  console.log(allWerkData.image)
+  let router = useRouter();
 
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
@@ -29,30 +26,27 @@ export default function Home({ allWerkData }) {
   
   return (
     <>
-      <Head>
-        <title>Aaron Keohane</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name='description' content='Portfolio of work, contact info and about Aaron Keohane' />
-          <link rel="icon" href="/favicon.svg" sizes="any" />
-      </Head>
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
-        <CustomModal image={allWerkData.image} />
         <Hero/>
         <About/>
         <Work allWerkData={allWerkData}/>
         <Contact/>
+        <CustomModal>
+        </CustomModal>
       </div>
     </>
   )
 }
 
-export async function getStaticProps({ params }) {
-  const allWerkData = await getSortedWerkData(params);
+export async function getStaticProps() {
+  const allWerkData = await getSortedWerkData();
   return {
     props: {
       allWerkData,
     },
   };
 }
+
+
 
 

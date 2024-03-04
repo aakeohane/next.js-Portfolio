@@ -14,6 +14,7 @@ const Work = (props) => {
             <Workcard key={slug} image={image} title={title} slug={slug} />
           )
           )}
+          
         </div>
     </section>
   )

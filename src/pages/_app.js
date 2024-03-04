@@ -1,19 +1,16 @@
 import '@/styles/globals.css';
 import Layout from '../components/layout';
-import { Inter, Bebas_Neue } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import { useRouter } from 'next/router';
-import NoLayout from '@/components/layout-alt';
+import Head from 'next/head';
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
 
-const bebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  style: ['normal'],
-  weight: ['400'],
+const bebasNeue = localFont({
+  src: '../../public/fonts/BebasNeue-Regular.ttf',
   display: 'swap',
 })
 
@@ -40,19 +37,14 @@ export const bebasNeueFontClass = bebasNeue.className
 
 export default function App({ Component, pageProps }) {
 
-  const router = useRouter();
-  const withoutLayoutArray = [
-    'work'
-  ];
-
-  const isWithoutLayout = router.pathname.includes(withoutLayoutArray);
-
-  return isWithoutLayout ? (
-    <NoLayout>
-      <Component {...pageProps} />
-    </NoLayout>
-  ) : (
+  return (
     <Layout>
+      <Head>
+        <title>Aaron Keohane</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name='description' content='Portfolio of work, contact info and about Aaron Keohane' />
+          <link rel="icon" href="/favicon.svg" sizes="any" />
+      </Head>
       <Component {...pageProps} />
     </Layout>
   )

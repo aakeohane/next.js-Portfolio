@@ -16,7 +16,7 @@
 :root {
   --whale-yellow: #e6b342;
   --whale-blue: #04465d;
-  --inkblot-black: #333;
+  --inkblot-black: #222;
   --light-inkblot-black: rgba(51, 51, 51, 0);
   --viewport-height: 100%;
 }
@@ -50,6 +50,10 @@ h1 {
   line-height: 0.9;
   /* weird tailwind h1 override */
   margin: 0.8em 0;
+}
+
+h2 {
+  font-size: 28px;
 }
 
 p {
@@ -89,6 +93,7 @@ nav {
   --max-size: 28;
   --min-size: 25;
   font-size: var(--responsive);
+  margin: 20px 0;
 }
 
 nav > a {
