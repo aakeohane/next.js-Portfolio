@@ -18,7 +18,7 @@
   --whale-blue: #04465d;
   --inkblot-black: #222;
   --light-inkblot-black: rgba(51, 51, 51, 0);
-  --viewport-height: 100%;
+  --vh: 100%;
 }
 
 @font-face {
@@ -39,7 +39,7 @@ body {
   /* background-color: var(--whale-yellow); */
   /* box-shadow: -25px 5px 100px #ededed inset; */
   height: 100vh;
-  height: var(--viewport-height);
+  height: var(--vh);
 }
 
 h1 {
@@ -68,8 +68,9 @@ section {
   align-self: center;
   width: 100%;
   max-width: 600px;
-  /* min-height: 100dvh; */
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  height: fit-content;
 }
 
 a {
