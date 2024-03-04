@@ -72,10 +72,10 @@ section {
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
-section:first-child {
+/* section:first-child {
   scroll-margin-top: 90px;
   height: calc(var(--vh, 1vh) * 100);
-}
+} */
 
 a {
   color: inherit;
