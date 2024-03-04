@@ -16,10 +16,8 @@ export default function Home({ allWerkData }) {
 // 1650 pixels wide (change containers size to prevent wrap)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-      let vh = window.innerHeight * 0.01;
-      // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      const sections = document.querySelectorAll('section')
+      sections[0].style.setProperty('--vh', `${window.innerHeight}px`)
     }
   }, [])
 
