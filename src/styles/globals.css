@@ -67,15 +67,14 @@ section {
   align-self: center;
   width: 100%;
   max-width: 600px;
-  min-height: 100vh;
+  min-height: var(--vh);
   height: fit-content;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
 section:first-child {
   scroll-margin-top: 90px;
-  min-height: var(--vh);
-  height: fit-content;
+  height: var(--vh);
 }
 
 a {
