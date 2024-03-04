@@ -15,7 +15,7 @@ const Hero = () => {
           <span className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span>
         </div>
 
-        <div>
+        <div className={styles["portrait-container"]}>
           <Image
             alt="personal logo" 
             src={profilePic}
