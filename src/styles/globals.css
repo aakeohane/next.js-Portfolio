@@ -86,19 +86,19 @@ a {
 nav {
   display: flex;
   align-items: center;
-  height: 75px;
+  height: 55px;
   position: relative;
   z-index: 1;
   overflow: hidden;
   --max-size: 28;
   --min-size: 25;
   font-size: var(--responsive);
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 nav > a {
   margin-right: 10px;
-  color: var(--whale-blue);
+  color: var(--whale-çlue);
   transition: 2s;
 }
 

@@ -89,7 +89,7 @@ const Navbar = () => {
     transition: '2s'
   };
   
-  const logoSize = 75
+  const logoSize = 50
 
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up
   
