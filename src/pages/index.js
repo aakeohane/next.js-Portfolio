@@ -16,10 +16,9 @@ export default function Home({ allWerkData }) {
 // 1650 pixels wide (change containers size to prevent wrap)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const sections = document.querySelectorAll('section')
-      sections.forEach((section) => {
-        section.style.setProperty('--vh', `${window.innerHeight}px`)
-      })
+      let vh = window.innerHeight * 0.01;
+      console.log(vh)
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
   }, [])
 

@@ -18,7 +18,6 @@
   --whale-blue: #04465d;
   --inkblot-black: #222;
   --light-inkblot-black: rgba(51, 51, 51, 0);
-  --vh: 100%;
 }
 
 @font-face {
@@ -39,7 +38,7 @@ body {
   /* background-color: var(--whale-yellow); */
   /* box-shadow: -25px 5px 100px #ededed inset; */
   height: 100vh;
-  height: var(--vh);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 h1 {
@@ -68,14 +67,14 @@ section {
   align-self: center;
   width: 100%;
   max-width: 600px;
-  min-height: var(--vh);
+  min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
 section:first-child {
   scroll-margin-top: 90px;
-  height: var(--vh);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 a {
