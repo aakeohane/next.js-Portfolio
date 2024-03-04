@@ -17,7 +17,9 @@ export default function Home({ allWerkData }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const sections = document.querySelectorAll('section')
-      sections[0].style.setProperty('--vh', `${window.innerHeight}px`)
+      sections.forEach((section) => {
+        section.style.setProperty('--vh', `${window.innerHeight}px`)
+      })
     }
   }, [])
 

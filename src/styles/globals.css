@@ -71,8 +71,10 @@ section {
   height: fit-content;
 }
 
-section:nth-child(1) {
-  min-height: calc(var(--vh, 1vh) * 100);
+/* allows for vertical margin below fixed header when Link is direct to a section on website */
+section:first-child {
+  scroll-margin-top: 90px;
+  min-height: var(--vh);
   height: fit-content;
 }
 
