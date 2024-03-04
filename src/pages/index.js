@@ -10,12 +10,6 @@ import { useRouter } from 'next/router'
 export default function Home({ allWerkData }) {
 
   let router = useRouter();
-        // We listen to the resize event
-        window.addEventListener('resize', () => {
-          // We execute the same script as before
-          let vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
 
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
