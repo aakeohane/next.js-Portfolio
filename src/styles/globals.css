@@ -70,7 +70,7 @@ section {
   max-width: 600px;
   min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;
-  padding-bottom: 10vh;
+  padding-bottom: 2.5vh;
 }
 
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
@@ -94,6 +94,7 @@ nav {
   --min-size: 25;
   font-size: var(--responsive);
   margin: 10px 0;
+  /* animation: marquee 0.7s linear; */
 }
 
 nav > a {

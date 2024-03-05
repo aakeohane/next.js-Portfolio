@@ -11,6 +11,7 @@
 .developer {
   font-size: calc(2.5rem + 3vw);
   letter-spacing: 0;
+  display: block;
 }
 
 .biologist {
@@ -57,7 +58,6 @@
 /* Media Queries */
 
 @media only screen and (min-width: 1000px) {
-  /*  */
 }
 
 /* Animations */
@@ -85,5 +85,14 @@
   }
   84% {
     border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

@@ -1,16 +1,38 @@
 import styles from './hero.module.css'
 import Image from 'next/image';
+import gsap from 'gsap'
 import profilePic from 'public/images/professional-portrait-v3.png'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
+import { useEffect, useLayoutEffect, useRef } from 'react';
+
 
 const Hero = () => {
+
+  const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+  useIsomorphicLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set("#developer", {
+        x: -300
+      }),
+      gsap.to("#developer", {
+        x: 0,
+        duration: 2,
+        delay: 1
+      })
+      return () => ctx.revert()
+    })
+  }, [])
+
+
+  
   
   return (
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
-      <div>
-        <div style={{lineHeight: 0.9}}>
-          <span className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span><br></br>
+      <div className={styles["inner-content"]}>
+        <div  style={{lineHeight: 0.9}}>
+          <span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span><br></br>
           <span className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span><br></br>
           <span className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span>
         </div>

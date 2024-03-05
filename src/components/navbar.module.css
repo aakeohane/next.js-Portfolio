@@ -42,3 +42,13 @@
   padding-right: 15px;
   margin-left: -2px;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(calc(-25% + 1rem), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50% + 1rem), 0, 0);
+  }
+}
