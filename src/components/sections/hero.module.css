@@ -1,11 +1,10 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: var(--whale-blue);
-  padding-bottom: 2em;
-  margin-bottom: 3em;
-  height: 100%;
+  margin-bottom: 5vh;
+  height: 100vh;
   z-index: -1;
 }
 
@@ -49,7 +48,6 @@
   position: relative;
   bottom: 10px;
   z-index: -1;
-  align-content: flex-end;
 }
 
 .bio {
