@@ -89,7 +89,7 @@ const Navbar = () => {
     transition: '2s'
   };
   
-  const logoSize = 50
+  const logoSize = 65
 
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up
   
@@ -97,7 +97,7 @@ const Navbar = () => {
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
-          offset: target == '#hero' ? -90 : -50, // Offsets fixed header
+          offset: target == '#hero' ? -90 : -60, // Offsets fixed header
           ease: 'in-expo',
           duration: 1000,
         })

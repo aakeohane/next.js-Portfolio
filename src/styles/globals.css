@@ -86,7 +86,7 @@ a {
 nav {
   display: flex;
   align-items: center;
-  height: 55px;
+  height: fit-content;
   position: relative;
   z-index: 1;
   overflow: hidden;
