@@ -25,7 +25,7 @@ const Hero = () => {
       }),
       gsap.from("#artist", {
         translateY: [50, 0],
-        rotation:30,
+        rotation: 30,
         opacity: 0,
         delay: 1,
       }),
@@ -38,12 +38,12 @@ const Hero = () => {
         translateX: [-100, 0],
         opacity: 0,
         duration: 1,
-        delay: 2
+        delay: 2.5
       }),
       gsap.from("#biography", {
         opacity: 0,
         duration: 3,
-        delay: 3
+        delay: 3.5
       })
 
       return () => ctx.revert()

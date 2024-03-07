@@ -41,9 +41,8 @@ const Navbar = () => {
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.from("#navBar", {
-        translateY: [-75, 0],
+        translateY: [-50, 0],
         delay: 1.5,
-        duration:1,
         opacity: 0
       }),
   
