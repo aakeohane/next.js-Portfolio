@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +37,13 @@ export const interFontClass = inter.className
 export const bebasNeueFontClass = bebasNeue.className
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const loader = document.getElementById('globalLoader');
+      if (loader)
+        loader.remove();
+    }
+  }, []);
 
   return (
     <Layout>

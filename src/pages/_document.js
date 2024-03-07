@@ -17,8 +17,11 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Main />
-        <NextScript />
+      <div id="globalLoader">
+        <div id="loader"></div>
+      </div>
+      <Main />
+      <NextScript />
       </body>
     </Html>
   );

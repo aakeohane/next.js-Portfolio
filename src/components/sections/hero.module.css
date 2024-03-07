@@ -11,17 +11,25 @@
 .developer {
   font-size: calc(2.5rem + 3vw);
   letter-spacing: 0;
-  display: block;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
 }
 
 .biologist {
   font-size: calc(2.2rem + 3vw);
   letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
 }
 
 .artist {
   font-size: calc(2.2rem + 3vw);
   letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
 }
 
 .artista {
@@ -33,6 +41,14 @@
 
 .period {
   color: var(--whale-yellow);
+}
+
+.hidden {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  margin-top: -1.5vh;
+  line-height: 1;
 }
 
 .portrait {
@@ -47,8 +63,12 @@
 
 .bio-container {
   position: relative;
-  bottom: 10px;
+  bottom: 2vh;
   z-index: -1;
+}
+
+.hidden-override {
+  margin-top: 0;
 }
 
 .bio {
@@ -85,14 +105,5 @@
   }
   84% {
     border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }

@@ -39,6 +39,13 @@ const Navbar = () => {
     let ctx = gsap.context(() => {
       gsap.registerPlugin()
       gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from("#navBar", {
+        translateY: [-75, 0],
+        delay: 1.5,
+        duration:1,
+        opacity: 0
+      }),
   
       gsap.set("#aaron", {xPercent: 0, opacity: 1})
       gsap.set("#keohane", {xPercent: 0, opacity: 1}, )
@@ -106,7 +113,7 @@ const Navbar = () => {
   
   return (
     <div className={blastimoFontClass}>
-      <nav>
+      <nav id="navBar">
         <Link 
           onClick={e => smoothLinkClick(e, '#hero')} 
           href={"/#hero"}

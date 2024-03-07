@@ -12,6 +12,7 @@
     (var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))
   ); /* Ranges from 421px to 1199px */
   margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -22,8 +23,38 @@
 }
 
 @font-face {
-  font-family: "BlowBrush";
-  src: url("../../public/fonts/blowbrush.otf");
+  font-family: BlowBrush;
+  src: url(/public/fonts/Blastimo.ttf);
+  weight: 400;
+}
+
+#globalLoader {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#loader {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  animation: load 1s linear infinite alternate;
+}
+#loader:before {
+  content: "Loading...";
+}
+@keyframes load {
+  to {
+    opacity: 0;
+  }
 }
 
 body {
