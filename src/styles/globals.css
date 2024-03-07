@@ -27,6 +27,11 @@
   src: url("../../public/fonts/blowbrush.otf");
 }
 
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../../public/fonts/BebasNeue-Regular.ttf");
+}
+
 #globalLoader {
   position: fixed;
   z-index: 9999;
@@ -85,6 +90,14 @@ h1 {
 
 h2 {
   font-size: 28px;
+}
+
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--whale-yellow);
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 0.2em 0;
 }
 
 p {

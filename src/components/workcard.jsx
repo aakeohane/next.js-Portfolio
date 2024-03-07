@@ -5,7 +5,7 @@ function Workcard({slug, index, title, image}) {
   
   return (
     <div key={index} id={slug}>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <Link 
         // href="work/[slug]"
         // href={`work/[slug]?slug=${slug}`}
