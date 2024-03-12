@@ -56,31 +56,33 @@ const Hero = () => {
   return (
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
-      <div className={styles["inner-content"]}>
-        <div>
-          <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span></div><br></br>
-          <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
-          <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
-        </div>
-
-        <div className={styles["portrait-container"]}>
-          <Image
-            alt="personal logo" 
-            src={profilePic}
-            className={styles.portrait}
-            height={350}
-            priority={true}
-            id="portrait"
-          />
-        </div>
+        <div className={styles["inner-content"]}>
         
-        <div className={styles["bio-container"]}>
-          <div className={`${styles.hidden} ${styles["hidden-override"]}`}><h2 id="intro" className={`${blowbrushFontClass}`}>That's me, Aaron</h2></div>
-          <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
-            A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
-            you can be sure I will think imaginatively when finding yours.
-          </p>
-        </div>
+          <div>
+            <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span></div><br></br>
+            <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
+            <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
+          </div>
+
+          <div className={styles["portrait-container"]}>
+            <Image
+              alt="personal logo" 
+              src={profilePic}
+              className={styles.portrait}
+              height={350}
+              priority={true}
+              id="portrait"
+            />
+          </div>
+          
+          <div className={styles["bio-container"]}>
+            <div className={`${styles.hidden} ${styles["hidden-override"]}`}><h2 id="intro" className={`${blowbrushFontClass}`}>That's me, Aaron</h2></div>
+            <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
+              A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
+              you can be sure I will think imaginatively when finding yours.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

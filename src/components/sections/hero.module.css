@@ -1,11 +1,15 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   color: var(--whale-blue);
   margin-bottom: 5vh;
   height: 100vh;
   z-index: -1;
+}
+
+.inner-content {
+  height: 80vh;
 }
 
 .developer {
@@ -69,6 +73,7 @@
 
 .hidden-override {
   margin-top: 0;
+  width: 100%;
 }
 
 .bio {
