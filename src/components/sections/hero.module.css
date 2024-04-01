@@ -55,6 +55,11 @@
   line-height: 1;
 }
 
+.portrait-container {
+  display: flex;
+  justify-content: center;
+}
+
 .portrait {
   border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
   box-shadow: 0 3px 20px rgb(0 0 0 / 0.5);
@@ -62,7 +67,6 @@
   position: relative;
   z-index: -1;
   bottom: 30px;
-  left: 35px;
 }
 
 .bio-container {
