@@ -113,7 +113,7 @@ section {
   width: 100%;
   max-width: 600px;
   min-height: calc(var(--vh, 1vh) * 100);
-  height: fit-content;
+  height: -webkit-fill-available;
   padding-bottom: 2.5vh;
 }
 

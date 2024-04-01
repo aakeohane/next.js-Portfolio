@@ -1,7 +1,7 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   color: var(--whale-blue);
   height: 100vh;
   z-index: -1;
@@ -12,7 +12,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: fit-content;
-  margin-bottom: 8vh;
 }
 
 .developer {
@@ -89,7 +88,10 @@
 }
 /* Media Queries */
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 480px) {
+  .main-content {
+    justify-content: center;
+  }
 }
 
 /* Animations */
