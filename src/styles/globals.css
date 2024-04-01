@@ -120,6 +120,7 @@ section {
 /* allows for vertical margin below fixed header when Link is direct to a section on website */
 section:first-child {
   height: -webkit-fill-available;
+  margin-bottom: 10vh;
 }
 
 a {
