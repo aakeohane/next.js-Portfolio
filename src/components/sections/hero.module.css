@@ -3,13 +3,16 @@
   flex-direction: column;
   justify-content: flex-end;
   color: var(--whale-blue);
-  margin-bottom: 5vh;
   height: 100vh;
   z-index: -1;
 }
 
 .inner-content {
-  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  margin-bottom: 8vh;
 }
 
 .developer {
