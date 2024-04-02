@@ -105,19 +105,32 @@ p {
   line-height: 1.3333;
   font-size: calc(1rem + 1vw);
   letter-spacing: 0.025rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+button {
+  font-family: "BlowBrush", sans-serif;
+  /* font-family: "Bebas Neue", sans-serif; */
+  color: var(--inkblot-black);
+  text-decoration: none;
+  border-radius: 1px;
+  border: 2px solid var(--inkblot-black);
+  background-color: transparent;
 }
 
 section {
   scroll-margin-top: 90px;
   align-self: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
+  width: 100%;
   min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;
   padding-bottom: 2.5vh;
 }
 
-/* allows for vertical margin below fixed header when Link is direct to a section on website */
+/* adding webkit fill is weird hack to avoid browser builtins from overlapping my content on page load */
 section:first-child {
   height: -webkit-fill-available;
   margin-bottom: 10vh;
@@ -139,7 +152,6 @@ nav {
   --min-size: 25;
   font-size: var(--responsive);
   margin: 10px 0;
-  /* animation: marquee 0.7s linear; */
 }
 
 nav > a {

@@ -56,7 +56,7 @@ const Hero = () => {
   return (
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
-        <div className={styles["inner-content"]}>
+
         
           <div>
             <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span></div><br></br>
@@ -69,7 +69,7 @@ const Hero = () => {
               alt="personal logo" 
               src={profilePic}
               className={styles.portrait}
-              height={350}
+              height={450}
               priority={true}
               id="portrait"
             />
@@ -79,12 +79,16 @@ const Hero = () => {
             <div className={`${styles.hidden} ${styles["hidden-override"]}`}><h2 id="intro" className={`${blowbrushFontClass}`}>That's me, Aaron</h2></div>
             <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
               A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
-              you can be sure I will think imaginatively when finding yours.
+              you can be sure I will think imaginatively when finding yours. 
             </p>
+            <button className={styles.workbttn}>Work</button>
           </div>
-
+          <div>
+            
+          </div>
+          
         </div>
-      </div>
+      
     </section>
   )
 }
