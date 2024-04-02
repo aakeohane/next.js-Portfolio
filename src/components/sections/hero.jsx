@@ -69,7 +69,7 @@ const Hero = () => {
               alt="personal logo" 
               src={profilePic}
               className={styles.portrait}
-              height={450}
+              height={350}
               priority={true}
               id="portrait"
             />
