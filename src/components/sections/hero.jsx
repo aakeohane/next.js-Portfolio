@@ -56,8 +56,6 @@ const Hero = () => {
   return (
     <section id="hero" data-section>
       <div className={styles["main-content"]}>
-
-        
           <div>
             <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span></div><br></br>
             <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
