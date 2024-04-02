@@ -62,8 +62,8 @@
   line-height: calc(2rem + 1vw);
   padding: 1px 4px;
   opacity: 0.9;
-  margin-bottom: 20px;
 }
+
 .portrait-container {
   display: flex;
   justify-content: center;
@@ -87,6 +87,7 @@
   z-index: -1;
   max-width: 600px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .hidden-override {
