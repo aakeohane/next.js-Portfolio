@@ -40,10 +40,15 @@ const Hero = () => {
         duration: 1,
         delay: 2.5
       }),
+      gsap.from("#hero-bttn", {
+        opacity: 0,
+        duration: 3,
+        delay: 3
+      })
       gsap.from("#biography", {
         opacity: 0,
         duration: 3,
-        delay: 3.5
+        delay: 2.5
       })
 
       return () => ctx.revert()
@@ -79,7 +84,7 @@ const Hero = () => {
               A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
               you can be sure I will think imaginatively when finding yours. 
             </p>
-            <button className={styles.workbttn}>Work</button>
+            <button id="hero-bttn" className={styles.workbttn}>Work</button>
           </div>
           <div>
             

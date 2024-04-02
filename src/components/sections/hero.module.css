@@ -5,7 +5,7 @@
   color: var(--whale-blue);
   height: 100vh;
   z-index: -1;
-  margin: 2vh 0;
+  margin: 3vh 0;
 }
 
 .developer {
@@ -63,13 +63,12 @@
   padding: 1px 4px;
   opacity: 0.9;
   /* right: 10px; */
-  margin: 0.5rem 1.5rem 1rem 0;
+  margin: 0.1rem 1.5rem 2rem 0;
 }
 
 .portrait-container {
   display: flex;
   justify-content: center;
-  max-height: 100%;
   margin-bottom: -2vh;
 }
 
