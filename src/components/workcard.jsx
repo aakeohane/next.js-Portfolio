@@ -1,16 +1,14 @@
 import Link from "next/link";
 import Image from "next/image"
 
-function Workcard({slug, index, title, image}) {
-  
+function Workcard({order, title, image, slug}) {
   return (
-    <div key={index} id={slug}>
+    <div key={order}>
       <h3>{title}</h3>
       <Link 
-        // href="work/[slug]"
-        // href={`work/[slug]?slug=${slug}`}
-        href={`/work/?slug=${slug}`}
-        as={`/work/${slug}`}
+        key={slug}
+        href={`projects/${slug}`}
+        // as={`/work/${slug}`}
         scroll={false}
         shallow={true}>
         <Image
@@ -20,7 +18,7 @@ function Workcard({slug, index, title, image}) {
           style={{
             width: '100%',
             height: 'auto',
-            margin: '-3px 0 -3px 0'
+            margin: '15px 0 15px 0'
           }}
           width={300}
           height={100}

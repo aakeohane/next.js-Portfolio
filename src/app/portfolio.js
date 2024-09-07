@@ -1,15 +1,14 @@
+'use client'
+
 import Hero from '@/components/sections/hero'
 import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
 import { useEffect } from 'react'
-import { getSortedWerkData } from '/lib/work'
-import { CustomModal } from '@/components/custom-modal'
-import { useRouter } from 'next/router'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
-export default function Home({ allWerkData }) {
-
-  let router = useRouter();
+const Portfolio = ({allWerkData}) => {
 
 // runs this when loading, dynamically measure viewport height taking into account browsers built-in bottom and top bars
 // this is not dynamically responsive, but will work on refresh and also need to put in media query for screens greater than
@@ -21,30 +20,30 @@ export default function Home({ allWerkData }) {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const loader = document.getElementById('globalLoader');
+      if (loader)
+        loader.remove();
+    }
+  }, []);
+
   
   return (
     <>
+      <div id="globalLoader">
+        <div id="loader"></div>
+      </div>
+      <Header />
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
         <Hero/>
         <About/>
         <Work allWerkData={allWerkData}/>
         <Contact/>
-        <CustomModal>
-        </CustomModal>
       </div>
+      <Footer />
     </>
   )
 }
 
-export async function getStaticProps() {
-  const allWerkData = await getSortedWerkData();
-  return {
-    props: {
-      allWerkData,
-    },
-  };
-}
-
-
-
-
+export default Portfolio

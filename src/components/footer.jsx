@@ -1,4 +1,4 @@
-import {blastimoFontClass } from '@/pages/_app.js';
+import {blastimoFontClass } from '@/app/layout';
 import styles from './footer.module.css'
 
 import TwitterIcon from '/public/images/svg/twitter.svg';

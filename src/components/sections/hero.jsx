@@ -2,15 +2,13 @@ import styles from './hero.module.css'
 import Image from 'next/image';
 import gsap from 'gsap'
 import profilePic from 'public/images/professional-portrait-v3.png'
-import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/pages/_app.js';
-import { useEffect } from 'react';
+import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
+import { useGSAP } from '@gsap/react';
 
 
 const Hero = () => {
   
-  useEffect(() => {
-    
-    let ctx = gsap.context(() => {
+  useGSAP(() => {
       gsap.from("#developer", {
         translateY: [50, 0],
         rotation:10,
@@ -50,9 +48,6 @@ const Hero = () => {
         duration: 3,
         delay: 2.5
       })
-
-      return () => ctx.revert()
-    })
   }, [])
 
 

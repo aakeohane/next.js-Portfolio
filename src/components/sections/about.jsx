@@ -1,4 +1,4 @@
-import { bebasNeueFontClass } from "@/pages/_app"
+import { bebasNeueFontClass } from "@/app/layout"
 
 const About = () => {
 

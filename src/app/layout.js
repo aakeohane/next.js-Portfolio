@@ -1,9 +1,22 @@
 import '@/styles/globals.css';
-import Layout from '../components/layout';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import Head from 'next/head';
-import { useEffect } from 'react';
+
+export default function RootLayout({ children, modal }) {
+  
+
+  return (
+    <html lang='en' suppressHydrationWarning={true}>
+      <body>
+        <div>
+          {children}
+        </div>
+        {modal}
+        <div id="modal-root-id" />
+      </body>
+    </html>
+  )
+}
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,24 +49,3 @@ export const blastimoSwashFontClass = blastimoSwash.className
 export const interFontClass = inter.className
 export const bebasNeueFontClass = bebasNeue.className
 
-export default function App({ Component, pageProps }) {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const loader = document.getElementById('globalLoader');
-      if (loader)
-        loader.remove();
-    }
-  }, []);
-
-  return (
-    <Layout>
-      <Head>
-        <title>Aaron Keohane</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name='description' content='Portfolio of work, contact info and about Aaron Keohane' />
-          <link rel="icon" href="/favicon.svg" sizes="any" />
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
-  )
-}

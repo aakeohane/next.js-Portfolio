@@ -1,40 +1,50 @@
+'use client'
 
-import Image from "next/image";
-import { useRouter } from "next/router";
-import Modal from 'react-modal';
+import { createPortal } from "react-dom";
 import styles from "./custom-modal.module.css"
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from 'react';
+import { FaWindowClose } from "react-icons/fa";
 
 
-
-export function CustomModal( { children } ) {
-
-  Modal.setAppElement('#__next');
-
+const Modal = ( { children } ) => {
+  
+  const modalRef = useRef(null)
   const router = useRouter();
 
-  return (
-    <Modal
+  useEffect(() => {
+    if (!modalRef.current?.open) {
+      modalRef.current?.showModal()
+      // prevents body scroll
+      document.body.style.overflow = "hidden";
+    }
+  }, [])
+
+  function onModalHide() {
+    router.back()
+    // turns body scroll back on
+    document.body.style.overflow = "auto";
+  }
+
+
+  return createPortal(
+    
+    <dialog
+      ref={modalRef}
       className={styles["my-modal"]}
-      isOpen={!!router.query.slug}
-      onRequestClose={() => router.push('/', undefined, { scroll: false })}
+      // isOpen={!modalRef.current?.open}
+      // onRequestClose={() => router.back('/', undefined, { shallow: true })}
       contentLabel="Work Modal"
-    >
-      
+      onRequestClose={onModalHide}
+    > 
+    <div
+      className={styles["topright"]}
+      onClick={onModalHide}
+    ><FaWindowClose size={28}/></div>
         {children}
-      
-      {/* <Image
-        alt="example" 
-        src={image}
-        sizes="100vw"
-        style={{
-          width: '50%',
-          height: 'auto',
-          margin: '3px 0 3px 0'
-        }}
-        width={300}
-        height={100}
-      /> */}
-    </Modal>
+    </dialog>, document.getElementById("modal-root-id")
   );
 }
+
+export default Modal
 

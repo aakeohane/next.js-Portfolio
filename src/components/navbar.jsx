@@ -5,11 +5,12 @@ import logo from 'public/images/initial.png'
 import aaron from 'public/images/only-aaron.png'
 import keohane from 'public/images/only-keohane.png'
 import scrollToElement from 'scroll-to-element'
-import { blastimoFontClass } from '@/pages/_app'
+import { blastimoFontClass } from '@/app/layout'
 
 import gsap from 'gsap'
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
 const Navbar = () => {
 
@@ -35,9 +36,8 @@ const Navbar = () => {
   };
 
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.registerPlugin()
+  useGSAP(() => {
+
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.from("#navBar", {
@@ -72,8 +72,6 @@ const Navbar = () => {
           scrub: true,
         }
       });
-      return () => ctx.revert()
-    })
 
     // must do this for proper webpack build
     if (typeof window !== "undefined") {
