@@ -6,19 +6,22 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
+import Modal from 'react-modal';
 
-const Modal = ( { children } ) => {
+
+const CustomModal = ( { children } ) => {
+
+  Modal.setAppElement('#modal-root-id')
   
   const modalRef = useRef(null)
   const router = useRouter();
 
-  useEffect(() => {
-    if (!modalRef.current?.open) {
-      modalRef.current?.showModal()
-      // prevents body scroll
-      document.body.style.overflow = "hidden";
-    }
-  }, [])
+  
+  function onModalOpen() {
+    // prevents body scroll
+    document.body.style.overflow = "hidden";
+  }
+        
 
   function onModalHide() {
     router.back()
@@ -26,25 +29,32 @@ const Modal = ( { children } ) => {
     document.body.style.overflow = "auto";
   }
 
+  function onBackButtonPress() {
+    document.body.style.overflow = "auto";
+  }
 
-  return createPortal(
+
+  return (
     
-    <dialog
+    <Modal
       ref={modalRef}
       className={styles["my-modal"]}
-      // isOpen={!modalRef.current?.open}
-      // onRequestClose={() => router.back('/', undefined, { shallow: true })}
+      isOpen={!modalRef.current?.open}
+      onAfterOpen={onModalOpen}
+      onAfterClose={onBackButtonPress}
       contentLabel="Work Modal"
       onRequestClose={onModalHide}
     > 
-    <div
-      className={styles["topright"]}
-      onClick={onModalHide}
-    ><FaWindowClose size={28}/></div>
+      <div
+        className={styles["topright"]}
+        onClick={onModalHide}
+      >
+        <FaWindowClose size={28}/>
+      </div>
         {children}
-    </dialog>, document.getElementById("modal-root-id")
+    </Modal>
   );
 }
 
-export default Modal
+export default CustomModal
 

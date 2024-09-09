@@ -1,14 +1,14 @@
 import  ProjectDetails from "@/components/project-details";
-import  Modal from "@/components/custom-modal";
+import  CustomModal from "@/components/custom-modal";
 
 
 const ProjectModal = ({ params: { slug } }) => {
   
   return (
     <div className="static">
-      <Modal>
+      <CustomModal>
         <ProjectDetails slug={slug} />
-      </Modal>
+      </CustomModal>
     </div>
   );
 };
