@@ -30,6 +30,7 @@ const CustomModal = ( { children } ) => {
   }
 
   function onBackButtonPress() {
+    // turns body scroll back on when user clicks the back button
     document.body.style.overflow = "auto";
   }
 
