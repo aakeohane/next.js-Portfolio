@@ -53,7 +53,7 @@
 
 #loader {
   font-weight: bold;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Bebas Neue", "Arial Narrow Bold", sans-serif;
   font-size: 40px;
   color: var(--whale-yellow);
   animation: load 1s linear infinite alternate;
@@ -161,7 +161,7 @@ nav {
 
 nav > a {
   margin-right: 10px;
-  color: var(--whale-çlue);
+  color: var(--inkblot-black);
   transition: 2s;
 }
 

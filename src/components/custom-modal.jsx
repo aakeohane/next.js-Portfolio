@@ -1,9 +1,8 @@
 'use client'
 
-import { createPortal } from "react-dom";
 import styles from "./custom-modal.module.css"
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
 import Modal from 'react-modal';
@@ -20,6 +19,7 @@ const CustomModal = ( { children } ) => {
   function onModalOpen() {
     // prevents body scroll
     document.body.style.overflow = "hidden";
+    
   }
         
 

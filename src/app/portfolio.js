@@ -20,20 +20,9 @@ const Portfolio = ({allWerkData}) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const loader = document.getElementById('globalLoader');
-      if (loader)
-        loader.remove();
-    }
-  }, []);
-
   
   return (
     <>
-      <div id="globalLoader">
-        <div id="loader"></div>
-      </div>
       <Header />
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
         <Hero/>
