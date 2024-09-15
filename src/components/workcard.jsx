@@ -3,19 +3,21 @@ import Image from "next/image"
 import styles from "./workcard.module.css"
 import { useState } from "react"
 
-function Workcard({order, title, image, slug}) {
+function Workcard({order, title, image, slug, windowWidth}) {
+
 
   const [hover, setHover] = useState(false)
+
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
   const hoverTitle = {
-    opacity: hover ? '1' : '0',
+    opacity: (windowWidth > 700) ? (hover ? '1' : '0') : null
   }
 
   const hoverImage = {
     transition: 'transform 1.25s ease-out',
-    transform: hover ? 'scale(1.2)' : null,
+    transform: hover ? 'scale(1.4)' : null,
   }
 
   const hoverContainer = {

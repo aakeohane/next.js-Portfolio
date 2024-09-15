@@ -2,7 +2,7 @@
 
 import styles from "./custom-modal.module.css"
 import { useRouter } from "next/navigation";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
 import Modal from 'react-modal';

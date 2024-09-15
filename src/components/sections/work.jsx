@@ -2,7 +2,6 @@ import { bebasNeueFontClass } from "@/app/layout"
 import Workcard from "../workcard"
 
 const Work = (props) => {
-  
   return (
     <section id="work" data-section>
       <h1>
@@ -11,7 +10,7 @@ const Work = (props) => {
       <p className={`${bebasNeueFontClass}`}></p>
       <div style={{padding: 0}}>
           {props.allWerkData.map(({ image, title, slug, description, order }) => (
-            <Workcard key={slug} description={description} image={image} title={title} slug={slug} order={order} />
+            <Workcard windowWidth={props.windowWidth} key={slug} description={description} image={image} title={title} slug={slug} order={order} />
           )
           )}
         </div>
