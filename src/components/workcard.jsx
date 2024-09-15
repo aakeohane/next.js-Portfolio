@@ -11,29 +11,32 @@ function Workcard({order, title, image, slug}) {
 
   const hoverTitle = {
     opacity: hover ? '1' : '0',
-  
   }
 
   const hoverImage = {
-    width: '100%',
-    height: 'auto',
+    transition: 'transform 1.25s ease-out',
+    transform: hover ? 'scale(1.2)' : null,
   }
 
+  const hoverContainer = {
+    transition: 'transform 1.25s ease-out',
+    transform: hover ? 'scale(.95)' : null,
+  }
 
   return (
       <Link 
-      className={styles["workcard-link"]}
+        className={styles["workcard-link"]}
         key={order}
         href={`projects/${slug}`}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         scroll={false}
         shallow={true}>
-        <div className={styles["workcard-content-container"]} >
+        <div className={styles["workcard-content-container"]} style={hoverContainer} >
           <Image
             className={styles["workcard-image"]}
+            alt="project image" 
             style={hoverImage}
-            alt="example" 
             src={image}
             sizes="100vw"
             width={300}

@@ -16,4 +16,10 @@
 .workcard-content-container {
   position: relative;
   z-index: -1;
+  overflow: hidden;
+}
+
+.workcard-image {
+  width: 100%;
+  height: auto;
 }
