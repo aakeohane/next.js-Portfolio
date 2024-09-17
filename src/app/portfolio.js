@@ -1,12 +1,13 @@
 'use client'
 
-import Hero from '@/components/sections/hero'
+
 import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
 import { useEffect, useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Home from '@/components/sections/home'
 
 const Portfolio = ({allWerkData}) => {
 
@@ -23,29 +24,32 @@ const Portfolio = ({allWerkData}) => {
 
   useEffect(() => {
     const loader = document.getElementById('globalLoader');
-    if (loader)
+    if (loader) {
       loader.remove();
+    }
 
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+      console.log(vh)
 
-    // only execute all the code below in client side
-    // Handler to call on window resize
+
     function handleResize() {
       // Set window width/height to state
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
+      
     }
     
-    // Add event listener
+
+
     window.addEventListener("resize", handleResize);
      
     // Call handler right away so state gets updated with initial window size
     handleResize();
     
-    // Remove event listener on cleanup
+    // Removes event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
@@ -59,7 +63,8 @@ const Portfolio = ({allWerkData}) => {
       </div>
       <Header />
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
-        <Hero/>
+        <Home/>
+        
         <About/>
         <Work allWerkData={allWerkData} windowWidth={size.width}/>
         <Contact/>

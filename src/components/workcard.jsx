@@ -16,8 +16,9 @@ function Workcard({order, title, image, slug, windowWidth}) {
   }
 
   const hoverImage = {
-    transition: 'transform 1.25s ease-out',
+    transition: 'transform 1.25s ease-out, filter 1.25s ease-in-out',
     transform: hover ? 'scale(1.4)' : null,
+    filter: (windowWidth > 700) ? hover ? 'grayscale(0%)' : 'grayscale(100%)' : null
   }
 
   const hoverContainer = {

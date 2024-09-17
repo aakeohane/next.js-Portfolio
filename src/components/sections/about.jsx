@@ -1,9 +1,22 @@
+import styles from './about.module.css'
+import Image from 'next/image';
+import profilePic from 'public/images/professional-portrait-v3.png'
 import { bebasNeueFontClass } from "@/app/layout"
 
 const About = () => {
 
   return (
     <section id="about" data-section>
+      <div className={styles["portrait-container"]}>
+        <Image
+          alt="personal logo" 
+          src={profilePic}
+          className={styles["portrait"]}
+          height={350}
+          priority={true}
+          id="portrait"
+        />
+      </div>
       <h1>How did I know I was destined for coding?</h1>
       <p className={`${bebasNeueFontClass}`}>
         I am always the first to google the moment someone asks a question.

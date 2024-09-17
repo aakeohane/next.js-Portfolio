@@ -73,7 +73,7 @@ const Navbar = () => {
         }
       });
 
-    // must do this for proper webpack build
+    // must do this for proper webpack build if not 'client' component
     if (typeof window !== "undefined") {
       window.onscroll = () => {
         setOffset(window.scrollY)
@@ -100,7 +100,7 @@ const Navbar = () => {
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
-          offset: target == '#hero' ? -90 : -60, // Offsets fixed header
+          offset: target == '#home' ? -90 : -60, // Offsets fixed header
           ease: 'in-expo',
           duration: 1000,
         })
@@ -111,8 +111,8 @@ const Navbar = () => {
     <div className={blastimoFontClass}>
       <nav id="navBar">
         <Link 
-          onClick={e => smoothLinkClick(e, '#hero')} 
-          href={"/#hero"}
+          onClick={e => smoothLinkClick(e, '#home')} 
+          href={"/#home"}
           className={styles["logo-container"]}
         >
           <Image

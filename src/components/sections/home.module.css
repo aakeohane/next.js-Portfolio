@@ -1,15 +1,14 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   color: var(--whale-blue);
   height: 100vh;
-  z-index: -1;
   margin: 3vh 0;
 }
 
 .developer {
-  font-size: calc(2.5rem + 3vw);
+  font-size: calc(3rem + 3vw);
   letter-spacing: 0;
   display: inline-block;
   position: relative;
@@ -17,7 +16,7 @@
 }
 
 .biologist {
-  font-size: calc(2.2rem + 3vw);
+  font-size: calc(5rem + 3vw);
   letter-spacing: 1px;
   display: inline-block;
   position: relative;
@@ -25,7 +24,7 @@
 }
 
 .artist {
-  font-size: calc(2.2rem + 3vw);
+  font-size: calc(5rem + 3vw);
   letter-spacing: 1px;
   display: inline-block;
   position: relative;
@@ -51,41 +50,8 @@
   line-height: 1;
 }
 
-.workbttn {
-  position: relative;
-  float: right;
-  border-radius: 3px;
-  border: 3px solid var(--inkblot-black);
-  font-size: calc(2rem + 1vw);
-  color: var(--inkblot-black);
-  height: calc(2rem + 1vw);
-  line-height: calc(2rem + 1vw);
-  padding: 1px 4px;
-  opacity: 0.9;
-  /* right: 10px; */
-  margin: 0.1rem 1.5rem 2.5rem 0;
-}
-
-.portrait-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: -2vh;
-}
-
-.portrait {
-  border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
-  box-shadow: 0 3px 20px rgb(0 0 0 / 0.5);
-  animation: shifting-borders 60s ease-in-out infinite both alternate;
-  position: relative;
-  z-index: -2;
-  top: -50px;
-  height: auto;
-}
-
 .bio-container {
-  position: relative;
   bottom: 2vh;
-  z-index: -1;
   max-width: 600px;
   width: 100%;
   margin-bottom: 20px;
@@ -96,10 +62,32 @@
   width: 100%;
 }
 
+.intro {
+  position: relative;
+  z-index: -1;
+  height: auto;
+}
+
 .bio {
   font-size: calc(0.75rem + 1vw);
   color: var(--inkblot-black);
 }
+
+.workbttn {
+  float: right;
+  border-radius: 3px;
+  border: 3px solid var(--inkblot-black);
+  font-size: calc(2rem + 1vw);
+  color: var(--inkblot-black);
+  height: auto;
+  line-height: calc(2rem + 1vw);
+  padding: 0 4px;
+  padding-top: 4px;
+  right: 10px;
+  margin: 0.1rem 1.5rem 2.5rem 0;
+  cursor: pointer;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 480px) {
