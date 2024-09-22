@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-end;
   color: var(--whale-blue);
-  height: 100vh;
+  height: 100%;
   margin: 3vh 0;
 }
 

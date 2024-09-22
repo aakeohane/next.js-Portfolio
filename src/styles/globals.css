@@ -147,8 +147,10 @@ section {
 
 /* adding webkit fill is weird hack to avoid browser builtins from overlapping my content on page load */
 section:first-child {
+  height: -moz-available;
   height: -webkit-fill-available;
-  margin-bottom: 10vh;
+  height: stretch;
+  /* margin-bottom: 10vh; */
 }
 
 a {

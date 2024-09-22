@@ -24,13 +24,13 @@ const Portfolio = ({allWerkData}) => {
 
   useEffect(() => {
     const loader = document.getElementById('globalLoader');
-    if (loader) {
-      loader.remove();
-    }
+    if (loader)
+    loader.remove();
+    
 
     let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`)
-      console.log(vh)
+      console.log(`this is the ${vh}`)
 
 
     function handleResize() {
@@ -58,9 +58,6 @@ const Portfolio = ({allWerkData}) => {
   
   return (
     <>
-      <div id="globalLoader">
-        <div id="loader"></div>
-      </div>
       <Header />
       <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
         <Home/>
@@ -70,6 +67,9 @@ const Portfolio = ({allWerkData}) => {
         <Contact/>
       </div>
       <Footer />
+      <div id="globalLoader">
+        <div id="loader"></div>
+      </div>
     </>
   )
 }
