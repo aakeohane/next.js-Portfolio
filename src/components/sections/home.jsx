@@ -39,22 +39,6 @@ const Home = () => {
         opacity: 0,
         delay: 1,
       }),
-      gsap.from("#portrait", {
-        opacity: 0,
-        duration: 3,
-        delay: 2
-      }),
-      gsap.from("#intro", {
-        translateX: [-100, 0],
-        opacity: 0,
-        duration: 1,
-        delay: 2.5
-      }),
-      gsap.from("#hero-bttn", {
-        opacity: 0,
-        duration: 3,
-        delay: 3
-      })
       gsap.from("#biography", {
         opacity: 0,
         duration: 3,
@@ -71,8 +55,7 @@ const Home = () => {
   
   
   return (
-    <section id="home" data-section>
-      <div className={styles["main-content"]}>
+    <section id="home" data-sectio className={styles["main-content"]}>
           <div className={styles["title-container"]}>
             <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
             <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
@@ -80,7 +63,6 @@ const Home = () => {
           </div>
           
           <div className={styles["bio-container"]}>
-            <div className={`${styles.hidden} ${styles["hidden-override"]}`}><h2 id="intro" className={`${blowbrushFontClass} ${styles["intro"]}`}>That's me, Aaron</h2></div>
             <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
               A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
               you can be sure I will think imaginatively when finding yours. 
@@ -92,7 +74,6 @@ const Home = () => {
               href="/#work"
             >Work</Link>
           </div> 
-        </div> 
     </section>
   )
 }

@@ -1,6 +1,9 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+html {
+  height: 100%;
+}
 
 *,
 *::after,
@@ -145,11 +148,8 @@ section {
   padding-bottom: 2.5vh;
 }
 
-/* adding webkit fill is weird hack to avoid browser builtins from overlapping my content on page load */
 section:first-child {
-  height: -moz-available;
-  height: -webkit-fill-available;
-  margin-bottom: 10vh;
+  padding-bottom: 10vh;
 }
 
 a {
