@@ -40,14 +40,15 @@ const Home = () => {
         delay: 1,
       }),
       gsap.from("#biography", {
+        translateX: [-100, 0],
+        // duration: 3,
         opacity: 0,
-        duration: 3,
         delay: 2.5
       })
       gsap.from("#work-bttn", {
         opacity: 0,
-        duration: 3,
-        delay: 2.5
+        duration: 2,
+        delay: 1.5
       })
   }, [])
 
