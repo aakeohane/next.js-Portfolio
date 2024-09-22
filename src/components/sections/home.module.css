@@ -7,7 +7,7 @@
 }
 
 .title-container {
-  margin-bottom: 2.5vh;
+  margin-bottom: 1vh;
 }
 
 .developer {
@@ -16,11 +16,12 @@
   display: inline-block;
   position: relative;
   z-index: -1;
-  animation: typing 3.5s steps(25, end) 2s, blink 1.5s step-end infinite;
+  animation: typing 1.5s steps(25, end) 4s, blink 1.5s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid var(--whale-yellow);
+  border-right: 4px solid var(--whale-yellow);
   margin: 0 auto;
+  /* padding-top: 1vh; */
 }
 
 .biologist {
@@ -51,6 +52,15 @@
 }
 
 .hidden {
+  display: inline-block;
+  overflow: hidden;
+  margin-top: -1.5vh;
+  line-height: 1;
+  width: 100%;
+}
+
+/* seperaye hidden line to keep line height correct for wev developer */
+.hidden-two {
   display: inline-block;
   overflow: hidden;
   margin-top: -1.5vh;
@@ -96,32 +106,6 @@
 }
 
 /* Animations */
-
-/* changes border edge around profile picture */
-@keyframes shifting-borders {
-  0%,
-  100% {
-    border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
-  }
-  14% {
-    border-radius: 70% 26% 54% 46% / 49% 60% 40% 51%;
-  }
-  28% {
-    border-radius: 60% 36% 38% 62% / 49% 70% 30% 51%;
-  }
-  42% {
-    border-radius: 81% 20% 55% 45% / 61% 38% 62% 39%;
-  }
-  56% {
-    border-radius: 60% 30% 67% 33% / 70% 50% 50% 30%;
-  }
-  70% {
-    border-radius: 70% 25% 34% 66% / 56% 68% 32% 44%;
-  }
-  84% {
-    border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
-  }
-}
 
 @keyframes typing {
   from {

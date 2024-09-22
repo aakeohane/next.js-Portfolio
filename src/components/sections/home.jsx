@@ -23,7 +23,7 @@ const Home = () => {
   useGSAP(() => {
       gsap.from("#developer", {
         opacity: 0,
-        delay: 2,
+        delay: 3,
       }),
       gsap.from("#biologist", {
         translateY: [50, 0],
@@ -67,7 +67,7 @@ const Home = () => {
           <div className={styles["title-container"]}>
             <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
             <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
-            <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
+            <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
           </div>
           
           <div className={styles["bio-container"]}>
