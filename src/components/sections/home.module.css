@@ -16,7 +16,6 @@
   display: inline-block;
   position: relative;
   z-index: -1;
-  width: auto;
   animation: typing 3.5s steps(25, end) 2s, blink 1.5s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
@@ -54,7 +53,6 @@
 .hidden {
   display: inline-block;
   overflow: hidden;
-  width: 100%;
   margin-top: -1.5vh;
   line-height: 1;
 }
