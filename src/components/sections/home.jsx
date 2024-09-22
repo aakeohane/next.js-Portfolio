@@ -1,10 +1,9 @@
 import styles from './home.module.css'
-import gsap, { SteppedEase } from 'gsap'
+import gsap from 'gsap'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
 import { useGSAP } from '@gsap/react';
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
-import { TextPlugin } from 'gsap/all';
 
 
 const Home = () => {
@@ -22,14 +21,10 @@ const Home = () => {
   }
   
   useGSAP(() => {
-    let text = document.querySelector("#developer");
-    gsap.registerPlugin(TextPlugin)
-      // gsap.from("#developer", {
-      //   translateY: [50, 0],
-      //   rotation:10,
-      //   opacity: 0,
-      //   delay: 1,
-      // }),
+      gsap.from("#developer", {
+        opacity: 0,
+        delay: 2,
+      }),
       gsap.from("#biologist", {
         translateY: [50, 0],
         rotation:20,

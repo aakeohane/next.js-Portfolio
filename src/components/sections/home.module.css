@@ -17,11 +17,11 @@
   position: relative;
   z-index: -1;
   width: auto;
-  animation: typing 3.5s steps(25, end), blink 1.5s step-end infinite;
+  animation: typing 3.5s steps(25, end) 2s, blink 1.5s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--whale-yellow);
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 
 .biologist {
