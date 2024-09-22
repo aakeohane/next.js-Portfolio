@@ -6,12 +6,22 @@
   height: 100%;
 }
 
+.title-container {
+  margin-bottom: 2.5vh;
+}
+
 .developer {
   font-size: calc(3rem + 3vw);
   letter-spacing: 0;
   display: inline-block;
   position: relative;
   z-index: -1;
+  width: auto;
+  animation: typing 3.5s steps(25, end), blink 1.5s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--whale-yellow);
+  /* margin: 0 auto; */
 }
 
 .biologist {
@@ -112,5 +122,24 @@
   }
   84% {
     border-radius: 84% 16% 30% 70% / 70% 28% 72% 30%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--whale-yellow);
   }
 }

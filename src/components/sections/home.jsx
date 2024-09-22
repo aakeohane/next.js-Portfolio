@@ -1,9 +1,10 @@
 import styles from './home.module.css'
-import gsap from 'gsap'
+import gsap, { SteppedEase } from 'gsap'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
 import { useGSAP } from '@gsap/react';
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
+import { TextPlugin } from 'gsap/all';
 
 
 const Home = () => {
@@ -21,12 +22,14 @@ const Home = () => {
   }
   
   useGSAP(() => {
-      gsap.from("#developer", {
-        translateY: [50, 0],
-        rotation:10,
-        opacity: 0,
-        delay: 1,
-      }),
+    let text = document.querySelector("#developer");
+    gsap.registerPlugin(TextPlugin)
+      // gsap.from("#developer", {
+      //   translateY: [50, 0],
+      //   rotation:10,
+      //   opacity: 0,
+      //   delay: 1,
+      // }),
       gsap.from("#biologist", {
         translateY: [50, 0],
         rotation:20,
@@ -40,16 +43,25 @@ const Home = () => {
         delay: 1,
       }),
       gsap.from("#biography", {
-        translateX: [-100, 0],
-        // duration: 3,
+        translateY: [20, 0],
         opacity: 0,
         delay: 2.5
       })
       gsap.from("#work-bttn", {
         opacity: 0,
         duration: 2,
-        delay: 1.5
+        delay: 2
       })
+
+  
+      // letter animation
+      // gsap.fromTo("#developer", 3, {
+      //   width: "0",
+      // }, {
+      //   width: "auto",
+      //   ease:  SteppedEase.config(9)
+      // }, .5);
+
   }, [])
 
 
@@ -60,7 +72,7 @@ const Home = () => {
           <div className={styles["title-container"]}>
             <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
             <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
-            <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web developer<span className={styles.period}>.</span></span></div><br></br>
+            <div className={styles.hidden}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
           </div>
           
           <div className={styles["bio-container"]}>
