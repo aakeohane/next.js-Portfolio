@@ -149,8 +149,7 @@ section {
 section:first-child {
   height: -moz-available;
   height: -webkit-fill-available;
-  height: stretch;
-  /* margin-bottom: 10vh; */
+  margin-bottom: 10vh;
 }
 
 a {
