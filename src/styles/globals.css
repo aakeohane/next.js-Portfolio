@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 html {
   height: 100%;
 }
@@ -146,10 +147,6 @@ section {
   min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;
   padding-bottom: 2.5vh;
-}
-
-section:first-child {
-  padding-bottom: 10vh;
 }
 
 a {
