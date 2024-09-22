@@ -4,7 +4,6 @@
   justify-content: flex-end;
   color: var(--whale-blue);
   height: 100%;
-  /* margin: 3vh 0; */
 }
 
 .developer {
@@ -56,20 +55,11 @@
   width: 100%;
 }
 
-.hidden-override {
-  margin-top: 0;
-  width: 100%;
-}
-
-.intro {
-  position: relative;
-  z-index: -1;
-  height: auto;
-}
-
 .bio {
-  font-size: calc(0.75rem + 1vw);
+  font-size: calc(1rem + 1vw);
+  line-height: 1.2;
   color: var(--inkblot-black);
+  text-indent: 30vw;
 }
 
 .workbttn {
@@ -79,11 +69,10 @@
   font-size: calc(2rem + 1vw);
   color: var(--inkblot-black);
   height: auto;
-  line-height: calc(2rem + 1vw);
+  line-height: 1;
   padding: 0 4px;
-  padding-top: 4px;
-  right: 10px;
-  /* margin: 0.1rem 1.5rem 2.5rem 0; */
+  padding-top: 8px;
+  margin: 0.5rem 1rem 0 0;
   cursor: pointer;
 }
 
