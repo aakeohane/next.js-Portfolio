@@ -7,7 +7,7 @@ import { bebasNeueFontClass } from "@/app/layout"
 const About = () => {
 
   return (
-    <section id="about" data-section>
+    <section id="about" data-section className={"content-container"}>
       <div className={styles["portrait-container"]}>
         <div className={styles["drop"]}>
           <Image

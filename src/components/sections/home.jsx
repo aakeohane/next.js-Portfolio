@@ -48,15 +48,6 @@ const Home = () => {
         delay: 2
       })
 
-  
-      // letter animation
-      // gsap.fromTo("#developer", 3, {
-      //   width: "0",
-      // }, {
-      //   width: "auto",
-      //   ease:  SteppedEase.config(9)
-      // }, .5);
-
   }, [])
 
 
