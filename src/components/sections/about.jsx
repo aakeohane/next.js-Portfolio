@@ -3,8 +3,29 @@ import Image from 'next/image';
 import profilePicFisheye from 'public/images/professional-portrait-v3-watercolor-v3.png'
 
 import { bebasNeueFontClass } from "@/app/layout"
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const About = () => {
+
+  useGSAP(() => {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.set("#drop1", {scale: 0})
+
+    gsap.to("#drop1", {
+      scale: .6,
+      ease: "power1.out", // Easing for smooth transition
+      scrollTrigger: {
+        trigger: "#drop1",
+        start: 'top 90%',
+        end: 'top 50%',
+        scrub: true,
+      }
+    });
+}, [])
 
   return (
     <section id="about" data-section className={"about-container"}>
@@ -18,7 +39,7 @@ const About = () => {
             id="portrait"
             fill={true}
           />
-        <div className={styles["drop"]}></div>
+        <div id="drop1" className={styles["drop"]}></div>
         <div className={styles["drop"]}></div>
         <div className={styles["drop"]}></div>
           </div>
