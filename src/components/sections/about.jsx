@@ -1,27 +1,27 @@
 import styles from './about.module.css'
 import Image from 'next/image';
-import profilePicFisheye from 'public/images/professional-portrait-v3-fisheye.png'
+import profilePicFisheye from 'public/images/professional-portrait-v3-watercolor-v3.png'
 
 import { bebasNeueFontClass } from "@/app/layout"
 
 const About = () => {
 
   return (
-    <section id="about" data-section className={"content-container"}>
+    <section id="about" data-section className={"about-container"}>
       <div className={styles["portrait-container"]}>
-        <div className={styles["drop"]}>
+          <div className={styles["profile-container"]}>
           <Image
             alt="personal logo" 
             src={profilePicFisheye}
             className={styles["portrait"]}
-            height={350}
             priority={true}
             id="portrait"
+            fill={true}
           />
-        </div>
         <div className={styles["drop"]}></div>
         <div className={styles["drop"]}></div>
         <div className={styles["drop"]}></div>
+          </div>
       </div>
       <h1>How did I know I was destined for coding?</h1>
       <p className={`${bebasNeueFontClass}`}>

@@ -58,7 +58,7 @@ const Portfolio = ({allWerkData}) => {
   return (
     <>
       <Header />
-      <div style={{display: 'flex', flexDirection: 'column', padding: "0 20px 0 20px"}}>
+      <div style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
         <Home/>
         <About/>
         <Work allWerkData={allWerkData} windowWidth={size.width}/>
