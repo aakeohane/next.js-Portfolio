@@ -9,26 +9,27 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const About = () => {
 
-  useGSAP(() => {
+//   useGSAP(() => {
 
-    gsap.registerPlugin(ScrollTrigger);
+//     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.set("#drop1", {scale: 0})
+//     gsap.set("#drop1", {scale: 0})
 
-    gsap.to("#drop1", {
-      scale: .6,
-      ease: "power1.out", // Easing for smooth transition
-      scrollTrigger: {
-        trigger: "#drop1",
-        start: 'top 90%',
-        end: 'top 50%',
-        scrub: true,
-      }
-    });
-}, [])
+//     gsap.to("#drop1", {
+//       scale: .6,
+//       ease: "power1.out", // Easing for smooth transition
+//       scrollTrigger: {
+//         trigger: "#drop1",
+//         start: 'top 90%',
+//         end: 'top 50%',
+//         scrub: true,
+//       }
+//     });
+// }, [])
 
   return (
     <section id="about" data-section className={"about-container"}>
+            <h1>How did I know I was destined for coding?</h1>
       <div className={styles["portrait-container"]}>
           <div className={styles["profile-container"]}>
           <Image
@@ -44,7 +45,6 @@ const About = () => {
         <div className={styles["drop"]}></div>
           </div>
       </div>
-      <h1>How did I know I was destined for coding?</h1>
       <p className={`${bebasNeueFontClass}`}>
         I am always the first to google the moment someone asks a question.
         Besides my googling talent, my academic background in the sciences 
