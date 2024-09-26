@@ -26,7 +26,7 @@ const Portfolio = ({allWerkData}) => {
 
   useEffect(() => {
     const loader = document.getElementById('globalLoader');
-    if (loader) {
+    if (isLoading && loader) {
       loader.remove();
       setIsLoading(false)
     }
