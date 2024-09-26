@@ -13,6 +13,8 @@ const Portfolio = ({allWerkData}) => {
 
   const size = useWindowSize();
 
+  const [isLoading, setIsLoading] = useState(true)
+
   // Hook
   function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -24,8 +26,10 @@ const Portfolio = ({allWerkData}) => {
 
   useEffect(() => {
     const loader = document.getElementById('globalLoader');
-    if (loader)
-    loader.remove();
+    if (loader) {
+      loader.remove();
+      setIsLoading(false)
+    }
     
 
     let vh = window.innerHeight * 0.01;

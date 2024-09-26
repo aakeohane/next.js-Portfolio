@@ -34,6 +34,7 @@
   position: relative;
   background: transparent;
   width: fit-content;
+  opacity: 0;
   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2),
     15px 25px 10px rgba(0, 0, 0, 0.2), 15px 20px 20px rgba(0, 0, 0, 0.1),
     inset -5px -5px 20px rgba(255, 255, 255, 0.5);
@@ -66,6 +67,7 @@
   height: 100px;
   width: 100px;
   border-radius: 44% 56% 39% 61% / 55% 54% 46% 45%;
+  opacity: 1;
 }
 
 .drop:nth-child(2)::before {
@@ -91,9 +93,10 @@
 }
 
 .drop:nth-child(3) {
-  transform: scale(0.5) translate(14vh, 78vh);
+  transform: scale(0.5) translate(13vh, 76vh);
   height: 50px;
   width: 50px;
+  opacity: 1;
   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2),
     5px 15px 5px rgba(0, 0, 0, 0.2), 10px 15px 15px rgba(0, 0, 0, 0.1),
     inset -10px -10px 15px rgba(255, 255, 255, 0.5);
@@ -124,9 +127,10 @@
 }
 
 .drop:nth-child(4) {
-  transform: scale(0.8) translate(48vh, 50vh);
+  transform: scale(0.8) translate(48vh, 46vh);
   height: 50px;
   width: 50px;
+  opacity: 1;
   border-radius: 51% 49% 49% 51% / 49% 47% 53% 51%;
   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2),
     5px 15px 5px rgba(0, 0, 0, 0.2), 10px 15px 15px rgba(0, 0, 0, 0.1),

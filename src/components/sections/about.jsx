@@ -32,17 +32,17 @@ const About = () => {
             <h1>How did I know I was destined for coding?</h1>
       <div className={styles["portrait-container"]}>
           <div className={styles["profile-container"]}>
-          <Image
-            alt="personal logo" 
-            src={profilePicFisheye}
-            className={styles["portrait"]}
-            priority={true}
-            id="portrait"
-            fill={true}
-          />
-        <div id="drop1" className={styles["drop"]}></div>
-        <div className={styles["drop"]}></div>
-        <div className={styles["drop"]}></div>
+            <Image
+              alt="personal logo" 
+              src={profilePicFisheye}
+              className={styles["portrait"]}
+              priority={true}
+              id="portrait"
+              fill={true}
+            />
+            <div id="drop1" className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
           </div>
       </div>
       <p className={`${bebasNeueFontClass}`}>
