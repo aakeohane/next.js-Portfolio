@@ -1,6 +1,5 @@
 'use client'
 
-
 import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
@@ -13,7 +12,7 @@ const Portfolio = ({allWerkData}) => {
 
   const size = useWindowSize();
 
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
 
   // Hook
   function useWindowSize() {
@@ -25,11 +24,11 @@ const Portfolio = ({allWerkData}) => {
   });
 
   useEffect(() => {
-    const loader = document.getElementById('globalLoader');
-    if (isLoading && loader) {
-      loader.remove();
-      setIsLoading(false)
-    }
+    // const loader = document.getElementById('globalLoader');
+    // if (isLoading && loader) {
+    //   loader.remove();
+    //   setIsLoading(false)
+    // }
     
 
     let vh = window.innerHeight * 0.01;
@@ -69,9 +68,9 @@ const Portfolio = ({allWerkData}) => {
         <Contact/>
       </div>
       <Footer />
-      <div id="globalLoader">
+      {/* <div id="globalLoader">
         <div id="loader"></div>
-      </div>
+      </div> */}
     </>
   )
 }
