@@ -11,8 +11,9 @@ import Home from '@/components/sections/home'
 const Portfolio = ({allWerkData}) => {
 
   const size = useWindowSize();
+  const [isLoading, setIsLoading] = useState(true)
 
-  // const [isLoading, setIsLoading] = useState(true)
+  
 
   // Hook
   function useWindowSize() {
@@ -24,11 +25,10 @@ const Portfolio = ({allWerkData}) => {
   });
 
   useEffect(() => {
-    // const loader = document.getElementById('globalLoader');
-    // if (isLoading && loader) {
-    //   loader.remove();
-    //   setIsLoading(false)
-    // }
+    const loader = document.getElementById('globalLoader');
+    if (isLoading) {
+      setIsLoading(false)
+    }
     
 
     let vh = window.innerHeight * 0.01;
@@ -60,17 +60,21 @@ const Portfolio = ({allWerkData}) => {
   
   return (
     <>
-      <Header />
-      <div style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
-        <Home/>
-        <About/>
-        <Work allWerkData={allWerkData} windowWidth={size.width}/>
-        <Contact/>
-      </div>
-      <Footer />
-      {/* <div id="globalLoader">
+    {isLoading ? 
+      <div id="globalLoader">
         <div id="loader"></div>
-      </div> */}
+      </div>
+      :
+      <main>
+        <Header />
+        <div style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
+          <Home/>
+          <About/>
+          <Work allWerkData={allWerkData} windowWidth={size.width}/>
+          <Contact/>
+        </div>
+        <Footer />
+      </main>}
     </>
   )
 }
