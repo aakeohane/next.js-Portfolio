@@ -21,6 +21,11 @@ const inter = Inter({
   display: 'swap',
 })
 
+const blastimo = localFont({
+  src: '../../public/fonts/Blastimo.ttf',
+  display: 'swap'
+})
+
 const bebasNeue = localFont({
   src: '../../public/fonts/BebasNeue-Regular.ttf',
   display: 'swap',
@@ -28,11 +33,6 @@ const bebasNeue = localFont({
 
 const blowbrush = localFont({
   src: '../../public/fonts/blowbrush.otf',
-  display: 'swap'
-})
-
-const blastimo = localFont({
-  src: '../../public/fonts/Blastimo.ttf',
   display: 'swap'
 })
 

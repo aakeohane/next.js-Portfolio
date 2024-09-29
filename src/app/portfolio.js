@@ -13,27 +13,20 @@ const Portfolio = ({allWerkData}) => {
   const size = useWindowSize();
   const [isLoading, setIsLoading] = useState(true)
 
-  
-
-  // Hook
   function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
 
   useEffect(() => {
-    const loader = document.getElementById('globalLoader');
     if (isLoading) {
       setIsLoading(false)
     }
     
-
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`)
-
 
     function handleResize() {
       // Set window width/height to state
@@ -44,8 +37,6 @@ const Portfolio = ({allWerkData}) => {
       
     }
     
-
-
     window.addEventListener("resize", handleResize);
      
     // Call handler right away so state gets updated with initial window size

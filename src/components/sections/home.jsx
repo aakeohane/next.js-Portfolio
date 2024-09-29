@@ -2,8 +2,10 @@ import styles from './home.module.css'
 import gsap from 'gsap'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
 import { useGSAP } from '@gsap/react';
+import watercolorWhale from 'public/images/whale-watercolor.png'
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Home = () => {
@@ -23,7 +25,6 @@ const Home = () => {
   useGSAP(() => {
       gsap.from("#developer", {
         opacity: 0,
-        delay: 3,
       }),
       gsap.from("#biologist", {
         translateY: [50, 0],
@@ -55,6 +56,16 @@ const Home = () => {
   
   return (
     <section id="home" data-sectio className={styles["main-content"]}>
+          <div className={styles["whale-container"]}>
+            <Image
+              alt="watercolor whale" 
+              src={watercolorWhale}
+              className={styles["whale"]}
+              priority={true}
+              id="whale"
+              // fill={true}
+            />
+          </div>
           <div className={styles["title-container"]}>
             <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
             <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>

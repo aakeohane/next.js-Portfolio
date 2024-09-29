@@ -10,13 +10,25 @@
   margin-bottom: 1vh;
 }
 
+.whale-container {
+  position: relative;
+  height: 35vh;
+}
+
+.whale {
+  position: relative;
+  z-index: -1;
+  height: 100%;
+  object-fit: contain;
+}
+
 .developer {
   font-size: calc(3rem + 3vw);
   letter-spacing: 0;
   display: inline-block;
   position: relative;
   z-index: -1;
-  animation: typing 1.5s steps(25, end) 3s, blink 1.5s step-end infinite;
+  animation: typing 1.5s steps(25, end), blink 1.5s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
   border-right: 4px solid var(--whale-yellow);

@@ -37,6 +37,11 @@ html {
   src: url("../../public/fonts/BebasNeue-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Blastimo";
+  src: url("../../public/fonts/Blastimo.ttf");
+}
+
 #globalLoader {
   position: fixed;
   z-index: 9999;

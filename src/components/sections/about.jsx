@@ -1,6 +1,6 @@
 import styles from './about.module.css'
 import Image from 'next/image';
-import profilePicFisheye from 'public/images/professional-portrait-v3-watercolor-v3.png'
+import profilePic from 'public/images/professional-portrait-v3-watercolor-v3.png'
 
 import { bebasNeueFontClass } from "@/app/layout"
 import gsap from 'gsap'
@@ -34,7 +34,7 @@ const About = () => {
           <div className={styles["profile-container"]}>
             <Image
               alt="personal logo" 
-              src={profilePicFisheye}
+              src={profilePic}
               className={styles["portrait"]}
               priority={true}
               id="portrait"
