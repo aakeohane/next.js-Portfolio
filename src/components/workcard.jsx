@@ -11,6 +11,11 @@ function Workcard({order, title, image, slug, windowWidth}) {
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
+  const handleClick = () => {
+    // had to create this function, because page could still be scrolled for the few milliseconds that it took for the modal to open
+    document.body.style.overflow = "hidden";
+  }
+
   const hoverTitle = {
     opacity: (windowWidth > 700) ? (hover ? '1' : '0') : null
   }
@@ -30,6 +35,7 @@ function Workcard({order, title, image, slug, windowWidth}) {
       <Link 
         className={styles["workcard-link"]}
         key={order}
+        onClick={() => handleClick()}
         href={`projects/${slug}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

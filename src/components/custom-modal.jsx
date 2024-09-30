@@ -18,8 +18,8 @@ const CustomModal = ( { children } ) => {
   
   function onModalOpen() {
     // prevents body scroll
+    // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
     document.body.style.overflow = "hidden";
-    
   }
         
 
