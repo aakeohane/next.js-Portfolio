@@ -1,4 +1,3 @@
-'use client'
 import { bebasNeueFontClass } from "@/app/layout"
 import Workcard from "../workcard"
 import styles from './work.module.css'
@@ -9,22 +8,8 @@ import { useRef, useEffect, useState } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const Work = (props) => {
-
-  const [size, setSize] = useState({ width: 0, height: 0 });
   const projectRefs = useRef([]);
-
-  useEffect(() => {
-    if (projectRefs.current) {
-      projectRefs.current.forEach((project) => {
-        const { width, height } = project.getBoundingClientRect();
-        setSize({ width, height });
-        project.style.height = height
-      })
-      
-    }
-  }, []);
-
-
+  gsap.registerPlugin(ScrollTrigger);
 
   const projectRef = (project) => {
     if (project && !projectRefs.current.includes(project)) {
@@ -33,12 +18,12 @@ const Work = (props) => {
   };
 
 
+
+
     useGSAP(() => {
 
-      gsap.registerPlugin(ScrollTrigger);
-      ScrollTrigger.refresh()
       projectRefs.current.forEach((project) => {
-        gsap.set(project, {opacity: 0}, )
+        gsap.set(project, {opacity: 0})
         gsap.to(project, {
           opacity: 1,
           scrollTrigger: {

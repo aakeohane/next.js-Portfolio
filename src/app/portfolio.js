@@ -58,7 +58,7 @@ const Portfolio = ({allWerkData}) => {
       :
       <main>
         <Header />
-        <div style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
+        <div id="fake-body" style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
           <Home/>
           <About/>
           <Work allWerkData={allWerkData} windowWidth={size.width}/>
