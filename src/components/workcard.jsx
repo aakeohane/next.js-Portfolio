@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image"
 import styles from "./workcard.module.css"
-import { useState } from "react"
+import { forwardRef, useState } from "react"
 
-function Workcard({order, title, image, slug, windowWidth}) {
+const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
+
 
 
   const [hover, setHover] = useState(false)
@@ -14,6 +15,7 @@ function Workcard({order, title, image, slug, windowWidth}) {
   const handleClick = () => {
     // had to create this function, because page could still be scrolled for the few milliseconds that it took for the modal to open
     document.body.style.overflow = "hidden";
+    console.log("handle click")
   }
 
   const hoverTitle = {
@@ -33,11 +35,12 @@ function Workcard({order, title, image, slug, windowWidth}) {
 
   return (
       <Link 
-        className={styles["workcard-link"]}
         key={order}
-        onClick={() => handleClick()}
+        ref={ref}
+        className={styles["link-container"]}
         href={`projects/${slug}`}
         onMouseEnter={handleMouseEnter}
+        onClick={handleClick}
         onMouseLeave={handleMouseLeave}
         scroll={false}
         shallow={true}>
@@ -62,6 +65,6 @@ function Workcard({order, title, image, slug, windowWidth}) {
         </div>
       </Link>
   );
-}
+})
 
 export default Workcard;

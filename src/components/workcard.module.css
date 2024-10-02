@@ -13,11 +13,20 @@
   transition: 1s;
 }
 
+.link-container {
+  height: 300px;
+}
+
+.workcard-link {
+  border-radius: 50%;
+}
+
 .workcard-content-container {
   position: relative;
   z-index: -1;
   overflow: hidden;
   margin: 1em 0;
+  border-radius: 2%;
 }
 
 .workcard-image {

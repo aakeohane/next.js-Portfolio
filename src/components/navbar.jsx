@@ -55,8 +55,8 @@ const Navbar = () => {
         duration: 1,
         scrollTrigger: {
           trigger: "#aaron",
-          start: 20,
-          end: 250,
+          start: 100,
+          end: 350,
           scrub: true,
           
         }
@@ -67,8 +67,8 @@ const Navbar = () => {
         opacity: 0,
         scrollTrigger: {
           trigger: "#keohane",
-          start: 20,
-          end: 250,
+          start: 100,
+          end: 350,
           scrub: true,
         }
       });
