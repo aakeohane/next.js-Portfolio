@@ -1,10 +1,9 @@
 import { bebasNeueFontClass } from "@/app/layout"
 import Workcard from "../workcard"
-import styles from './work.module.css'
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const Work = (props) => {
@@ -22,16 +21,24 @@ const Work = (props) => {
 
     useGSAP(() => {
 
+      // function setOffScreen( project ){
+      //   const dimension = project.getBoundingClientRect();
+      //   let distance = props.windowWidth + dimension.offsetWidth/2;
+      //   console.log(dimension)
+      //   return distance
+
+      // }
+
       projectRefs.current.forEach((project) => {
         gsap.set(project, {opacity: 0})
         gsap.to(project, {
           opacity: 1,
           scrollTrigger: {
             trigger: project,
-            start: 'top center',
+            start: 'top bottom 20px',
             end: 'bottom top',
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       });

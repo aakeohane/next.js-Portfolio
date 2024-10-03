@@ -38,7 +38,6 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   return (
       <Link 
         key={order}
-        ref={ref}
         className={styles["link-container"]}
         href={`projects/${slug}`}
         onMouseEnter={handleMouseEnter}
@@ -46,7 +45,7 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
         onMouseLeave={handleMouseLeave}
         scroll={false}
         shallow={true}>
-        <div className={styles["workcard-content-container"]} style={hoverContainer} >
+        <div ref={ref} className={styles["workcard-content-container"]} style={hoverContainer} >
           <Image
             className={styles["workcard-image"]}
             alt="project image" 
