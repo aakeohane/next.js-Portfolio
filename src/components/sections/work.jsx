@@ -1,3 +1,4 @@
+'use client'
 import { bebasNeueFontClass } from "@/app/layout"
 import Workcard from "../workcard"
 
@@ -16,31 +17,22 @@ const Work = (props) => {
     }
   };
 
-
-
-
     useGSAP(() => {
-
-      // function setOffScreen( project ){
-      //   const dimension = project.getBoundingClientRect();
-      //   let distance = props.windowWidth + dimension.offsetWidth/2;
-      //   console.log(dimension)
-      //   return distance
-
-      // }
-
       projectRefs.current.forEach((project) => {
-        gsap.set(project, {opacity: 0})
+        gsap.set( project , {y: 100, autoAlpha: 0 } );
         gsap.to(project, {
-          opacity: 1,
           scrollTrigger: {
             trigger: project,
-            start: 'top bottom 20px',
-            end: 'bottom top',
-            scrub: true,
-            // markers: true,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: 1,
+            markers: true,
+            preventOverlaps: true,
           },
-        });
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.1
+        })
       });
 
       
