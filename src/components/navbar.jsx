@@ -46,13 +46,12 @@ const Navbar = () => {
         opacity: 0
       }),
   
-      gsap.set("#aaron", {xPercent: 0, opacity: 1})
-      gsap.set("#keohane", {xPercent: 0, opacity: 1}, )
+      gsap.set("#aaron", {xPercent: 0, autoAlpha: 1})
+      gsap.set("#keohane", {xPercent: 0, autoAlpha: 1}, )
   
       gsap.to("#aaron", {
         xPercent: 100,
-        opacity: 0,
-        duration: 1,
+        autoAlpha: 0,
         scrollTrigger: {
           trigger: "#aaron",
           start: 100,
@@ -64,7 +63,7 @@ const Navbar = () => {
 
       gsap.to("#keohane", {
         xPercent: -150,
-        opacity: 0,
+        autoAlpha: 0,
         scrollTrigger: {
           trigger: "#keohane",
           start: 100,

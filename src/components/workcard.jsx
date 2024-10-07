@@ -17,7 +17,6 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   const handleClick = () => {
     // had to create this function, because page could still be scrolled for the few milliseconds that it took for the modal to open
     document.body.style.overflow = "hidden";
-    console.log("handle click")
   }
 
   const hoverTitle = {

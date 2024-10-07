@@ -8,7 +8,7 @@ export default function RootLayout({ children, modal }) {
   return (
     <html lang='en' >
       <body suppressHydrationWarning={true}>
-        {children}
+          {children}
         {modal}
         <div id="modal-root-id" />
       </body>

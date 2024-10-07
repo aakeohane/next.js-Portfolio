@@ -11,42 +11,40 @@ const Work = (props) => {
   const projectRefs = useRef([]);
   gsap.registerPlugin(ScrollTrigger);
 
+  // takes each project as it is rendered and put the DOM ref object into an array
   const projectRef = (project) => {
     if (project && !projectRefs.current.includes(project)) {
       projectRefs.current.push(project);
     }
   };
 
-    useGSAP(() => {
-      projectRefs.current.forEach((project) => {
-        gsap.set( project , {y: 100, autoAlpha: 0 } );
-        gsap.to(project, {
-          scrollTrigger: {
-            trigger: project,
-            start: 'top 80%',
-            end: 'top 50%',
-            scrub: 1,
-            markers: true,
-            preventOverlaps: true,
-          },
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.1
-        })
-      });
-
-      
+  // takes the above array and sets each project with animation on viewport entry (scrollTrigger)
+  useGSAP(() => {
+    projectRefs.current.forEach((project) => {
+      gsap.set( project , {y: 100, autoAlpha: 0 } );
+      gsap.to(project, {
+        scrollTrigger: {
+          trigger: project,
+          start: 'top 90%',
+          end: 'top 60%',
+          scrub: 1,
+          preventOverlaps: true,
+        },
+        y: 0,
+        autoAlpha: 1,
+      })
+    });
   }, [])
     
   
   return (
     <section id="work" data-section>
       <h1>
-        Here is my amazing portfolio of werk!
+        My Projects
       </h1>
       <p className={`${bebasNeueFontClass}`}></p>
       <div style={{padding: 0}}>
-          {props.allWerkData.map(({ image, title, slug, description, order }) => {
+        {props.allWerkData.map(({ image, title, slug, description, order }) => {
           return (
             <Workcard 
               key={slug} 
@@ -59,8 +57,8 @@ const Work = (props) => {
               order={order}
             />
           )
-})}
-        </div>
+        })}
+      </div>
     </section>
   )
 }

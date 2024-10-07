@@ -1,20 +1,21 @@
 .my-modal {
   position: relative;
-  inset: 10px;
-  border: 1px solid rgb(204, 204, 204);
-  background: rgb(255, 255, 255);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(/images/watercolor-paper-background-2.jpg);
   overflow: auto;
-  border-radius: 4px;
   outline: none;
   padding: 20px;
-  top: 10vh;
-  left: 10vw;
-  width: 80vw;
-  height: 80vh;
+  /* top: 10vh;
+  left: 10vw; */
+  width: 100vw;
+  height: 100vh;
 }
 
 .topright {
   position: fixed;
-  right: 9vw;
-  top: 9vh;
+  right: 4vw;
+  top: 2vh;
 }

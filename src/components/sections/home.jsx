@@ -11,7 +11,6 @@ import Image from 'next/image';
 const Home = () => {
 
   const smoothLinkClick = (e, target) => {
-    console.log(target)
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {

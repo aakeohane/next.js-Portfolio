@@ -1,0 +1,13 @@
+.modal-image {
+  width: 100%;
+  height: auto;
+  margin: 15px 0 15px 0;
+  border-radius: 50%;
+}
+
+.parallel-image {
+  width: 100%;
+  height: auto;
+  /* border-radius: 50%; */
+  margin: 15px 0 15px 0;
+}
