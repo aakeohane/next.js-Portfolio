@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, createContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
+
 import Modal from 'react-modal'; 
 
 const ModalContext = createContext()
@@ -12,7 +13,7 @@ const ModalContext = createContext()
 const CustomModal = ( { children } ) => {
 
   Modal.setAppElement('#modal-root-id')
-  const [modalOpen, setModalOpen] = useState(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
   
   const modalRef = useRef(null)

@@ -1,17 +1,5 @@
 .my-modal {
   position: relative;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(/images/watercolor-paper-background-2.jpg);
-  overflow: auto;
-  outline: none;
-  padding: 20px;
-  /* top: 10vh;
-  left: 10vw; */
-  width: 100vw;
-  height: 100vh;
 }
 
 .topright {

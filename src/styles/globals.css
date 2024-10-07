@@ -114,13 +114,16 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--whale-blue);
+  font-size: 35px;
+  letter-spacing: 1px;
 }
 
 h3 {
   font-family: "Bebas Neue", sans-serif;
   color: var(--whale-yellow);
-  font-size: 25px;
+  font-size: 28px;
   letter-spacing: 1px;
   margin: 0.2em 0;
 }
