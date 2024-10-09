@@ -1,12 +1,15 @@
 'use client'
 
+import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRouter } from "next/navigation";
-import { useRef, useState, createContext } from 'react';
+import { useRef, useState, createContext, useEffect, useLayoutEffect } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 
 
 import Modal from 'react-modal'; 
+import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
 
 const ModalContext = createContext()
 
@@ -15,9 +18,30 @@ const CustomModal = ( { children } ) => {
   Modal.setAppElement('#modal-root-id')
   const [modalOpen, setModalOpen] = useState(false)
 
+  const router = useRouter()
+  
   
   const modalRef = useRef(null)
-  const router = useRouter();
+
+  useGSAP(() => {
+
+    if (modalOpen) {
+      gsap.fromTo(
+        "#myModal",
+        {x: -600 },
+        {x: 0, duration: 3 }
+      );
+
+    }
+
+    // Animation for closing the modal
+    else {
+      gsap.to(
+        "#myModal",
+        { opacity: 0, scale: 0.9, duration: 0.3, ease: 'back.in' }
+      );
+    };
+  }, [modalOpen]);
 
   
   function onModalOpen() {
@@ -29,28 +53,32 @@ const CustomModal = ( { children } ) => {
         
 
   function onModalHide() {
-    router.back()
+    setModalOpen(!modalOpen)
+    console.log("clicked")
     // turns body scroll back on
     document.body.style.overflow = "auto";
-    setModalOpen(!modalOpen)
+    // Delay the navigation until after the modal transition
+    setTimeout(() => {
+      router.back();
+    }, 300); // Adjust the delay as needed
+
   }
 
-  function onBackButtonPress() {
-    // turns body scroll back on when user clicks the back button
-    document.body.style.overflow = "auto";
-  }
+  
+
 
 
   return (
-    
       <Modal
         ref={modalRef}
         className={styles["my-modal"]}
+        overlayClassName="my-overlay"
+        id="myModal"
         isOpen={!modalRef.current?.open}
         onAfterOpen={onModalOpen}
-        onAfterClose={onBackButtonPress}
         contentLabel="Work Modal"
         onRequestClose={onModalHide}
+        
       > 
         <div
           className={styles["topright"]}
@@ -62,7 +90,6 @@ const CustomModal = ( { children } ) => {
           {children}
         </ModalContext.Provider>
       </Modal>
-    
   );
 }
 

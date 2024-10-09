@@ -1,11 +1,11 @@
 import ProjectDetails from "@/components/project-details";
 
 
-const ProjectModal = ({ params: { slug } }, modal) => {
+const ProjectModal = ({ params: { slug } }) => {
   
   return (
     <div className="parallel-route">
-      <ProjectDetails slug={slug} modal={modal} />
+      <ProjectDetails slug={slug} />
     </div>
   );
 };

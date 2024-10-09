@@ -18,4 +18,9 @@
   position: fixed;
   right: 4vw;
   top: 2vh;
+  z-index: 100;
+}
+
+.my-overlay {
+  display: none;
 }
