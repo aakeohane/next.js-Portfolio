@@ -21,6 +21,7 @@ const CustomModal = ( { children } ) => {
   const router = useRouter()
   
   
+  const exRef = useRef(null)
   const modalRef = useRef(null)
 
   useGSAP(() => {
@@ -28,9 +29,14 @@ const CustomModal = ( { children } ) => {
     if (modalOpen) {
       gsap.fromTo(
         "#myModal",
-        {x: -600 },
-        {x: 0, duration: 3 }
-      );
+        {autoAlpha:1, x: -400 },
+        {autoAlpha: 1, x: 0, duration: 2 }
+      ),
+      gsap.fromTo(
+        exRef.current,
+        {autoAlpha: 0},
+        {autoAlpha: 1, delay: 1.75}
+      )
 
     }
 
@@ -39,7 +45,7 @@ const CustomModal = ( { children } ) => {
       gsap.to(
         "#myModal",
         { opacity: 0, scale: 0.9, duration: 0.3, ease: 'back.in' }
-      );
+      )
     };
   }, [modalOpen]);
 
@@ -83,6 +89,7 @@ const CustomModal = ( { children } ) => {
         <div
           className={styles["topright"]}
           onClick={onModalHide}
+          ref={exRef}
         >
           <FaWindowClose size={28}/>
         </div>
