@@ -12,8 +12,9 @@ const ProjectDetails = ({slug}) => {
   const modalOpen = useContext(ModalContext)
 
 
+
   return (
-    <div className={styles["modal-container"]} id="myModal">
+    <div className={styles["modal-container"]}>
 
       <div className={styles["modal-first-section"]}>
         <div className={styles["title-container"]}>

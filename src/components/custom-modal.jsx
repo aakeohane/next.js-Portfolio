@@ -24,6 +24,10 @@ const CustomModal = ( { children } ) => {
   const exRef = useRef(null)
   const modalRef = useRef(null)
 
+  gsap.config({
+    nullTargetWarn: false,
+  });
+
   useGSAP(() => {
 
     if (modalOpen) {
@@ -37,14 +41,12 @@ const CustomModal = ( { children } ) => {
         {autoAlpha: 0},
         {autoAlpha: 1, delay: 1.75}
       )
-
     }
-
     // Animation for closing the modal
     else {
       gsap.to(
         "#myModal",
-        { opacity: 0, scale: 0.9, duration: 0.3, ease: 'back.in' }
+        {scale: 0.9, duration: 0.3, ease: 'back.in' }
       )
     };
   }, [modalOpen]);

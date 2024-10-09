@@ -1,21 +1,12 @@
 /* Modal */
 
 .modal-container {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* align-items: center; */
   padding: 20px 20px 0 20px;
   height: 100%;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(/images/watercolor-paper-background-2.jpg);
 }
 
 .modal-first-section {
