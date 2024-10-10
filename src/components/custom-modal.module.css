@@ -25,3 +25,7 @@
 .my-overlay {
   display: none;
 }
+
+body:has(#myModal[open]) {
+  overflow: hidden;
+}

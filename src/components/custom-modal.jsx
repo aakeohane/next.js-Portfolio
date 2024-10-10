@@ -2,13 +2,10 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useState, createContext, useEffect, useLayoutEffect } from 'react';
+import { useRef, useState, createContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
-
-
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
-import { useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 
 const ModalContext = createContext()
@@ -20,7 +17,6 @@ const CustomModal = ( { children } ) => {
 
   const router = useRouter()
   
-  
   const exRef = useRef(null)
   const modalRef = useRef(null)
 
@@ -31,6 +27,7 @@ const CustomModal = ( { children } ) => {
   useGSAP(() => {
 
     if (modalOpen) {
+      
       gsap.fromTo(
         "#myModal",
         {autoAlpha:1, x: -400 },

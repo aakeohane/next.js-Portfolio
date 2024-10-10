@@ -40,6 +40,7 @@ const ProjectDetails = ({slug}) => {
           sizes="100vw"
           width={300}
           height={100}
+          priority
         />
       </div>
 
