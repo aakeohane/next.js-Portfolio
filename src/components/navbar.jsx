@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './navbar.module.css'
@@ -8,11 +9,38 @@ import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '@/app/layout'
 
 import gsap from 'gsap'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import { ModalContext } from '@/app/context/provider'
 
 const Navbar = () => {
+
+  const { isOpen } = useContext(ModalContext)
+  const [modalOpen, setModalOpen] = useState(false)
+  
+  useEffect(() => {
+
+    
+      
+
+    // if (!isOpen) {
+      
+    //   gsap.fromTo(
+    //     "#my-nav",
+    //     {autoAlpha:1, x: 0 },
+    //     {autoAlpha: 0, x: -400, duration: 2 }
+    //   )
+    // }
+    // // Animation for closing the modal
+    // else {
+    //   gsap.from("#navBar", {
+    //     translateY: [0, 0],
+    //     delay: 1.5,
+    //     opacity: 1
+    //   })
+    // };
+  }, [isOpen]);
 
   const [offset, setOffset] = useState(0)
   const [activeSection, setActiveSection] = useState(null);
@@ -39,7 +67,7 @@ const Navbar = () => {
   useGSAP(() => {
 
       gsap.registerPlugin(ScrollTrigger);
-
+      
       gsap.from("#navBar", {
         translateY: [-50, 0],
         delay: 1.5,
@@ -96,6 +124,7 @@ const Navbar = () => {
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up
   
   const smoothLinkClick = (e, target) => {
+    
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
@@ -107,7 +136,7 @@ const Navbar = () => {
   }
   
   return (
-    <div className={blastimoFontClass}>
+    <div id='my-nav' className={blastimoFontClass}>
       <nav id="navBar">
         <Link 
           onClick={e => smoothLinkClick(e, '#home')} 

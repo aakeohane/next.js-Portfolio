@@ -7,8 +7,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
 
-
-
   const [hover, setHover] = useState(false)
 
   const handleMouseEnter = () => setHover(true);

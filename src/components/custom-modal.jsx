@@ -2,23 +2,28 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useState, createContext } from 'react';
+import { useRef, useState, useContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
+import { ModalContext } from "@/app/context/provider";
 
-const ModalContext = createContext()
 
 const CustomModal = ( { children } ) => {
+
 
   Modal.setAppElement('#modal-root-id')
   const [modalOpen, setModalOpen] = useState(false)
 
   const router = useRouter()
+
+  const {isOpen, openModal, closeModal } = useContext(ModalContext);
   
   const exRef = useRef(null)
   const modalRef = useRef(null)
+
+  // console.log(isOpen)
 
   gsap.config({
     nullTargetWarn: false,
@@ -49,15 +54,16 @@ const CustomModal = ( { children } ) => {
   }, [modalOpen]);
 
   
-  function onModalOpen() {
+  const onModalOpen = () => {
     // prevents body scroll
     // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     setModalOpen(!modalOpen)
   }
         
 
   function onModalHide() {
+    closeModal()
     setModalOpen(!modalOpen)
     console.log("clicked")
     // turns body scroll back on
@@ -80,7 +86,10 @@ const CustomModal = ( { children } ) => {
         overlayClassName="my-overlay"
         id="myModal"
         isOpen={!modalRef.current?.open}
-        onAfterOpen={onModalOpen}
+        onAfterOpen={() => {
+          onModalOpen();
+          openModal();
+        }}
         contentLabel="Work Modal"
         onRequestClose={onModalHide}
         
@@ -92,13 +101,9 @@ const CustomModal = ( { children } ) => {
         >
           <FaWindowClose size={28}/>
         </div>
-        <ModalContext.Provider value ={{modalOpen}}>
           {children}
-        </ModalContext.Provider>
       </Modal>
   );
 }
-
-export {ModalContext}
 export default CustomModal
 

@@ -3,14 +3,14 @@ import  CustomModal from "@/components/custom-modal";
 
 
 
-const ProjectModal = ({ params: { slug} }, modal) => {
+const ProjectModal = ({ params: { slug} }) => {
   
   return (
-    <div>
-      <CustomModal modal={modal}>
-        <ProjectDetails slug={slug} modal={modal} />
-      </CustomModal>
-    </div>
+      <div className="modal">
+        <CustomModal>
+          <ProjectDetails slug={slug} />
+        </CustomModal>
+      </div>
   );
 };
 

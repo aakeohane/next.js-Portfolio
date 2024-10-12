@@ -2,16 +2,14 @@
 import Image from "next/image"
 import styles from './project-details.module.css'
 import { useContext } from "react"
-import { ModalContext } from "./custom-modal"
 import Footer from "./footer"
+import { ModalContext } from "@/app/context/provider"
 
 const { getWork } = require("@/lib/werk")
 
 const ProjectDetails = ({slug}) => {
   const werk = getWork(slug)
   const modalOpen = useContext(ModalContext)
-
-
 
   return (
     <div className={styles["modal-container"]}>

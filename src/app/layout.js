@@ -1,16 +1,22 @@
+import Header from '@/components/header';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
+import { MyProvider } from './context/provider';
 
-export default function RootLayout({ children, modal }) {
+
+export default function RootLayout({ children, modal }) {  
+
   
 
   return (
     <html lang='en' >
       <body suppressHydrationWarning={true}>
+        <MyProvider>
+          <Header modal={modal}></Header>
           {children}
-        {modal}
-        <div id="modal-root-id" />
+          <div id="modal-root-id">{modal}</div>
+        </MyProvider>
       </body>
     </html>
   )

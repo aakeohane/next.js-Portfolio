@@ -8,7 +8,8 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
 
-const Portfolio = ({allWerkData}) => {
+const Portfolio = ({allWerkData, modal}) => {
+
 
   const size = useWindowSize();
   const [isLoading, setIsLoading] = useState(true)
@@ -57,7 +58,6 @@ const Portfolio = ({allWerkData}) => {
       </div>
       :
       <main>
-        <Header />
         <div id="fake-body" style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
           <Home/>
           <About/>
