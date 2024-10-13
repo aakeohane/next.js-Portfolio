@@ -9,37 +9,34 @@ import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '@/app/layout'
 
 import gsap from 'gsap'
-import { useState, useRef, useEffect, useContext } from 'react'
+import { useState, useRef, useContext } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { ModalContext } from '@/app/context/provider'
 
 const Navbar = () => {
-
+// using context here similar to redux or global state management, had to go 
+// client side in order for navbar component to recognize when modal was open
   const { isOpen } = useContext(ModalContext)
-  const [modalOpen, setModalOpen] = useState(false)
   
-  useEffect(() => {
-
+  useGSAP(() => {
     
-      
-
-    // if (!isOpen) {
-      
-    //   gsap.fromTo(
-    //     "#my-nav",
-    //     {autoAlpha:1, x: 0 },
-    //     {autoAlpha: 0, x: -400, duration: 2 }
-    //   )
-    // }
-    // // Animation for closing the modal
-    // else {
-    //   gsap.from("#navBar", {
-    //     translateY: [0, 0],
-    //     delay: 1.5,
-    //     opacity: 1
-    //   })
-    // };
+    if (isOpen) {
+    // Animation for navbar to leave the screen
+      gsap.fromTo(
+        "#my-nav",
+        { x: 0 },
+        { x: 400, duration: 1, ease: 'expo.in'  }
+      )
+    }
+    // Animation for navbar coming back on when closing the modal
+      else if (isOpen === false) {
+        gsap.fromTo(
+          "#my-nav",
+          {autoAlpha: 1, x: 400 },
+          {autoAlpha: 1, x: 0, ease: 'expo.out'  }
+        )
+      };
   }, [isOpen]);
 
   const [offset, setOffset] = useState(0)

@@ -1,11 +1,7 @@
 'use client'
-import { useContext } from "react"
 import Navbar from "./navbar"
-import { ModalContext } from "@/app/context/provider"
 
 const Header = () => {
-
-  // const { isOpen } = useContext(ModalContext)
 
 
   return (
