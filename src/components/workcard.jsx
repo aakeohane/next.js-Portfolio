@@ -12,7 +12,7 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
-  const body = document.getElementById('body')
+  const body = document.getElementById('bodyEl')
 
   const handleClick = () => {
     // had to create this function, because page could still be scrolled for the few milliseconds that it took for the modal to open

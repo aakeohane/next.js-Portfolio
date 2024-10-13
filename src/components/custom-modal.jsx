@@ -24,7 +24,7 @@ const CustomModal = ( { children } ) => {
   const exRef = useRef(null)
   const modalRef = useRef(null)
 
-  const body = document.getElementById('body')
+  const body = document.getElementById('bodyEl')
 
 
   gsap.config({

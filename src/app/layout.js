@@ -9,7 +9,7 @@ export default function RootLayout({ children, modal }) {
 
   return (
     <html lang='en' >
-      <body id="body" suppressHydrationWarning={true}>
+      <body id="bodyEl" suppressHydrationWarning={true}>
           <MyProvider>
             <Header></Header>
             {children}
