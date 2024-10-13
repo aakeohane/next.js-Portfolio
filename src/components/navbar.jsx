@@ -64,6 +64,7 @@ const Navbar = () => {
   useGSAP(() => {
 
       gsap.registerPlugin(ScrollTrigger);
+
       
       gsap.from("#my-nav", {
         translateY: [-50, 0],
@@ -159,7 +160,6 @@ const Navbar = () => {
             id="keohane"
             width={logoSize}
             className={styles["nav-logo-keohane"]}
-            
           />
         </Link>
         <Link 

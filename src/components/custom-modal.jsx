@@ -8,6 +8,8 @@ import Modal from 'react-modal';
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
+// import Image from "next/image";
+// import inkBlotLeft from 'public/images/leftside.png'
 
 
 const CustomModal = ( { children } ) => {
@@ -90,16 +92,29 @@ const CustomModal = ( { children } ) => {
         contentLabel="Work Modal"
         overlayClassName="my-overlay"
         onRequestClose={onModalHide}
-        onAfterClose={(back) => {onModalHide(back)}}
-      > 
-        <div
-          className={styles["topright"]}
-          onClick={onModalHide}
-          ref={exRef}
-        >
-          <FaWindowClose size={28}/>
-        </div>
-          {children}
+        onAfterClose={(e) => {onModalHide(e)}}
+      >
+          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
+            <FaWindowClose size={28}/>
+          </div>
+            {children}
+          {/* <div className={styles["ink-blot-left-container"]}>
+            <Image
+              alt="inkblot left" 
+              src={inkBlotLeft}
+              width={125}
+              className={styles["ink-blot-left"]}
+            />
+          </div> */}
+          {/* <div className="ink-blot-right-container"> */}
+            {/* <Image
+              alt="inkblot right" 
+              src={inkBlotRight}
+              width={100}
+              className={styles["ink-blot-right"]}
+            /> */}
+          {/* </div> */}
+
       </Modal>
   );
 }

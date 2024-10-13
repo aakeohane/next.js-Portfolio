@@ -1,9 +1,11 @@
 'use client'
-import Image from "next/image"
 import styles from './project-details.module.css'
 import { useContext } from "react"
 import Footer from "./footer"
 import { ModalContext } from "@/app/context/provider"
+import Image from "next/image";
+import inkBlotLeft from 'public/images/leftside.png'
+import inkBlotRight from 'public/images/rightside.png'
 
 const { getWork } = require("@/lib/werk")
 
@@ -44,8 +46,26 @@ const ProjectDetails = ({slug}) => {
 
       <div className={styles["modal-third-section"]}>
         <p>{werk.description}</p>
+        <div className={styles['ink-blot-left-flex-container']}>
+          <div className={styles["ink-blot-left-container"]}>
+            <Image
+              alt="inkblot left" 
+              src={inkBlotLeft}
+              width={150}
+              className={styles["ink-blot-left"]}
+            />
+          </div>
         <Footer />
+        </div>
       </div>
+        <div className={styles["ink-blot-right-container"]}>
+          <Image
+            alt="inkblot right" 
+            src={inkBlotRight}
+            width={120}
+            className={styles["ink-blot-right"]}
+          />
+        </div>
     </div>
   )
 }

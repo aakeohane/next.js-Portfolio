@@ -48,6 +48,29 @@
   object-fit: fill;
 }
 
+/* had to  create a container within container in order to get inkblot at bottom when modal becomes scrollable */
+.ink-blot-left-flex-container {
+  position: relative;
+  /* z-index: -1; */
+}
+
+.ink-blot-left-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: -20px;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.ink-blot-right-container {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  opacity: 0.8;
+  z-index: -1;
+}
+
 /* Parallel Route */
 
 .parallel-image {

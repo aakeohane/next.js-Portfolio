@@ -49,9 +49,6 @@ const Portfolio = ({allWerkData}) => {
   return windowSize;
 }
 
-
-
-  
   return (
     <>
     {isLoading ? 
