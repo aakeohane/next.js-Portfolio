@@ -25,16 +25,16 @@ const Navbar = () => {
     // Animation for navbar to leave the screen
       gsap.fromTo(
         "#my-nav",
-        { x: 0 },
-        { x: 400, duration: 1, ease: 'expo.in'  }
+        { xPercent: 0 },
+        { xPercent: 100, duration: 1, ease: 'expo.in'  }
       )
     }
     // Animation for navbar coming back on when closing the modal
       else if (isOpen === false) {
         gsap.fromTo(
           "#my-nav",
-          {autoAlpha: 1, x: -400 },
-          {autoAlpha: 1, x: 0, ease: 'expo.out'  }
+          {autoAlpha: 1, xPercent: -110 },
+          {autoAlpha: 1, xPercent: 0, ease: 'expo.out'  }
         )
       };
   }, [isOpen]);

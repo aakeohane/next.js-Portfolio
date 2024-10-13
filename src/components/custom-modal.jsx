@@ -22,6 +22,8 @@ const CustomModal = ( { children } ) => {
   const exRef = useRef(null)
   const modalRef = useRef(null)
 
+  const body = document.getElementById('body')
+
 
   gsap.config({
     nullTargetWarn: false,
@@ -33,8 +35,8 @@ const CustomModal = ( { children } ) => {
       
       gsap.fromTo(
         "#myModal",
-        {autoAlpha: 1, x: -400 },
-        {autoAlpha: 1, x: 0, duration: 1, ease: 'expo.in'  }
+        {autoAlpha: 1, xPercent: -100 },
+        {autoAlpha: 1, xPercent: 0, duration: 1, ease: 'expo.in'  }
       )
       gsap.fromTo(
         exRef.current,
@@ -46,8 +48,8 @@ const CustomModal = ( { children } ) => {
     else {
       gsap.fromTo(
         "#myModal",
-        {autoAlpha: 1, x: 0 },
-        {autoAlpha: 1, x: 400, ease: 'expo.out'  }
+        {autoAlpha: 1, xPercent: 0 },
+        {autoAlpha: 1, xPercent: 100, ease: 'expo.out'  }
       )
     };
   }, [modalOpen]);
@@ -55,7 +57,7 @@ const CustomModal = ( { children } ) => {
   
   const onModalOpen = () => {
     // prevents body scroll
-    // body.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
     // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
     setModalOpen(!modalOpen)
     openModal()
@@ -72,7 +74,7 @@ const CustomModal = ( { children } ) => {
         router.back();
       }
       // turns body scroll back on
-      // body.style.overflow = 'auto';
+      body.style.overflow = 'auto';
     }, 300); // Adjust the delay as needed
 
   }

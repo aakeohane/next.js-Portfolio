@@ -3,27 +3,15 @@
 import About from '@/components/sections/about'
 import Work from '@/components/sections/work'
 import Contact from '@/components/sections/contact'
-import { useContext, useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
-import { ModalContext } from './context/provider'
 
 const Portfolio = ({allWerkData}) => {
-
-  const {isOpen } = useContext(ModalContext);
   
 
   const size = useWindowSize();
   const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const body = document.getElementById('body')
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-    } else if (isOpen === false) {
-      body.style.overflow = 'auto';
-    }
-  },[isOpen])
 
   function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -71,7 +59,7 @@ const Portfolio = ({allWerkData}) => {
         <div id="loader"></div>
       </div>
       :
-      <main id="main">
+      <main>
         <div id="fake-body" style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
           <Home/>
           <About/>
