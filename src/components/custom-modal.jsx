@@ -22,6 +22,8 @@ const CustomModal = ( { children } ) => {
   const exRef = useRef(null)
   const modalRef = useRef(null)
 
+  const body = document.querySelector('#body')
+
 
   gsap.config({
     nullTargetWarn: false,
@@ -55,22 +57,24 @@ const CustomModal = ( { children } ) => {
   
   const onModalOpen = () => {
     // prevents body scroll
+    body.style.overflow = 'hidden';
     // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
-    document.body.style.overflow = "hidden";
     setModalOpen(!modalOpen)
     openModal()
     console.log(isOpen)
   }
         
 
-  function onModalHide() {
+  function onModalHide(backButton) {
     closeModal()
     setModalOpen(!modalOpen)
-    // turns body scroll back on
     // Delay the navigation until after the modal transition
     setTimeout(() => {
-      document.body.style.overflow = "auto";
-      router.back();
+      if (backButton) {
+        router.back();
+      }
+      // turns body scroll back on
+      body.style.overflow = 'auto';
     }, 300); // Adjust the delay as needed
 
   }
@@ -80,13 +84,13 @@ const CustomModal = ( { children } ) => {
       <Modal
         ref={modalRef}
         className={styles["my-modal"]}
-        overlayClassName="my-overlay"
         id="myModal"
         isOpen={!modalRef.current?.open}
         onAfterOpen={onModalOpen}
         contentLabel="Work Modal"
+        overlayClassName="my-overlay"
         onRequestClose={onModalHide}
-        
+        onAfterClose={(back) => {onModalHide(back)}}
       > 
         <div
           className={styles["topright"]}

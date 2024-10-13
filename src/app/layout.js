@@ -1,4 +1,3 @@
-'use client'
 import Header from '@/components/header';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google'
@@ -8,13 +7,11 @@ import { MyProvider } from './context/provider';
 
 export default function RootLayout({ children, modal }) {  
 
-  
-
   return (
     <html lang='en' >
-      <body suppressHydrationWarning={true}>
+      <body id="body" suppressHydrationWarning={true}>
         <MyProvider>
-          <Header modal={modal}></Header>
+          <Header></Header>
           {children}
           <div id="modal-root-id">{modal}</div>
         </MyProvider>
