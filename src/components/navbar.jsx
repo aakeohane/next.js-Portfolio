@@ -33,7 +33,7 @@ const Navbar = () => {
       else if (isOpen === false) {
         gsap.fromTo(
           "#my-nav",
-          {autoAlpha: 1, x: 400 },
+          {autoAlpha: 1, x: -400 },
           {autoAlpha: 1, x: 0, ease: 'expo.out'  }
         )
       };

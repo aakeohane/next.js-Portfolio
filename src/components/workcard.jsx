@@ -12,11 +12,11 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
-  const body = document.querySelector('#body')
+  // const body = document.querySelector('#bodyOverlay')
 
   const handleClick = () => {
     // had to create this function, because page could still be scrolled for the few milliseconds that it took for the modal to open
-    body.style.overflow = "hidden";
+    // body.style.overflow = "hidden";
   }
 
   const hoverTitle = {

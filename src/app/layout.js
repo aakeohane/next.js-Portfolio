@@ -10,11 +10,11 @@ export default function RootLayout({ children, modal }) {
   return (
     <html lang='en' >
       <body id="body" suppressHydrationWarning={true}>
-        <MyProvider>
-          <Header></Header>
-          {children}
-          <div id="modal-root-id">{modal}</div>
-        </MyProvider>
+          <MyProvider>
+            <Header></Header>
+            {children}
+            <div id="modal-root-id">{modal}</div>
+          </MyProvider>
       </body>
     </html>
   )
