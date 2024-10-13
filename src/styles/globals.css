@@ -173,7 +173,7 @@ nav {
   --max-size: 28;
   --min-size: 25;
   font-size: var(--responsive);
-  margin: 10px 0;
+  padding: 5px 0;
 }
 
 nav > a {
