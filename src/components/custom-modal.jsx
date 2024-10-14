@@ -26,7 +26,7 @@ const CustomModal = ( { children } ) => {
   const body = document.getElementById('bodyEl')
 
   // nifty aria trick to actually remove body scroll when using phone on safari
-  // usePreventScroll()
+  usePreventScroll()
 
   gsap.config({
     nullTargetWarn: false,
