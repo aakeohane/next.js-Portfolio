@@ -94,14 +94,18 @@ body {
   margin: 0;
   width: 100vw;
   max-width: 100%;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url(/images/watercolor-paper-background-2.jpg);
+    url(/images/watercolor-paper-background-2-mirrored.png); */
+  background-image: url(/images/watercolor-paper-background-2-mirrored.png);
   height: 100%;
   height: calc(var(--vh, 1vh) * 100);
   overscroll-behavior: contain;
+  background-position: top center;
+  opacity: 0.6;
+  /* background-repeat: repeat-y; */
 }
 
 h1 {
