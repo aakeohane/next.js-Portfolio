@@ -14,7 +14,7 @@ const Home = () => {
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
-          offset: -60, // Offsets fixed header
+          offset: -280, // Offsets fixed header
           ease: 'in-expo',
           duration: 1000,
         })
