@@ -27,6 +27,8 @@ const CustomModal = ( { children } ) => {
 
   const body = document.getElementById('bodyEl')
 
+  usePreventScroll()
+
 
   gsap.config({
     nullTargetWarn: false,
