@@ -2,12 +2,13 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useState, useContext } from 'react';
+import { useRef, useState, useContext, useEffect } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
+import { usePreventScroll } from "@react-aria/overlays";
 // import Image from "next/image";
 // import inkBlotLeft from 'public/images/leftside.png'
 
@@ -63,7 +64,6 @@ const CustomModal = ( { children } ) => {
     // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
     setModalOpen(!modalOpen)
     openModal()
-    console.log(isOpen)
   }
         
 
