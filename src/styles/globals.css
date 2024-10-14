@@ -97,11 +97,11 @@ body {
       rgba(255, 255, 255, 0.3)
     ),
     url(/images/watercolor-paper-background-2-mirrored.png); */
-  background-image: url(/images/watercolor-paper-background-lightYellow-mirrored.png);
+  background-image: url(/images/watercolor-paper-background-lightyellow.v3.png);
   height: 100%;
   height: calc(var(--vh, 1vh) * 100);
   overscroll-behavior: contain;
-  background-position: center;
+  background-position: top center;
   background-size: auto;
   /* background-repeat: repeat-y; */
 }
