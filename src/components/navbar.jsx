@@ -126,7 +126,7 @@ const Navbar = () => {
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
-          offset: target == '#home' ? -90 : -60, // Offsets fixed header
+          offset: target == '#home' ? -90 : target == '#work' ? -280 : -60, // Offsets fixed header
           ease: 'in-expo',
           duration: 1000,
         })
