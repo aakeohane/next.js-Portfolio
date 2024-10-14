@@ -104,7 +104,6 @@ body {
   height: calc(var(--vh, 1vh) * 100);
   overscroll-behavior: contain;
   background-position: top center;
-  opacity: 0.6;
   /* background-repeat: repeat-y; */
 }
 
