@@ -9,8 +9,6 @@ import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
 import { usePreventScroll } from "@react-aria/overlays";
-// import Image from "next/image";
-// import inkBlotLeft from 'public/images/leftside.png'
 
 
 const CustomModal = ( { children } ) => {
@@ -18,7 +16,7 @@ const CustomModal = ( { children } ) => {
 
   Modal.setAppElement('#modal-root-id')
   const [modalOpen, setModalOpen] = useState(false)
-  const {isOpen, openModal, closeModal } = useContext(ModalContext);
+  const {openModal, closeModal } = useContext(ModalContext);
 
   const router = useRouter()
 
@@ -27,8 +25,8 @@ const CustomModal = ( { children } ) => {
 
   const body = document.getElementById('bodyEl')
 
-  usePreventScroll()
-
+  // nifty aria trick to actually remove body scroll when using phone on safari
+  // usePreventScroll()
 
   gsap.config({
     nullTargetWarn: false,
@@ -61,9 +59,6 @@ const CustomModal = ( { children } ) => {
 
   
   const onModalOpen = () => {
-    // prevents body scroll
-    body.style.overflow = 'hidden';
-    // this is done twice to be sure body is not scrollable, other instance is onClick of LINK in workcard.jsx
     setModalOpen(!modalOpen)
     openModal()
   }
