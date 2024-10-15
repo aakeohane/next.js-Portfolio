@@ -3,16 +3,34 @@ import Link from "next/link";
 import Image from "next/image"
 import styles from "./workcard.module.css"
 import { forwardRef, useState, useEffect } from "react"
-
+import { usePreventScroll } from "@react-aria/overlays";
+import { isMobile, isSafari } from "react-device-detect";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
 
   const [hover, setHover] = useState(false)
   const [bodyLocked, setBodyLocked] = useState(false)
+  const [isSafariMobile, setSafariMobile] = useState(false)
+
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
+
+  useEffect(() => {
+    const SafariMobile = isMobile && isSafari;
+    if (SafariMobile) {
+      console.log("safari and mobile")
+      setSafariMobile(true)
+    }
+  }, [bodyLocked])
+
+
+  if (isSafariMobile === true) {
+    console.log(isSafariMobile)
+    usePreventScroll()
+    console.log("prevent scroll on safari mobile worked")
+  }
 
 
   const handleClick = () => {
