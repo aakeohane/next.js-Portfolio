@@ -2,16 +2,15 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useContext, useEffect, useState } from 'react';
+import { useRef, useContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
+import { usePreventScroll } from "@react-aria/overlays";
 
-
-
-const CustomModal = ( { children } ) => {
+const CustomModalSafari = ( { children } ) => {
 
 
   Modal.setAppElement('#modal-root-id')
@@ -24,10 +23,8 @@ const CustomModal = ( { children } ) => {
 
   const body = document.getElementById('bodyEl')
 
-
-
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
-  // usePreventScroll()
+  usePreventScroll()
 
   gsap.config({
     nullTargetWarn: false,
@@ -88,9 +85,11 @@ const CustomModal = ( { children } ) => {
           <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
             <FaWindowClose size={28}/>
           </div>
+          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
+            <FaWindowClose size={50}/>
+          </div>
             {children}
       </Modal>
   );
 }
-export default CustomModal
-
+export default CustomModalSafari
