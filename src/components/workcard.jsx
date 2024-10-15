@@ -23,6 +23,8 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
       const body = document.getElementById('bodyEl')
       body.style.overflow = 'hidden'
       console.log("body is locked")
+      setBodyLocked(false)
+      console.log("bodyLocked state is now back to false")
     } else return
   }, [bodyLocked])
 
