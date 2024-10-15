@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useState, useContext, useEffect } from 'react';
+import { useRef, useContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
@@ -15,8 +15,7 @@ const CustomModal = ( { children } ) => {
 
 
   Modal.setAppElement('#modal-root-id')
-  const [modalOpen, setModalOpen] = useState(false)
-  const {openModal, closeModal } = useContext(ModalContext);
+  const {isOpen, openModal, closeModal } = useContext(ModalContext);
 
   const router = useRouter()
 
@@ -26,7 +25,7 @@ const CustomModal = ( { children } ) => {
   const body = document.getElementById('bodyEl')
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
-  usePreventScroll()
+  // usePreventScroll()
 
   gsap.config({
     nullTargetWarn: false,
@@ -34,7 +33,7 @@ const CustomModal = ( { children } ) => {
 
   useGSAP(() => {
 
-    if (modalOpen) {
+    if (isOpen) {
       
       gsap.fromTo(
         "#myModal",
@@ -55,18 +54,11 @@ const CustomModal = ( { children } ) => {
         {autoAlpha: 1, xPercent: 100, ease: 'expo.out'  }
       )
     };
-  }, [modalOpen]);
-
-  
-  const onModalOpen = () => {
-    setModalOpen(!modalOpen)
-    openModal()
-  }
+  }, [isOpen]);
         
 
   function onModalHide(backButton) {
     closeModal()
-    setModalOpen(!modalOpen)
     // Delay the navigation until after the modal transition
     setTimeout(() => {
       if (backButton) {
@@ -85,7 +77,7 @@ const CustomModal = ( { children } ) => {
         className={styles["my-modal"]}
         id="myModal"
         isOpen={!modalRef.current?.open}
-        onAfterOpen={onModalOpen}
+        onAfterOpen={() => openModal()}
         contentLabel="Work Modal"
         overlayClassName="my-overlay"
         onRequestClose={onModalHide}
