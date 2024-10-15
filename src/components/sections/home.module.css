@@ -109,6 +109,13 @@
   cursor: pointer;
 }
 
+.workBttn {
+  float: right;
+  color: var(--inkblot-black);
+  margin: 0.5rem 1rem 0 0;
+  cursor: pointer;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 480px) {
