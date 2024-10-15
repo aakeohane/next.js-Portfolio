@@ -2,7 +2,7 @@
 import  ProjectDetails from "@/components/project-details";
 import  CustomModal from "@/components/custom-modal";
 import { isMobile, isSafari } from "react-device-detect";
-import CustomModalSafari from "@/components/custom-modal-safari";
+import CustomModalSafariWrapper from "@/components/custom-modal-safari";
 import { useEffect, useState } from "react";
 
 
@@ -25,9 +25,11 @@ const ProjectModal = ({ params: { slug} }) => {
           <ProjectDetails slug={slug} />
         </CustomModal>
         : 
-        <CustomModalSafari>
-          <ProjectDetails slug={slug} />
-        </CustomModalSafari>
+        <CustomModalSafariWrapper>
+          <CustomModal>
+            <ProjectDetails slug={slug} />
+          </CustomModal>
+        </CustomModalSafariWrapper>
         }
       </div>
   );
