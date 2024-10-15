@@ -2,13 +2,15 @@
 
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useContext } from 'react';
+import { useRef, useContext, useEffect, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
 import { usePreventScroll } from "@react-aria/overlays";
+import { isMobile, isSafari } from "react-device-detect";
+
 
 
 const CustomModal = ( { children } ) => {
@@ -16,6 +18,7 @@ const CustomModal = ( { children } ) => {
 
   Modal.setAppElement('#modal-root-id')
   const {isOpen, openModal, closeModal } = useContext(ModalContext);
+  const [isSafariMobile, setSafariMobile] = useState(false)
 
   const router = useRouter()
 
@@ -23,6 +26,21 @@ const CustomModal = ( { children } ) => {
   const modalRef = useRef(null)
 
   const body = document.getElementById('bodyEl')
+
+  useEffect(() => {
+    const SafariMobile = isMobile && isSafari;
+    if (SafariMobile) {
+      console.log("safari and mobile")
+      setSafariMobile(true)
+    }
+  })
+
+
+  if (isSafariMobile === true) {
+    console.log(isSafariMobile)
+    usePreventScroll()
+    console.log("prevent scroll on safari mobile worked")
+  }
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
   // usePreventScroll()

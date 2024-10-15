@@ -14,6 +14,7 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
+
   const handleClick = () => {
     setBodyLocked(true)
   }
@@ -22,9 +23,8 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
     if (bodyLocked) {
       const body = document.getElementById('bodyEl')
       body.style.overflow = 'hidden'
-      console.log("body is locked")
+      console.log("body is locked on any browser other than safari mobile")
       setBodyLocked(false)
-      console.log("bodyLocked state is now back to false")
     } else return
   }, [bodyLocked])
 
