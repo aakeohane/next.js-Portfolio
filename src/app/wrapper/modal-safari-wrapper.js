@@ -1,6 +1,6 @@
 import { usePreventScroll } from "@react-aria/overlays";
 
-const CustomModalSafariWrapper = ( { children } ) => {
+const ModalSafariWrapper = ( { children } ) => {
 
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
@@ -13,4 +13,4 @@ const CustomModalSafariWrapper = ( { children } ) => {
       </>
   );
 }
-export default CustomModalSafariWrapper
+export default ModalSafariWrapper

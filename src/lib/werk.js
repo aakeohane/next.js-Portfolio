@@ -53,6 +53,7 @@ const werk = [
   }
 ]
 
+// use this to filter based on some sort of criteria
 const getAllWerkData = () => {
   return werk
 }

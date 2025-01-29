@@ -20,6 +20,7 @@
   z-index: -1;
   height: 100%;
   object-fit: contain;
+  opacity: 0.8;
 }
 
 .developer {

@@ -1,6 +1,7 @@
 import { bebasNeueFontClass } from "@/app/layout"
 import Image from "next/image"
 import jelly from 'public/images/jelly.png' 
+import styles from './contact.module.css'
 
 const Contact = () => {
   
@@ -12,7 +13,7 @@ const Contact = () => {
       <p className={`${bebasNeueFontClass}`}>
         email: aacunty@gmail.com
       </p>
-      <Image
+      <Image className={styles["jelly"]}
             alt="personal logo" 
             src={jelly}
             width={350}
