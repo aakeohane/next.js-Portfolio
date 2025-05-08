@@ -20,16 +20,35 @@ const ProjectDetails = ({slug}) => {
         <div className={styles["title-container"]}>
           <h2>{werk.title}</h2>
           <div className={styles["modal-favicon-container"]}>
+            {werk.favicon ? 
             <Image
               className={styles["favicon"]}
               alt="favicon for project" 
               src={werk.favicon}
-              width={10}
-              height={10}
+              width={20}
+              height={20}
             />
+            :
+            null
+            }
           </div>
         </div>
-        <p className={styles["modal-title-description"]}>{werk.titleDescription}</p>
+        <div className={styles["programs-container"]}>
+            {werk.programsUsed.map(( program ) => {
+              return (
+              <Image
+                className={styles["program"]}
+                alt="programs Used" 
+                src={program}
+                height={100}
+                width={100}
+              />
+              )
+            })}
+          </div>
+          <div>
+            <p className={styles["modal-title-description"]}>{werk.titleDescription}</p>
+          </div>
       </div>
 
       <div className={styles["modal-image-container"]}>

@@ -24,7 +24,8 @@
     "react-router-dom": "^6.26.2",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "scroll-to-element": "^2.0.3"
+    "scroll-to-element": "^2.0.3",
+    "sharp": "^0.34.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
