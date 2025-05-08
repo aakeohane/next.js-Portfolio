@@ -5,6 +5,7 @@ let reactIcon = "/images/utilities/react_native_icon.png"
 let jsonIcon = "/images/utilities/Json-icon.png"
 let webpackIcon = "/images/utilities/logo-on-white-bg.png"
 let firebaseIcon = "/images/utilities/firebase-icon.png"
+let wordpressIcon = "/images/utilities/Wordpress-icon.png"
 
 const werk = [
   {
@@ -105,7 +106,7 @@ const werk = [
       reactIcon,
       firebaseIcon,
       webpackIcon,
-      "/images/utilities/Wordpress-icon.png"
+      wordpressIcon
       ],
     "description": `This is a two part project. While the example is relatively simple for showcasing reasons. The number counter on the right side
     is actually used as a chrome extension to keep track of the amount of guests at a club. This number is then stored in a Firebase Realtime Database
