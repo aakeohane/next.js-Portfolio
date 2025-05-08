@@ -67,7 +67,7 @@ const werk = [
       reactIcon
       ],
     "description": `This project was based upon a DevProjects brief. While they provided the images, I solved the problems and developed everything else including the
-     front-end UI. Please checkout the website and download your very own alpaca image.`
+     front-end UI. I utilized a downloading library which I have never used before. Please checkout the website and download your very own alpaca image.`
   },
   {
     "title": "weChat",
