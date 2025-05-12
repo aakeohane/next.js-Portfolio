@@ -3,9 +3,9 @@ let jsIcon = "/images/utilities/JS-icon.png"
 let htmlIcon = "/images/utilities/html5-icon.png"
 let reactIcon = "/images/utilities/react_native_icon.png"
 let jsonIcon = "/images/utilities/Json-icon.png"
-let webpackIcon = "/images/utilities/logo-on-white-bg.png"
+let webpackIcon = "/images/utilities/webpack-icon.png"
 let firebaseIcon = "/images/utilities/firebase-icon.png"
-let wordpressIcon = "/images/utilities/Wordpress-icon.png"
+let wordpressIcon = "/images/utilities/WordPress-icon.png"
 
 const werk = [
   {

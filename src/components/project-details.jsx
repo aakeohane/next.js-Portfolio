@@ -35,6 +35,28 @@ const ProjectDetails = ({slug}) => {
         </div>
         <div className={styles["programs-container"]}>
             {werk.programsUsed.map(( program ) => {
+              const renderToottip = () => {
+                switch (program) {
+                  case "/images/utilities/CSS3_icon.png":
+                    return "CSS";
+                  case "/images/utilities/JS-icon.png":
+                    return "JS";
+                  case "/images/utilities/html5-icon.png":
+                    return "html5";
+                  case "/images/utilities/react_native_icon.png":
+                    return "React";
+                  case "/images/utilities/Json-icon.png":
+                    return "JSON";
+                  case "/images/utilities/webpack-icon.png":
+                    return "Webpack";
+                  case "/images/utilities/firebase-icon.png":
+                    return "Firebase";
+                  case "/images/utilities/WordPress-icon.png":
+                    return "Wordpress";
+                  default:
+                    return null;
+                }
+              };
               return (
               <Image
                 className={styles["program"]}
@@ -42,6 +64,7 @@ const ProjectDetails = ({slug}) => {
                 src={program}
                 height={100}
                 width={100}
+                title={renderToottip()}
               />
               )
             })}
