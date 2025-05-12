@@ -6,6 +6,7 @@ import { ModalContext } from "@/app/context/provider"
 import Image from "next/image";
 import inkBlotLeft from 'public/images/leftside.png'
 import inkBlotRight from 'public/images/rightside.png'
+import Link from 'next/link';
 
 const { getWork } = require("@/lib/werk")
 
@@ -35,14 +36,14 @@ const ProjectDetails = ({slug}) => {
         </div>
         <div className={styles["programs-container"]}>
             {werk.programsUsed.map(( program ) => {
-              const renderToottip = () => {
+              const renderTooltip = () => {
                 switch (program) {
                   case "/images/utilities/CSS3_icon.png":
                     return "CSS";
                   case "/images/utilities/JS-icon.png":
-                    return "JS";
+                    return "JavaScript";
                   case "/images/utilities/html5-icon.png":
-                    return "html5";
+                    return "HTML5";
                   case "/images/utilities/react_native_icon.png":
                     return "React";
                   case "/images/utilities/Json-icon.png":
@@ -64,7 +65,7 @@ const ProjectDetails = ({slug}) => {
                 src={program}
                 height={100}
                 width={100}
-                title={renderToottip()}
+                title={renderTooltip()}
               />
               )
             })}
@@ -88,7 +89,21 @@ const ProjectDetails = ({slug}) => {
 
       <div className={styles["modal-third-section"]}>
         <p>{werk.description}</p>
-        <div className={styles['ink-blot-left-flex-container']}>
+        <div className={styles["example-link-container"]}>
+          <Link
+            className={styles['example-button']}
+            href={werk.liveSiteLink}
+            target="_blank"
+          >Live Site
+          </Link>
+          <Link
+            className={styles['example-button']}
+            href={werk.githubLink}
+            target="_blank"
+          >Github Link
+          </Link>
+        </div>
+        <div className={styles["ink-blot-left-flex-container"]}>
           <div className={styles["ink-blot-left-container"]}>
             <Image
               alt="inkblot left" 

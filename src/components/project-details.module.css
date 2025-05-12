@@ -64,6 +64,22 @@
   object-fit: fill;
 }
 
+.example-link-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.example-button {
+  border-radius: 3px;
+  border: 3px solid var(--inkblot-black);
+  font-size: calc(1rem + 1vw);
+  color: var(--inkblot-black);
+  height: auto;
+  line-height: 1;
+  padding: 7.5px;
+  cursor: pointer;
+}
+
 /* had to  create a container within container in order to get inkblot at bottom when modal becomes scrollable */
 .ink-blot-left-flex-container {
   position: relative;
