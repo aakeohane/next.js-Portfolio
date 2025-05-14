@@ -74,7 +74,7 @@ const werk = [
     "title": "weChat",
     "slug": "weChat",
     "favicon": "",
-    "order": "6",
+    "order": "0",
     "titleDescription": "A messaging application for your phone",    
     "image": "/images/myFlix-screenshot.png",
     "githubLink": "",
@@ -98,8 +98,6 @@ const werk = [
     "image": "/images/club-counter-cover.jpg",
     "imageContent": "/images/chrome-extension-counter.png",
     "githubLink": {
-      // "https://github.com/aakeohane/csd-chrom-extension-frontend",
-      // "https://github.com/aakeohane/club-sd-counter"
       "Chrome Extension": "https://github.com/aakeohane/csd-chrom-extension-frontend",
       "WordPress Frontend": "https://github.com/aakeohane/club-sd-counter"
     },
@@ -139,8 +137,9 @@ const werk = [
 
 // use this to filter based on some sort of criteria
 const getAllWerkData = () => {
-  werk.sort((a,b) => a.order - b.order);
-  return werk
+  // returns project in numberical order and doesnt include any projects that have 0 as an order meaning I dont want to include them in my project list
+  const projectOrder = werk.sort((a,b) => a.order - b.order).filter((item) => item.order !== "0");
+  return projectOrder
 }
 
 const getWork = (slug) => {

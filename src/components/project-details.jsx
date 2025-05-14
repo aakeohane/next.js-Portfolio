@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import styles from './project-details.module.css'
 import { useContext } from "react"
 import Footer from "./footer"
@@ -70,7 +70,7 @@ const ProjectDetails = ({slug, parRoute}) => {
               )
             })}
           </div>
-          <div>
+          <div className={styles["title-description-container"]}>
             <p className={styles["modal-title-description"]}>{werk.titleDescription}</p>
           </div>
       </div>

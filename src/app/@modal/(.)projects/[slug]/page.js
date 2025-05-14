@@ -6,7 +6,7 @@ import ModalSafariWrapper from "@/app/wrapper/modal-safari-wrapper";
 import { useEffect, useState } from "react";
 
 
-const ProjectModal = ({ params: { slug} }) => {
+const ProjectModal = ({ params: { slug } }) => {
 
   const [isSafariMobile, setisSafariMobile] = useState(false)
 

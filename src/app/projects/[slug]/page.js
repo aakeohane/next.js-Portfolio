@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 
 const ProjectModal = ({ params: { slug } }) => {
-   const [isParRoute, setIsParRoute] = useState(null);
-
+  // these two lines of logic are only to set Par route for project details info like a footer
+  const [isParRoute, setIsParRoute] = useState(null);
   const parRoute = () => setIsParRoute(true);
   return (
     <div className="parallel-route">

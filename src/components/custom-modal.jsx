@@ -1,15 +1,11 @@
-'use client'
-
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useContext, useEffect, useState } from 'react';
+import { useRef, useContext } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
-
-
 
 const CustomModal = ( { children } ) => {
 
