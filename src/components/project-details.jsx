@@ -19,7 +19,7 @@ const ProjectDetails = ({slug}) => {
 
       <div className={styles["modal-first-section"]}>
         <div className={styles["title-container"]}>
-          <h2>{werk.title}</h2>
+          <h4>{werk.title}</h4>
           <div className={styles["modal-favicon-container"]}>
             {werk.favicon ? 
             <Image
@@ -90,40 +90,37 @@ const ProjectDetails = ({slug}) => {
       <div className={styles["modal-third-section"]}>
         <p>{werk.description}</p>
         <div className={styles["example-link-container"]}>
+          <div className={styles["github-link-container"]}>
+            {
+            typeof werk.githubLink !== "object" ?
+              <Link
+                className={styles['example-button']}
+                href={werk.githubLink}
+                target="_blank"
+              >The Code
+              </Link>
+              :
+              Object.entries(werk.githubLink).map(link => {
+                return (
+                  <div className={styles['github-link']}>
+                    <p>{link[0]}:</p>
+                    <Link
+                      className={styles['example-button']}
+                      href={link[1]}
+                      target="_blank"
+                    >The Code
+                    </Link>
+                  </div>
+              )
+              })
+            }
+            </div>
           <Link
             className={styles['example-button']}
             href={werk.liveSiteLink}
             target="_blank"
-          >The Example
+          >Live Site
           </Link>
-          <div className={styles["github-link-container"]}>
-          {
-           typeof werk.githubLink == "string" ?
-            <Link
-              className={styles['example-button']}
-              href={werk.githubLink}
-              target="_blank"
-            >The Code
-            </Link>
-            :
-
-            
-            
-            Object.entries(werk.githubLink).map(link => {
-              return (
-                <div className={styles['github-link']}>
-                  <p>{link[0]}:</p>
-                  <Link
-                    className={styles['example-button']}
-                    href={link[1]}
-                    target="_blank"
-                  >The Code
-                  </Link>
-                </div>
-            )
-            })
-          }
-          </div>
         </div>
         <div className={styles["ink-blot-left-flex-container"]}>
           <div className={styles["ink-blot-left-container"]}>

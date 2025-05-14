@@ -37,6 +37,7 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
 .program {
@@ -88,6 +89,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .example-button {
+    margin-left: 40px;
+  }
 }
 
 .github-link {
@@ -126,4 +131,12 @@
   height: auto;
   /* border-radius: 50%; */
   margin: 15px 0 15px 0;
+}
+
+@media only screen and (max-width: 480px) {
+  .github-link-container {
+    .example-button {
+      margin-left: 7.5px;
+    }
+  }
 }
