@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const { getWork } = require("@/lib/werk")
 
-const ProjectDetails = ({slug}) => {
+const ProjectDetails = ({slug, parRoute}) => {
   const werk = getWork(slug)
   const modalOpen = useContext(ModalContext)
 
@@ -131,7 +131,10 @@ const ProjectDetails = ({slug}) => {
               className={styles["ink-blot-left"]}
             />
           </div>
-        <Footer />
+          {
+            parRoute ? <Footer /> : null
+            
+          }
         </div>
       </div>
         <div className={styles["ink-blot-right-container"]}>

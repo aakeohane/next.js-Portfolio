@@ -104,6 +104,7 @@ body {
   background-position: top center;
   background-size: auto;
   /* background-repeat: repeat-y; */
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -143,7 +144,7 @@ p {
   font-family: "Bebas Neue", sans-serif;
   line-height: calc(0.9rem + 1vw);
   font-size: calc(0.8rem + 1vw);
-  letter-spacing: 0.035rem;
+  /* letter-spacing: 0.035rem; */
   padding: 0px;
   margin: 0px;
 }
