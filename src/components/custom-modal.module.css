@@ -13,6 +13,7 @@
       rgba(255, 255, 255, 0.3)
     ),
     url(/images/watercolor-paper-background-2.jpg);
+  background-attachment: local;
 }
 
 .my-overlay {
