@@ -14,7 +14,6 @@ const ProjectModal = ({ params: { slug} }) => {
     const safariMobile = isMobile && isSafari
     if (safariMobile) {
       setisSafariMobile(true)
-      console.log("safari is mobile")
     }
   })
   

@@ -67,17 +67,33 @@
 .example-link-container {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .example-button {
   border-radius: 3px;
   border: 3px solid var(--inkblot-black);
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.55rem + 1vw);
   color: var(--inkblot-black);
-  height: auto;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
   line-height: 1;
-  padding: 7.5px;
+  padding: 10px;
   cursor: pointer;
+  margin: 7.5px;
+}
+
+.github-link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.github-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* had to  create a container within container in order to get inkblot at bottom when modal becomes scrollable */

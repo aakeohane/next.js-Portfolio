@@ -97,8 +97,12 @@ const werk = [
     "titleDescription": "A chrome extension for use at a club to keep track of number of people and the Wordpress code snippet used to show website vitiors the number",
     "image": "/images/club-counter-cover.jpg",
     "imageContent": "/images/chrome-extension-counter.png",
-    "githubLink": "https://github.com/aakeohane/csd-chrom-extension-frontend",
-    "githubLink": "https://github.com/aakeohane/club-sd-counter",
+    "githubLink": {
+      // "https://github.com/aakeohane/csd-chrom-extension-frontend",
+      // "https://github.com/aakeohane/club-sd-counter"
+      "Chrome Extension": "https://github.com/aakeohane/csd-chrom-extension-frontend",
+      "WordPress Frontend": "https://github.com/aakeohane/club-sd-counter"
+    },
     "liveSiteLink": "https://aakeohane.github.io/csd-chrom-extension-frontend/",
     "programsUsed": [
       cssIcon,
