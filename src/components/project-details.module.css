@@ -8,6 +8,10 @@
   height: 100vh;
 }
 
+.modal-container-par {
+  margin-top: 40px;
+}
+
 .modal-first-section {
   display: flex;
   flex-direction: column;

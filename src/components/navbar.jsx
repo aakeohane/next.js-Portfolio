@@ -17,8 +17,10 @@ import { ModalContext } from '@/app/context/provider'
 const Navbar = () => {
 // using context here similar to redux or global state management, had to go 
 // client side in order for navbar component to recognize when modal was open
-  const { isOpen } = useContext(ModalContext)
-  
+  const { isOpen, isParRoute, parRoute } = useContext(ModalContext)
+
+  console.log(isParRoute)
+
   useGSAP(() => {
     
     if (isOpen) {
@@ -135,6 +137,7 @@ const Navbar = () => {
   
   return (
     <div id='my-nav' className={blastimoFontClass}>
+      { !isParRoute ?
       <nav>
         <Link 
           onClick={e => smoothLinkClick(e, '#home')} 
@@ -186,7 +189,36 @@ const Navbar = () => {
         >
           contact
         </Link>
+      </nav> :
+      <nav>
+        <Link 
+          onClick={() => parRoute()}
+          href="/"
+          className={styles["logo-container-right"]}
+        >
+          <Image
+            alt="personal logo" 
+            id="aaron"
+            src={aaron}
+            width={logoSize}
+            className={styles["nav-logo-aaron"]}
+          />
+          <Image
+            alt="personal logo" 
+            src={logo}
+            width={logoSize}
+            className={styles["nav-logo-square"]}
+          />
+          <Image
+            alt="personal logo" 
+            src={keohane}
+            id="keohane"
+            width={logoSize}
+            className={styles["nav-logo-keohane"]}
+          />
+        </Link>
       </nav>
+}
       <div className={styles.glassomorph} style={{opacity: (opacity > 1) ? 1 : opacity}}></div>
     </div>
 

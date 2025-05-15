@@ -9,8 +9,11 @@ export const MyProvider = ({ children }) => {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
+  const [isParRoute, setIsParRoute] = useState(false);
+    const parRoute = () => setIsParRoute(!isParRoute);
+
   return (
-    <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ModalContext.Provider value={{ isOpen, openModal, closeModal, parRoute, isParRoute }}>
       {children}
     </ModalContext.Provider>
   );

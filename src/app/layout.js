@@ -1,4 +1,3 @@
-import Header from '@/components/header';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
@@ -11,7 +10,6 @@ export default function RootLayout({ children, modal }) {
     <html lang='en' >
       <body id="bodyEl" suppressHydrationWarning={true}>
           <MyProvider>
-            <Header></Header>
             {children}
             <div id="modal-root-id">{modal}</div>
           </MyProvider>

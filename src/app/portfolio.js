@@ -6,6 +6,7 @@ import Contact from '@/components/sections/contact'
 import { useEffect, useState } from 'react'
 import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
+import Header from '@/components/header'
 
 const Portfolio = ({allWerkData}) => {
   
@@ -57,6 +58,7 @@ const Portfolio = ({allWerkData}) => {
       </div>
       :
       <main>
+        <Header />
         <div id="fake-body" style={{overflow: 'visible', display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
           <Home/>
           <About/>

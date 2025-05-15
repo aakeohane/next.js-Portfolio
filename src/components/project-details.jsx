@@ -1,4 +1,3 @@
-// 'use client'
 import styles from './project-details.module.css'
 import { useContext } from "react"
 import Footer from "./footer"
@@ -14,15 +13,19 @@ const ProjectDetails = ({slug, parRoute}) => {
   const werk = getWork(slug)
   const modalOpen = useContext(ModalContext)
 
+  const parallelRouteClass = `${styles["modal-container"]} ${parRoute && styles["modal-container-par"]}`;
+
   return (
-    <div className={styles["modal-container"]}>
+    <div className={parallelRouteClass}>
 
       <div className={styles["modal-first-section"]}>
         <div className={styles["title-container"]}>
           <h4>{werk.title}</h4>
           <div className={styles["modal-favicon-container"]}>
+            {/* if favicon image exists, display next to title else nothing */}
             {werk.favicon ? 
             <Image
+
               className={styles["favicon"]}
               alt="favicon for project" 
               src={werk.favicon}
@@ -35,6 +38,7 @@ const ProjectDetails = ({slug, parRoute}) => {
           </div>
         </div>
         <div className={styles["programs-container"]}>
+          {/* loop through images and give a tooltip (title) based on image, love a good switch statement */}
             {werk.programsUsed.map(( program ) => {
               const renderTooltip = () => {
                 switch (program) {
@@ -60,6 +64,7 @@ const ProjectDetails = ({slug, parRoute}) => {
               };
               return (
               <Image
+                key={program}
                 className={styles["program"]}
                 alt="programs Used" 
                 src={program}
@@ -92,8 +97,10 @@ const ProjectDetails = ({slug, parRoute}) => {
         <div className={styles["example-link-container"]}>
           <div className={styles["github-link-container"]}>
             {
+              // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.githubLink !== "object" ?
               <Link
+                key={werk.order}
                 className={styles['example-button']}
                 href={werk.githubLink}
                 target="_blank"
@@ -105,6 +112,7 @@ const ProjectDetails = ({slug, parRoute}) => {
                   <div className={styles['github-link']}>
                     <p>{link[0]}:</p>
                     <Link
+                      key={link[0]}
                       className={styles['example-button']}
                       href={link[1]}
                       target="_blank"
@@ -132,6 +140,7 @@ const ProjectDetails = ({slug, parRoute}) => {
             />
           </div>
           {
+            // check for parallel route and add footer, otherwise wont need footer for modal
             parRoute ? <Footer /> : null
             
           }

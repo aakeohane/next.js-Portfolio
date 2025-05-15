@@ -94,7 +94,7 @@ const werk = [
     "slug": "club-counter",
     "favicon": "",
     "order": "1",
-    "titleDescription": "A chrome extension for use at a club to keep track of number of people and the Wordpress code snippet used to show website vitiors the number",
+    "titleDescription": "A chrome extension for use at a club to keep track of number of people and the Wordpress code snippet used to show website visitors the amount",
     "image": "/images/club-counter-cover.jpg",
     "imageContent": "/images/chrome-extension-counter.png",
     "githubLink": {
@@ -137,7 +137,7 @@ const werk = [
 
 // use this to filter based on some sort of criteria
 const getAllWerkData = () => {
-  // returns project in numberical order and doesnt include any projects that have 0 as an order meaning I dont want to include them in my project list
+  // returns project in numerical order and doesnt include any projects that have 0 as an order meaning I dont want to include them in my project list
   const projectOrder = werk.sort((a,b) => a.order - b.order).filter((item) => item.order !== "0");
   return projectOrder
 }

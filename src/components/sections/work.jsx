@@ -19,22 +19,22 @@ const Work = (props) => {
   };
 
   // takes the above array and sets each project with animation on viewport entry (scrollTrigger)
-  useGSAP(() => {
-    projectRefs.current.forEach((project) => {
-      gsap.set( project , {y: 100, autoAlpha: 0 } );
-      gsap.to(project, {
-        scrollTrigger: {
-          trigger: project,
-          start: 'top 90%',
-          end: 'top 60%',
-          scrub: 1,
-          preventOverlaps: true,
-        },
-        y: 0,
-        autoAlpha: 1,
-      })
-    });
-  }, [])
+  // useGSAP(() => {
+  //   projectRefs.current.forEach((project) => {
+  //     gsap.set( project , {y: 100, autoAlpha: 0 } );
+  //     gsap.to(project, {
+  //       scrollTrigger: {
+  //         trigger: project,
+  //         start: 'top 90%',
+  //         end: 'top 60%',
+  //         scrub: 1,
+  //         preventOverlaps: true,
+  //       },
+  //       y: 0,
+  //       autoAlpha: 1,
+  //     })
+  //   });
+  // }, [])
     
   
   return (
