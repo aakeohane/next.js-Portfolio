@@ -70,22 +70,26 @@ const CustomModal = ( { children } ) => {
 
 
   return (
-      <Modal
-        ref={modalRef}
-        className={styles["my-modal"]}
-        id="myModal"
-        isOpen={!modalRef.current?.open}
-        onAfterOpen={() => openModal()}
-        contentLabel="Work Modal"
-        overlayClassName="my-overlay"
-        onRequestClose={onModalHide}
-        onAfterClose={(e) => {onModalHide(e)}}
-      >
-          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
-            <FaWindowClose size={28}/>
-          </div>
-            {children}
-      </Modal>
+    <div className={styles["modal-container"]}>
+
+        <Modal
+          ref={modalRef}
+          className={styles["my-modal"]}
+          id="myModal"
+          isOpen={!modalRef.current?.open}
+          onAfterOpen={() => openModal()}
+          contentLabel="Work Modal"
+          overlayClassName="my-overlay"
+          onRequestClose={onModalHide}
+          onAfterClose={(e) => {onModalHide(e)}}
+        >
+            <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
+              <FaWindowClose size={28}/>
+            </div>
+              {children}
+        </Modal>
+
+    </div>
   );
 }
 export default CustomModal

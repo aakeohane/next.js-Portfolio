@@ -1,3 +1,11 @@
+.modal-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
 .my-modal {
   position: fixed;
   overflow: hidden;
@@ -27,4 +35,17 @@
   right: 4vw;
   top: 2vh;
   z-index: 100;
+}
+
+@media only screen and (min-width: 480px) {
+  .my-modal {
+    position: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
+    overscroll-behavior: none;
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 12.5%;
+  }
 }
