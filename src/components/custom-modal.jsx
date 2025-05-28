@@ -35,8 +35,8 @@ const CustomModal = ( { children } ) => {
       
       gsap.fromTo(
         "#myModal",
-        {autoAlpha: 1, xPercent: -100 },
-        {autoAlpha: 1, xPercent: 0, duration: 1, ease: 'expo.in'  }
+        {autoAlpha: 1, xPercent: -120 },
+        {autoAlpha: 1, xPercent: 0, ease: 'expo.out'  }
       )
       gsap.fromTo(
         exRef.current,
@@ -49,7 +49,7 @@ const CustomModal = ( { children } ) => {
       gsap.fromTo(
         "#myModal",
         {autoAlpha: 1, xPercent: 0 },
-        {autoAlpha: 1, xPercent: 100, ease: 'expo.out'  }
+        {autoAlpha: 1, xPercent: 120, ease: 'expo.out'  }
       )
     };
   }, [isOpen]);
