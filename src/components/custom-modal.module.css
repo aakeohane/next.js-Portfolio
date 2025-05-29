@@ -26,7 +26,12 @@
 }
 
 .my-overlay {
-  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 51;
 }
 
 /* exit button */
@@ -47,5 +52,18 @@
     height: 100%;
     top: 0;
     left: 12.5%;
+  }
+
+  .my-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(220, 220, 220, 0.15);
+    /* glassomorphism */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 51;
   }
 }

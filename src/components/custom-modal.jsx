@@ -36,12 +36,12 @@ const CustomModal = ( { children } ) => {
       gsap.fromTo(
         "#myModal",
         {autoAlpha: 1, xPercent: -120 },
-        {autoAlpha: 1, xPercent: 0, ease: 'expo.out'  }
+        {autoAlpha: 1, xPercent: 0, duration: 1, ease: 'expo.out'  }
       )
       gsap.fromTo(
         exRef.current,
         {autoAlpha: 0},
-        {autoAlpha: 1, delay: .5}
+        {autoAlpha: 1, delay: .25}
       )
     }
     // Animation for closing the modal
@@ -71,7 +71,6 @@ const CustomModal = ( { children } ) => {
 
   return (
     <div className={styles["modal-container"]}>
-
         <Modal
           ref={modalRef}
           className={styles["my-modal"]}
@@ -79,7 +78,7 @@ const CustomModal = ( { children } ) => {
           isOpen={!modalRef.current?.open}
           onAfterOpen={() => openModal()}
           contentLabel="Work Modal"
-          overlayClassName="my-overlay"
+          overlayClassName={styles["my-overlay"]}
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
         >

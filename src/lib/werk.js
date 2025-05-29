@@ -18,8 +18,8 @@ const werk = [
     
     "githubLink": "https://github.com/aakeohane/React-Pokedex",
     "liveSiteLink": {
-      "newVersion": "https://aakeohane.github.io/React-Pokedex/",
-      "oldVersion": "https://aakeohane.github.io/Pokedex/"},
+      "New Version": "https://aakeohane.github.io/React-Pokedex/",
+      "Old Version": "https://aakeohane.github.io/Pokedex/"},
     "programsUsed": [
       cssIcon,
       jsIcon,
@@ -98,8 +98,8 @@ const werk = [
     "image": "/images/club-counter-cover.jpg",
     "imageContent": "/images/chrome-extension-counter.png",
     "githubLink": {
-      "Chrome Extension": "https://github.com/aakeohane/csd-chrom-extension-frontend",
-      "WordPress Frontend": "https://github.com/aakeohane/club-sd-counter"
+      "Chrome Extension": "https://github.com/aakeohane/club-sd-counter",
+      "WordPress Frontend": "https://github.com/aakeohane/csd-chrom-extension-frontend"
     },
     "liveSiteLink": "https://aakeohane.github.io/csd-chrom-extension-frontend/",
     "programsUsed": [

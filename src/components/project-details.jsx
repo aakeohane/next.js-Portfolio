@@ -97,7 +97,7 @@ const ProjectDetails = ({slug, parRoute}) => {
         <div className={styles["example-link-container"]}>
           <div className={styles["github-link-container"]}>
             {
-              // this is a one off instance to check for multiple links in library werk.js content
+            // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.githubLink !== "object" ?
               <Link
                 key={werk.order}
@@ -122,13 +122,34 @@ const ProjectDetails = ({slug, parRoute}) => {
               )
               })
             }
+          </div>
+          <div className={styles["github-link-container"]}>
+            {
+            // this is a one off instance to check for multiple links in library werk.js content
+            typeof werk.liveSiteLink !== "object" ?
+              <Link
+                className={styles['example-button']}
+                href={werk.liveSiteLink}
+                target="_blank"
+                >Live Site
+              </Link>
+              :
+              Object.entries(werk.liveSiteLink).map(link => {
+                return (
+                  <div className={styles['github-link']}>
+                    <p>{link[0]}:</p>
+                    <Link
+                      key={link[0]}
+                      className={styles['example-button']}
+                      href={link[1]}
+                      target="_blank"
+                    >The Code
+                    </Link>
+                  </div>
+                )
+              })
+            }
             </div>
-          <Link
-            className={styles['example-button']}
-            href={werk.liveSiteLink}
-            target="_blank"
-          >Live Site
-          </Link>
         </div>
         <div className={styles["ink-blot-left-flex-container"]}>
           <div className={styles["ink-blot-left-container"]}>
