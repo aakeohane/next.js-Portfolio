@@ -143,7 +143,7 @@ const ProjectDetails = ({slug, parRoute}) => {
                       className={styles['example-button']}
                       href={link[1]}
                       target="_blank"
-                    >The Code
+                    >Live Site
                     </Link>
                   </div>
                 )
