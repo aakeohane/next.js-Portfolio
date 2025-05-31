@@ -2,12 +2,13 @@ import '@/styles/globals.css';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import { MyProvider } from './context/provider';
+import { Source_Sans_3 } from 'next/font/google';
 
 
 export default function RootLayout({ children, modal }) {  
 
   return (
-    <html lang='en' >
+    <html lang='en' className={`${sourceSans.variable}`} >
       <body id="bodyEl" suppressHydrationWarning={true}>
           <MyProvider>
             {children}
@@ -21,6 +22,13 @@ export default function RootLayout({ children, modal }) {
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
+  
+})
+
+const sourceSans = Source_Sans_3({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sourceSans',
 })
 
 const blastimo = localFont({
@@ -48,4 +56,5 @@ export const blowbrushFontClass = blowbrush.className
 export const blastimoSwashFontClass = blastimoSwash.className
 export const interFontClass = inter.className
 export const bebasNeueFontClass = bebasNeue.className
+// export const sourceSansVar = sourceSans.variable
 

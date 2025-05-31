@@ -25,6 +25,7 @@ html {
   --whale-blue: #04465d;
   --inkblot-black: #222;
   --light-inkblot-black: rgba(51, 51, 51, 0);
+  --font-sourceSans: var(--font-sourceSans);
 }
 
 @font-face {
@@ -108,13 +109,13 @@ body {
 }
 
 h1 {
-  font-family: "BlowBrush", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 40px;
   color: var(--whale-blue);
-  letter-spacing: 2px;
-  line-height: 0.9;
+  /* letter-spacing: 2px; */
+  /* line-height: 0.9; */
   /* weird tailwind h1 override */
-  margin: 0.8em 0 0.1em 0;
+  /* margin: 0.8em 0 0.1em 0; */
 }
 
 h2 {
@@ -141,8 +142,8 @@ h4 {
 }
 
 p {
-  font-family: "Bebas Neue", sans-serif;
-  line-height: calc(0.9rem + 1vw);
+  font-family: var(--font-sourceSans);
+  /* line-height: calc(0.9rem + 1vw); */
   font-size: calc(0.8rem + 1vw);
   /* letter-spacing: 0.035rem; */
   padding: 0px;
