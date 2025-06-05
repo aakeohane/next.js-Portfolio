@@ -61,7 +61,7 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
             src={image}
             sizes="100vw"
             width={300}
-            height={100}
+            height={300}
             onLoad={() => ScrollTrigger.refresh()} // Refresh ScrollTrigger after image loads
             priority
           />

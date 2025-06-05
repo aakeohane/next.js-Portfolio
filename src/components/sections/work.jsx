@@ -1,5 +1,6 @@
 'use client'
 import { bebasNeueFontClass } from "@/app/layout"
+import styles from "./work.module.css"
 import Workcard from "../workcard"
 
 import gsap from 'gsap'
@@ -39,25 +40,27 @@ const Work = (props) => {
   
   return (
     <section id="work" data-section>
-      <h1>
-        My Projects
-      </h1>
-      <p className={`${bebasNeueFontClass}`}></p>
-      <div style={{padding: 0}}>
-        {props.allWerkData.map(({ image, title, slug, description, order }) => {
-          return (
-            <Workcard 
-              key={slug} 
-              windowWidth={props.windowWidth}
-              ref={projectRef}
-              description={description} 
-              image={image} 
-              title={title} 
-              slug={slug} 
-              order={order}
-            />
-          )
-        })}
+      <div className={styles["work-container"]}>
+        <h1>
+          My Projects
+        </h1>
+        <p className={`${bebasNeueFontClass}`}></p>
+        <div className={styles["work-card-container"]}>
+          {props.allWerkData.map(({ image, title, slug, description, order }) => {
+            return (
+              <Workcard 
+                key={slug} 
+                windowWidth={props.windowWidth}
+                ref={projectRef}
+                description={description} 
+                image={image} 
+                title={title} 
+                slug={slug} 
+                order={order}
+              />
+            )
+          })}
+        </div>
       </div>
     </section>
   )
