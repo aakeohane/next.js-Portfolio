@@ -91,8 +91,8 @@ html {
 
 body {
   margin: 0;
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
+  max-width: 100vw;
   /* background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
@@ -113,9 +113,9 @@ h1 {
   font-size: 40px;
   color: var(--whale-blue);
   /* letter-spacing: 2px; */
-  /* line-height: 0.9; */
+  line-height: 1.1;
   /* weird tailwind h1 override */
-  /* margin: 0.8em 0 0.1em 0; */
+  margin: 0 0 0.2em 0;
 }
 
 h2 {
@@ -145,7 +145,7 @@ p {
   font-family: var(--font-sourceSans);
   /* line-height: calc(0.9rem + 1vw); */
   font-size: calc(0.8rem + 1vw);
-  /* letter-spacing: 0.035rem; */
+  letter-spacing: 0.035rem;
   padding: 0px;
   margin: 0px;
 }
@@ -245,7 +245,6 @@ hr {
 @media only screen and (min-width: 480px) {
   section {
     scroll-margin-top: 90px;
-    align-self: center;
     width: 100%;
     max-width: 100vw;
     min-height: calc(var(--vh, 1vh) * 100);
