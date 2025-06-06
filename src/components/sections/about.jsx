@@ -1,6 +1,7 @@
 import styles from './about.module.css'
 import Image from 'next/image';
 import profilePic from 'public/images/professional-portrait-v3-watercolor-v3.png'
+import Link from 'next/link';
 
 const About = () => {
 
@@ -33,6 +34,14 @@ const About = () => {
             living a zero waste lifestyle. When I'm not obsessing about responsive 
             design, you can find me on the tennis courts. Take a peak at my CV below.
           </p>
+          <button className={styles["resume-button"]}>
+            <Link                        
+              href="files/keohane-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Resume
+            </Link>
+          </button>
         </div>
       </div>
     </section>

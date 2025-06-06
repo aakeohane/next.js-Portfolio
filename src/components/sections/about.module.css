@@ -32,6 +32,10 @@
   opacity: 0.9;
 }
 
+.resume-button {
+  margin-top: 1rem;
+}
+
 .drop {
   border-radius: 57% 43% 37% 63% / 45% 52% 48% 55%;
   position: relative;

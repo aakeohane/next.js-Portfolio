@@ -151,13 +151,18 @@ p {
 }
 
 button {
-  font-family: "BlowBrush", sans-serif;
-  /* font-family: "Bebas Neue", sans-serif; */
-  color: var(--inkblot-black);
-  text-decoration: none;
-  border-radius: 1px;
-  border: 2px solid var(--inkblot-black);
-  background-color: transparent;
+  border-radius: 3px;
+  font-family: "Bebas Neue", "Arial Narrow Bold", sans-serif;
+  border: 3px solid var(--inkblot-black);
+  font-size: calc(1rem + 1vw);
+  color: var(--whale-blue);
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  line-height: 1;
+  padding: 10px;
+  cursor: pointer;
+  margin: 7.5px;
 }
 
 section {
