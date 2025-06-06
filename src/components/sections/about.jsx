@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className={styles["content-container"]}>
           <h1 className={styles["title"]}>How did I know I was destined for coding?</h1>
-          <div>
+          <p>
             I am always the first to google the moment someone asks a question.
             Besides my googling talent, my academic background in the sciences 
             has prepared me to problem solve, critically evaluate, and think 
@@ -32,7 +32,7 @@ const About = () => {
             environmental change through my work. I love the ocean, typography and 
             living a zero waste lifestyle. When I'm not obsessing about responsive 
             design, you can find me on the tennis courts. Take a peak at my CV below.
-          </div>
+          </p>
         </div>
       </div>
     </section>

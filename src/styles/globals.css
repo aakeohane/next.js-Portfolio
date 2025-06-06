@@ -110,7 +110,7 @@ body {
 
 h1 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 40px;
+  font-size: calc(2rem + 1vw);
   color: var(--whale-blue);
   /* letter-spacing: 2px; */
   line-height: 1.1;
