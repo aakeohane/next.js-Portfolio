@@ -1,3 +1,31 @@
-.jelly {
-  opacity: 0.8;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1.5rem;
+  width: 100%;
+}
+
+.twitter-icon:hover {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(76%) saturate(3981%)
+    hue-rotate(176deg) brightness(99%) contrast(93%);
+}
+
+.github-icon:hover {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(63%) saturate(1018%)
+    hue-rotate(205deg) brightness(91%) contrast(86%);
+}
+
+.linkedin-icon:hover {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(58%) saturate(7208%)
+    hue-rotate(182deg) brightness(90%) contrast(89%);
 }

@@ -1,3 +1,23 @@
+.footer-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.footer-container div {
+  font-size: 1.6rem;
+  color: var(--inkblot-black);
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 0.5rem;
+}
+
 .twitter-icon path {
   transition: 0.9s fill;
 }
