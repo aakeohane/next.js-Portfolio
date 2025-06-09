@@ -36,6 +36,7 @@ html {
 @font-face {
   font-family: "Bebas Neue";
   src: url("../../public/fonts/BebasNeue-Regular.ttf");
+  font-weight: 900;
 }
 
 @font-face {
@@ -146,8 +147,7 @@ p {
   /* line-height: calc(0.9rem + 1vw); */
   font-size: calc(0.8rem + 1vw);
   letter-spacing: 0.035rem;
-  padding: 0px;
-  margin: 0px;
+  padding: 10px 0;
 }
 
 button {
