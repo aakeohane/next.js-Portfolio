@@ -2,7 +2,7 @@ import styles from './home.module.css'
 import gsap from 'gsap'
 import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
 import { useGSAP } from '@gsap/react';
-import watercolorWhale from 'public/images/whale-watercolor.png'
+import watercolorWhale from 'public/images/jelly.png'
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -62,7 +62,6 @@ const Home = () => {
             <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
           </div>
           
-          <div className={styles["right-container"]}>
           <div className={styles["whale-container"]}>
             <Image
               alt="watercolor whale" 
@@ -99,7 +98,7 @@ const Home = () => {
 
             </Link>
             </div>
-          </div> 
+          
     </section>
   )
 }

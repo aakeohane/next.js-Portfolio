@@ -1,27 +1,33 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   color: var(--whale-blue);
-  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .title-container {
-  margin-bottom: 1vh;
+  position: relative;
+  top: 20vh;
 }
 
 .whale-container {
-  position: relative;
-  height: 35vh;
+  /* overflow: hidden; */
+  /* transform: translate(50vw, 50vh); */
+  /* margin: 0 -20px 0 -20px; */
+  object-fit: cover;
+  position: absolute;
+  width: 100vw;
+  margin: 0 -20px 0 -20px;
 }
 
 .whale {
   position: relative;
   z-index: -1;
-  height: 100%;
-  object-fit: contain;
   opacity: 0.8;
-  transform: scaleX(-1);
+  left: 150px;
+  top: 100px;
 }
 
 .developer {

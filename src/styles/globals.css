@@ -173,7 +173,6 @@ section {
   min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;
   padding-bottom: 2.5vh;
-  /* margin-bottom: 5vh; */
 }
 
 a {
