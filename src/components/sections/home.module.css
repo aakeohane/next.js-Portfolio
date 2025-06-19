@@ -5,29 +5,29 @@
   color: var(--whale-blue);
   position: relative;
   overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
+  padding: 0 20px 0 20px;
 }
 
 .title-container {
   position: relative;
-  top: 20vh;
+  top: 40vh;
 }
 
 .whale-container {
-  /* overflow: hidden; */
-  /* transform: translate(50vw, 50vh); */
-  /* margin: 0 -20px 0 -20px; */
-  object-fit: cover;
   position: absolute;
+  z-index: -10;
+  right: -100%;
+  transform: translateX(-180px);
+  top: 10%;
+  height: 100vh;
   width: 100vw;
-  margin: 0 -20px 0 -20px;
 }
 
 .whale {
   position: relative;
-  z-index: -1;
   opacity: 0.8;
-  left: 150px;
-  top: 100px;
 }
 
 .developer {
@@ -102,20 +102,6 @@
   z-index: -1;
 }
 
-.workbttn {
-  float: right;
-  border-radius: 3px;
-  border: 3px solid var(--inkblot-black);
-  font-size: calc(2rem + 1vw);
-  color: var(--inkblot-black);
-  height: auto;
-  line-height: 1;
-  padding: 0 4px;
-  padding-top: 8px;
-  margin: 0.5rem 1rem 0 0;
-  cursor: pointer;
-}
-
 .workBttn {
   float: right;
   color: var(--inkblot-black);
@@ -126,24 +112,18 @@
 /* Media Queries */
 
 @media only screen and (min-width: 750px) {
-  .main-content {
+  /* .main-content {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: flex-end;
-  }
+  } */
 
   .right-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-  }
-
-  .whale-container {
-    position: relative;
-    height: 100%;
-    transform: translate(-50%, 5%);
   }
 
   .bio {

@@ -168,7 +168,7 @@ button {
 section {
   scroll-margin-top: 90px;
   align-self: center;
-  width: 100%;
+  width: 100vw;
   max-width: 500px;
   min-height: calc(var(--vh, 1vh) * 100);
   height: fit-content;

@@ -55,49 +55,48 @@ const Home = () => {
   
   
   return (
-    <section id="home" data-sectio className={styles["main-content"]}>
-          <div className={styles["title-container"]}>
-            <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
-            <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
-            <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
-          </div>
-          
-          <div className={styles["whale-container"]}>
-            <Image
-              alt="watercolor whale" 
-              src={watercolorWhale}
-              className={styles["whale"]}
-              priority={true}
-              id="whale"
-              // fill={true}
-            />
-          </div>
-          <div className={styles["bio-container"]}>
-            <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
-              A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
-              you can be sure I will think imaginatively when finding yours. 
-            </p>
-            {/* <Link
-              onClick={(e) => smoothLinkClick(e, '#work')}
-              id="work-bttn"
-              className={`${styles['workbttn']} ${blowbrushFontClass}`}
-              href="/#work"
-            >Work</Link> */}
-            <Link
-              onClick={(e) => smoothLinkClick(e, '#work')}
-              id="work-bttn"
-              className={styles['workBttn']}
-              href="/#work"
-            ><Image
-            alt="watercolor work button" 
-            src={inkedWorkBttn}
-            id="workbttn"
-            width={100}
-            // fill={true}
+    <section id="home" data-section>
+      <div  className={styles["main-content"]}>
+        <div className={styles["title-container"]}>
+          <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
+          <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
+          <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
+        </div>
+        
+        <div className={styles["whale-container"]}>
+          <Image
+            alt="watercolor whale" 
+            src={watercolorWhale}
+            className={styles["whale"]}
+            priority={true}
+            id="whale"
           />
-
-            </Link>
-            </div>
+        </div>
+        <div className={styles["bio-container"]}>
+          <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
+            A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
+            you can be sure I will think imaginatively when finding yours. 
+          </p>
+          {/* <Link
+            onClick={(e) => smoothLinkClick(e, '#work')}
+            id="work-bttn"
+            className={`${styles['workbttn']} ${blowbrushFontClass}`}
+            href="/#work"
+          >Work</Link> */}
+          <Link
+            onClick={(e) => smoothLinkClick(e, '#work')}
+            id="work-bttn"
+            className={styles['workBttn']}
+            href="/#work"
+          ><Image
+          alt="watercolor work button" 
+          src={inkedWorkBttn}
+          id="workbttn"
+          width={100}
+          />
+          </Link>
+        </div>
+      </div>
           
     </section>
   )
