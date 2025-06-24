@@ -8,6 +8,11 @@ import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
 import Header from '@/components/header'
 
+import watercolorWhale from 'public/images/jelly.png'
+import Image from 'next/image';
+
+import styles from './portfolio.module.css'
+
 const Portfolio = ({allWerkData}) => {
   
 
@@ -59,8 +64,17 @@ const Portfolio = ({allWerkData}) => {
       :
       <main>
         <Header />
-        <div id="fake-body" style={{ display: 'flex', flexDirection: 'column', margin: "0 20px 0 20px"}}>
+        <div id="fake-body" style={{ overflow: "hidden", position: "relative", width: "100vw", display: 'flex', flexDirection: 'column'}}>
           <Home/>
+          <div className={styles["whale-container"]}>
+          <Image
+            alt="watercolor whale" 
+            src={watercolorWhale}
+            className={styles["whale"]}
+            priority={true}
+            id="whale"
+          />
+        </div>
           <About/>
           <Work allWerkData={allWerkData} windowWidth={size.width}/>
           <Contact/>

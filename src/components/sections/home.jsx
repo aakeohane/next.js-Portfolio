@@ -55,7 +55,7 @@ const Home = () => {
   
   
   return (
-    <section id="home" data-section>
+    <section id="home" data-section style={{}}>
       <div  className={styles["main-content"]}>
         <div className={styles["title-container"]}>
           <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
@@ -63,7 +63,7 @@ const Home = () => {
           <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
         </div>
         
-        <div className={styles["whale-container"]}>
+        {/* <div className={styles["whale-container"]}>
           <Image
             alt="watercolor whale" 
             src={watercolorWhale}
@@ -71,7 +71,7 @@ const Home = () => {
             priority={true}
             id="whale"
           />
-        </div>
+        </div> */}
         <div className={styles["bio-container"]}>
           <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
             A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 

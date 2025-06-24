@@ -4,30 +4,15 @@
   justify-content: space-between;
   color: var(--whale-blue);
   position: relative;
-  overflow: hidden;
   height: 100vh;
+  height: 100svh;
   width: 100vw;
   padding: 0 20px 0 20px;
 }
 
 .title-container {
   position: relative;
-  top: 40vh;
-}
-
-.whale-container {
-  position: absolute;
-  z-index: -10;
-  right: -100%;
-  transform: translateX(-180px);
-  top: 10%;
-  height: 100vh;
-  width: 100vw;
-}
-
-.whale {
-  position: relative;
-  opacity: 0.8;
+  top: 30vh;
 }
 
 .developer {
@@ -103,7 +88,7 @@
 }
 
 .workBttn {
-  float: right;
+  float: left;
   color: var(--inkblot-black);
   margin: 0.5rem 1rem 0 0;
   cursor: pointer;
