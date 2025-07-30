@@ -23,7 +23,7 @@ const About = () => {
         </div>
         <div className={styles["content-container"]}>
           <h1 className={styles["title"]}>How did I know I was destined for coding?</h1>
-          <p className={styles["blur-and-threshold"]}>
+          <p className={styles["filter"]}>
             I am always the first to google the moment someone asks a question.
             Besides my googling talent, my academic background in the sciences 
             has prepared me to problem solve, critically evaluate, and think 
@@ -34,13 +34,21 @@ const About = () => {
             living a zero waste lifestyle. When I'm not obsessing about responsive 
             design, you can find me on the tennis courts. Take a peak at my CV below.
           </p>
-          <svg>
-            <filter id="filter">
-              <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 0 0 0 1 1 1 1 1 1" />
-              </feComponentTransfer>
-            </filter>
-          </svg>
+
+{/* lofi inkbleed text effect for paragaph */}
+<svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="pFilter">
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 0 0 1 1 1 1 1 1" />
+      </feComponentTransfer>
+    </filter>
+    <filter id="scribbleBorder">
+      <feTurbulence type="fractalNoise" baseFrequency=".1" numOctaves="2" />
+      <feDisplacementMap in="SourceGraphic" scale="4" />
+    </filter>
+  </defs>
+</svg>
           <button className={styles["resume-button"]}>
             <Link                        
               href="files/keohane-resume.pdf"

@@ -77,24 +77,13 @@ const Home = () => {
             A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
             you can be sure I will think imaginatively when finding yours. 
           </p>
-          {/* <Link
-            onClick={(e) => smoothLinkClick(e, '#work')}
-            id="work-bttn"
-            className={`${styles['workbttn']} ${blowbrushFontClass}`}
-            href="/#work"
-          >Work</Link> */}
-          <Link
-            onClick={(e) => smoothLinkClick(e, '#work')}
-            id="work-bttn"
-            className={styles['workBttn']}
-            href="/#work"
-          ><Image
-          alt="watercolor work button" 
-          src={inkedWorkBttn}
-          id="workbttn"
-          width={100}
-          />
-          </Link>
+          <button className={styles['work-button']} id="work-bttn">
+            <Link
+              onClick={(e) => smoothLinkClick(e, '#work')}
+              href="/#work"
+            >Work
+            </Link>
+          </button>
         </div>
       </div>
           

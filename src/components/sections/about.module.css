@@ -1,5 +1,5 @@
-.blur-and-threshold {
-  filter: blur(0.5px) url(#filter);
+.filter {
+  filter: blur(0.5px) url(#pFilter);
 }
 
 .about-container {
@@ -37,6 +37,16 @@
 
 .resume-button {
   margin-top: 1rem;
+  position: relative;
+}
+
+.resume-button::before {
+  content: "";
+  border: 2px solid var(--whale-blue);
+  inset: 0;
+  position: absolute;
+  filter: url(#scribbleBorder);
+  z-index: -1;
 }
 
 .drop {

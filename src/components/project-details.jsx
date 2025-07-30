@@ -93,31 +93,33 @@ const ProjectDetails = ({slug, parRoute}) => {
       </div>
 
       <div className={styles["modal-third-section"]}>
-        <p>{werk.description}</p>
+        <p className={styles["project-description"]}>{werk.description}</p>
         <div className={styles["example-link-container"]}>
           <div className={styles["github-link-container"]}>
             {
             // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.githubLink !== "object" ?
+            <button className={styles['example-button']}>
               <Link
                 key={werk.order}
-                className={styles['example-button']}
                 href={werk.githubLink}
                 target="_blank"
               >The Code
               </Link>
+            </button>
               :
               Object.entries(werk.githubLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
                     <p>{link[0]}:</p>
-                    <Link
-                      key={link[0]}
-                      className={styles['example-button']}
-                      href={link[1]}
-                      target="_blank"
-                    >The Code
-                    </Link>
+                    <button className={styles['example-button']}>
+                      <Link
+                        key={link[0]}
+                        href={link[1]}
+                        target="_blank"
+                      >The Code
+                      </Link>
+                    </button>
                   </div>
               )
               })
@@ -127,24 +129,26 @@ const ProjectDetails = ({slug, parRoute}) => {
             {
             // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.liveSiteLink !== "object" ?
+            <button className={styles['example-button']}>
               <Link
-                className={styles['example-button']}
                 href={werk.liveSiteLink}
                 target="_blank"
                 >Live Site
               </Link>
+            </button>
               :
               Object.entries(werk.liveSiteLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
                     <p>{link[0]}:</p>
-                    <Link
-                      key={link[0]}
-                      className={styles['example-button']}
-                      href={link[1]}
-                      target="_blank"
-                    >Live Site
-                    </Link>
+                    <button className={styles['example-button']}>
+                      <Link
+                        key={link[0]}
+                        href={link[1]}
+                        target="_blank"
+                      >Live Site
+                      </Link>
+                    </button>
                   </div>
                 )
               })

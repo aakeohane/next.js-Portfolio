@@ -87,11 +87,18 @@
   z-index: -1;
 }
 
-.workBttn {
-  float: left;
-  color: var(--inkblot-black);
-  margin: 0.5rem 1rem 0 0;
-  cursor: pointer;
+.work-button {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.work-button::before {
+  content: "";
+  border: 2px solid var(--whale-blue);
+  inset: 0;
+  position: absolute;
+  filter: url(#scribbleBorder);
+  z-index: -1;
 }
 
 /* Media Queries */

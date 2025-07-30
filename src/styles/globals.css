@@ -44,6 +44,11 @@ html {
   src: url("../../public/fonts/Blastimo.ttf");
 }
 
+@font-face {
+  font-family: "Buckwheat";
+  src: url("../../public/fonts/Buckwheat TC Sans Painted.otf");
+}
+
 #globalLoader {
   position: fixed;
   z-index: 9999;
@@ -110,35 +115,35 @@ body {
 }
 
 h1 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Buckwheat", sans-serif;
   font-size: calc(2rem + 1vw);
   color: var(--whale-blue);
-  /* letter-spacing: 2px; */
+  letter-spacing: -2px;
   line-height: 1.1;
   /* weird tailwind h1 override */
   margin: 0 0 0.2em 0;
 }
 
 h2 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Buckwheat", sans-serif;
   color: var(--whale-blue);
   font-size: 35px;
-  letter-spacing: 1px;
+  letter-spacing: 5px;
 }
 
 h3 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Buckwheat", sans-serif;
   color: var(--whale-yellow);
   font-size: 28px;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   margin: 0.2em 0;
 }
 
 h4 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Buckwheat", sans-serif;
   color: var(--whale-blue);
   font-size: calc(1.5rem + 1vw);
-  line-height: calc(1.5rem + 1vw);
+  /* line-height: calc(1.5rem + 1vw); */
   margin: 0.2em 0;
 }
 
@@ -152,9 +157,9 @@ p {
 
 button {
   border-radius: 3px;
-  font-family: "Bebas Neue", "Arial Narrow Bold", sans-serif;
-  border: 3px solid var(--inkblot-black);
-  font-size: calc(1rem + 1vw);
+  font-family: "Buckwheat", "Arial Narrow Bold", sans-serif;
+  border: 1px solid var(--whale-yellow);
+  font-size: calc(1rem + 2vw);
   color: var(--whale-blue);
   height: fit-content;
   width: fit-content;
@@ -163,6 +168,7 @@ button {
   padding: 10px;
   cursor: pointer;
   margin: 7.5px;
+  letter-spacing: -3px;
 }
 
 section {
