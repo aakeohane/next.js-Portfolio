@@ -2,9 +2,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './navbar.module.css'
-import logo from 'public/images/initial.png'
-import aaron from 'public/images/only-aaron.png'
-import keohane from 'public/images/only-keohane.png'
+import NameBody from 'public/images/BodyOfName.png'
+import InitialA from 'public/images/Initial-A.png'
+import InitialK from 'public/images/Initial-K.png'
 import scrollToElement from 'scroll-to-element'
 import { blastimoFontClass } from '@/app/layout'
 
@@ -14,12 +14,11 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { ModalContext } from '@/app/context/provider'
 
-const Navbar = () => {
+const Navbar = (props) => {
 // using context here similar to redux or global state management, had to go 
 // client side in order for navbar component to recognize when modal was open
   const { isOpen, isParRoute, parRoute } = useContext(ModalContext)
 
-  console.log(isParRoute)
 
   useGSAP(() => {
     
@@ -74,28 +73,26 @@ const Navbar = () => {
         autoAlpha: 0
       }),
   
-      gsap.set("#aaron", {xPercent: 0, autoAlpha: 1})
-      gsap.set("#keohane", {xPercent: 0, autoAlpha: 1}, )
-  
-      gsap.to("#aaron", {
-        xPercent: 100,
+      gsap.set("#K", {xPercent: 0, autoAlpha: 1}, )
+      gsap.set("#letters", {xPercent: 0, autoAlpha: 1}, )
+
+
+      gsap.to("#letters", {
         autoAlpha: 0,
         scrollTrigger: {
-          trigger: "#aaron",
-          start: 100,
-          end: 350,
+          trigger: "#letters",
+          start: 50,
+          end: 200,
           scrub: true,
-          
         }
       });
 
-      gsap.to("#keohane", {
-        xPercent: -150,
-        autoAlpha: 0,
+      gsap.to("#K", {
+        xPercent: -34,
         scrollTrigger: {
-          trigger: "#keohane",
-          start: 100,
-          end: 350,
+          trigger: "#K",
+          start: 125,
+          end: 250,
           scrub: true,
         }
       });
@@ -118,8 +115,9 @@ const Navbar = () => {
     color: 'var(--whale-yellow)',
     transition: '2s'
   };
+
+  let logoSize = (props.windowWidth > 500) ? 200 : 150
   
-  const logoSize = 65
 
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up
   
@@ -136,7 +134,9 @@ const Navbar = () => {
   }
   
   return (
-    <div id='my-nav' className={blastimoFontClass}>
+    <div id='my-nav' 
+    className={blastimoFontClass}
+    >
       { !isParRoute ?
       <nav>
         <Link 
@@ -146,23 +146,24 @@ const Navbar = () => {
         >
           <Image
             alt="personal logo" 
-            id="aaron"
-            src={aaron}
+            id="A"
+            src={InitialA}
             width={logoSize}
-            className={styles["nav-logo-aaron"]}
+            className={styles["nav-logo-A"]}
           />
           <Image
             alt="personal logo" 
-            src={logo}
+            id="letters"
+            src={NameBody}
             width={logoSize}
-            className={styles["nav-logo-square"]}
+            className={styles["nav-logo-letters"]}
           />
           <Image
             alt="personal logo" 
-            src={keohane}
-            id="keohane"
+            src={InitialK}
+            id="K"
             width={logoSize}
-            className={styles["nav-logo-keohane"]}
+            className={styles["nav-logo-K"]}
           />
         </Link>
         <Link 

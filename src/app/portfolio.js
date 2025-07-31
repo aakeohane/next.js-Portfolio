@@ -63,7 +63,7 @@ const Portfolio = ({allWerkData}) => {
       </div>
       :
       <main>
-        <Header />
+        <Header windowWidth={size.width} />
         <div id="fake-body" style={{ overflow: "hidden", position: "relative", width: "100vw", display: 'flex', flexDirection: 'column'}}>
           <Home/>
           <div className={styles["whale-container"]}>

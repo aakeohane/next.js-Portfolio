@@ -6,7 +6,6 @@ import watercolorWhale from 'public/images/jelly.png'
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
 import Image from 'next/image';
-import inkedWorkBttn from 'public/images/Work_button-inked.png'
 
 
 const Home = () => {
@@ -77,10 +76,11 @@ const Home = () => {
             A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
             you can be sure I will think imaginatively when finding yours. 
           </p>
-          <button className={styles['work-button']} id="work-bttn">
+          <button id="work-bttn" className={styles['work-button']} >
             <Link
               onClick={(e) => smoothLinkClick(e, '#work')}
               href="/#work"
+              
             >Work
             </Link>
           </button>

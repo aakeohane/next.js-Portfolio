@@ -1,10 +1,7 @@
 .contact-container {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 20px 0 20px;
+  /* height: fit-content; */
+  padding: 20px 20px 0 20px;
 }
 
 .main-content {
@@ -15,6 +12,14 @@
   margin: auto;
 }
 
+.sun-emoji {
+  transform: rotate(70deg);
+}
+
+.paragraph-font {
+  filter: blur(0.5px) url(#pFilter);
+}
+
 .social-icons-container {
   display: flex;
   justify-content: center;
@@ -22,6 +27,19 @@
   gap: 0 1.5rem;
   width: 100%;
   padding-top: 20px;
+}
+
+.resume-button {
+  position: relative;
+}
+
+.resume-button::before {
+  content: "";
+  border: 2px solid var(--whale-blue);
+  inset: 0;
+  position: absolute;
+  filter: url(#scribbleBorder);
+  z-index: -1;
 }
 
 .twitter-icon:hover {

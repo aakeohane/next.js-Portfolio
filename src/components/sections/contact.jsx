@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import styles from './contact.module.css'
 import Image from "next/image";
+import name from "public/images/FullName.png"
+import sun from "public/images/Sun-watercolor.png"
+import whale from "public/images/whale-watercolor.png"
 
 const Contact = () => {
   const socialIconSize = "70"
@@ -11,11 +14,28 @@ const Contact = () => {
         Contact
       </h1>
       <div className={styles["main-content"]}>
-        <p>
+      <Image 
+          className={styles["whale"]}  
+          src={whale}
+          height={200}
+          alt="whale"
+        />
+        <p className={styles["paragraph-font"]}>
         I am available for full-time employment, collaboration and freelance work.
         </p>
-        <h4>Aaron Keohane</h4>
-        <p>San Diego, California ☀️</p>
+        <Image 
+          src={name}
+          width={300}
+          height={300}
+          alt="My Name"
+        />
+        <p className={styles["paragraph-font"]}>San Diego, California</p>
+        <Image 
+          className={styles["sun-emoji"]}  
+          src={sun}
+          width={100}
+          alt="Sun"
+        />
         <button className={styles["resume-button"]}>
             <Link                       
               href="files/keohane-resume.pdf"
@@ -24,7 +44,7 @@ const Contact = () => {
             >Resume
             </Link>
         </button>
-        <div className={styles["social-icons-container"]}>
+        {/* <div className={styles["social-icons-container"]}>
             <a
               href="https://twitter.com/Aakeocaine"
               aria-label="Twitter"
@@ -67,7 +87,7 @@ const Contact = () => {
                 alt="LinkedIn Logo"
               />
             </a>
-          </div>
+          </div> */}
         </div>
     </section>
   )
