@@ -41,6 +41,7 @@
 @media screen and (min-width: 700px) {
   .workcard-title {
     opacity: 0;
+    height: 5rem;
   }
 
   .workcard-image {

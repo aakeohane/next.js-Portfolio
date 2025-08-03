@@ -11,8 +11,8 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
   const [bodyLocked, setBodyLocked] = useState(false)
 
 
-  // const handleMouseEnter = () => setHover(true);
-  // const handleMouseLeave = () => setHover(false);
+  const handleMouseEnter = () => setHover(true);
+  const handleMouseLeave = () => setHover(false);
 
 
 
@@ -48,9 +48,9 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
         key={order}
         className={styles["link-container"]}
         href={`projects/${slug}`}
-        // onMouseEnter={handleMouseEnter}
+        onMouseEnter={handleMouseEnter}
         onClick={handleClick}
-        // onMouseLeave={handleMouseLeave}
+        onMouseLeave={handleMouseLeave}
         scroll={false}
         shallow={true}>
         <div ref={ref} className={styles["workcard-content-container"]} style={hoverContainer} >
