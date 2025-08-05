@@ -48,9 +48,6 @@ const Home = () => {
       })
 
   }, [])
-
-
-  
   
   return (
     <section id="home" data-section style={{}}>
@@ -60,16 +57,7 @@ const Home = () => {
           <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
           <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br>
         </div>
-        
-        {/* <div className={styles["whale-container"]}>
-          <Image
-            alt="watercolor whale" 
-            src={watercolorWhale}
-            className={styles["whale"]}
-            priority={true}
-            id="whale"
-          />
-        </div> */}
+      
         <div className={styles["bio-container"]}>
           <p id="biography" className={`${bebasNeueFontClass} ${styles.bio}`}>
             A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
@@ -79,8 +67,7 @@ const Home = () => {
             <Link
               onClick={(e) => smoothLinkClick(e, '#work')}
               href="/#work"
-              
-            >Work
+            >Projects
             </Link>
           </button>
         </div>

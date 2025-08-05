@@ -156,17 +156,16 @@ p {
 
 button {
   border-radius: 3px;
-  font-family: "Buckwheat", "Arial Narrow Bold", sans-serif;
+  font-family: "Blastimo", "Arial Narrow Bold", sans-serif;
   border: 1px solid var(--whale-yellow);
-  font-size: calc(1rem + 1vw);
-  color: var(--whale-blue);
+  font-size: calc(1.5rem + 1vw);
+  color: var(--inkblot-black);
   height: fit-content;
   width: fit-content;
   text-align: center;
   line-height: 1;
   padding: 10px;
-  margin: 7.5px;
-  letter-spacing: -3px;
+  letter-spacing: 1px;
   transition: background-color 2s;
 }
 
