@@ -97,6 +97,33 @@ const Navbar = (props) => {
         }
       });
 
+      // fromTo needed so that my logo name can reappear on contact page
+      gsap.fromTo("#K", {
+        xPercent: -34
+      }, {
+        xPercent: 0,
+        // immediate render false so animation doesnt reset
+        immediateRender: false,
+        scrollTrigger: {
+          start: 2500,
+          end: 2625,
+          scrub: true
+        }
+      })
+
+      gsap.fromTo("#letters", {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1,
+        immediateRender: false,
+        scrollTrigger: {
+          start: 2575,
+          end: 2725,
+          scrub: true
+        }
+      })
+
+
     // must do this for proper webpack build if not 'client' component
     if (typeof window !== "undefined") {
       window.onscroll = () => {
