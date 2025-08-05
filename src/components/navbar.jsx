@@ -105,11 +105,8 @@ const Navbar = (props) => {
         // immediate render false so animation doesnt reset
         immediateRender: false,
         scrollTrigger: {
-          trigger: '#contact',
-          // start: 2500,
-          // end: 2625,
-          start: "center",
-          end: "bottom center",
+          start: 2500,
+          end: 2625,
           scrub: true
         }
       })
@@ -147,7 +144,6 @@ const Navbar = (props) => {
   };
 
   let logoSize = (props.windowWidth > 500) ? 200 : 150
-  console.log(props.xPosition)
   
 
   let opacity = offset * .0035 //increases glassomorphism behind nav as you scroll up

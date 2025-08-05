@@ -148,17 +148,16 @@ h4 {
 
 p {
   font-family: var(--font-sourceSans);
-  /* line-height: calc(0.9rem + 1vw); */
+  color: var(--inkblot-black);
   font-size: calc(0.8rem + 1vw);
-  letter-spacing: 0.035rem;
   padding: 10px 0;
+  filter: blur(0.5px) url(#pFilter);
 }
 
 button {
   border-radius: 3px;
   font-family: "Blastimo", "Arial Narrow Bold", sans-serif;
-  border: 1px solid var(--whale-yellow);
-  font-size: calc(1.5rem + 1vw);
+  font-size: calc(1.25rem + 1vw);
   color: var(--inkblot-black);
   height: fit-content;
   width: fit-content;
@@ -167,11 +166,21 @@ button {
   padding: 10px;
   letter-spacing: 1px;
   transition: background-color 2s;
+  position: relative;
 }
 
 button:hover {
   background-color: rgba(230, 179, 66, 0.2);
   transition: background-color 2s;
+}
+
+button::after {
+  content: "";
+  border: 3px solid var(--whale-yellow);
+  inset: 0;
+  position: absolute;
+  filter: url(#scribbleBorder);
+  z-index: -2;
 }
 
 section {
