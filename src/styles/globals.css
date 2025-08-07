@@ -66,9 +66,9 @@ html {
 }
 #loader {
   font-weight: bold;
-  font-family: "Bebas Neue", "Arial Narrow Bold", sans-serif;
+  font-family: "Buckwheat", "Arial Narrow Bold", sans-serif;
   font-size: 40px;
-  color: var(--whale-yellow);
+  color: var(--whale-blue);
   animation: load 1s linear infinite alternate;
 }
 
@@ -128,7 +128,7 @@ h1 {
 h2 {
   font-family: "Buckwheat", sans-serif;
   color: var(--whale-blue);
-  font-size: calc(1.5rem + 1vw);
+  font-size: calc(1.2rem + 1vw);
   line-height: 1.1;
   margin: 0.2em 0;
   letter-spacing: -0.05em;

@@ -22,7 +22,7 @@
 
 .title-container {
   display: flex;
-  justify-content: column;
+  justify-content: row;
   align-items: center;
   margin-top: 2.5vh;
 }
