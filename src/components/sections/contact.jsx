@@ -44,7 +44,7 @@ const Contact = () => {
             >Resume
             </Link>
         </button>
-        {/* <div className={styles["social-icons-container"]}>
+        <div className={styles["social-icons-container"]}>
             <a
               href="https://twitter.com/Aakeocaine"
               aria-label="Twitter"
@@ -87,7 +87,7 @@ const Contact = () => {
                 alt="LinkedIn Logo"
               />
             </a>
-          </div> */}
+          </div>
         </div>
     </section>
   )

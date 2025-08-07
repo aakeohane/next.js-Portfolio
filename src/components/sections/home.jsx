@@ -1,10 +1,8 @@
 import styles from './home.module.css'
 import gsap from 'gsap'
-import { bebasNeueFontClass, blastimoFontClass, blowbrushFontClass } from '@/app/layout';
 import { useGSAP } from '@gsap/react';
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
-import Image from 'next/image';
 
 
 const Home = () => {

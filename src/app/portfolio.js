@@ -8,7 +8,7 @@ import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
 import Header from '@/components/header'
 
-import watercolorWhale from 'public/images/jelly.png'
+import watercolorJelly from 'public/images/jelly.png'
 import Image from 'next/image';
 
 import styles from './portfolio.module.css'
@@ -66,13 +66,13 @@ const Portfolio = ({allWerkData}) => {
         <Header windowWidth={size.width} />
         <div id="fake-body" style={{ overflow: "hidden", position: "relative", width: "100vw", display: 'flex', flexDirection: 'column'}}>
           <Home/>
-          <div className={styles["whale-container"]}>
+          <div className={styles["jelly-container"]}>
           <Image
-            alt="watercolor whale" 
-            src={watercolorWhale}
-            className={styles["whale"]}
+            alt="watercolor jelly" 
+            src={watercolorJelly}
+            className={styles["jelly"]}
             priority={true}
-            id="whale"
+            id="jelly"
           />
         </div>
           <About/>

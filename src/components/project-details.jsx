@@ -20,7 +20,7 @@ const ProjectDetails = ({slug, parRoute}) => {
 
       <div className={styles["modal-first-section"]}>
         <div className={styles["title-container"]}>
-          <h4>{werk.title}</h4>
+          <h2>{werk.title}</h2>
           <div className={styles["modal-favicon-container"]}>
             {/* if favicon image exists, display next to title else nothing */}
             {werk.favicon ? 

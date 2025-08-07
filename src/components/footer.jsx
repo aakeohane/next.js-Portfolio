@@ -13,32 +13,6 @@ const Footer = () => {
         <div style={{position: "relative", marginLeft: "20px"}} className={`${blastimoFontClass}`}>
           <span style={{fontSize: "2rem", position: "absolute", left: "-17px", top: "-1px"}}>©</span><span style={{fontSize: "1.25rem"}}>{new Date().getFullYear()}</span> Aaron Keohane
         </div>
-        <div className={styles["social-icons-container"]}>
-          <a
-            href="https://twitter.com/Aakeocaine"
-            aria-label="Twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TwitterIcon className={styles["twitter-icon"]} />
-          </a>
-          <a
-            href="https://github.com/aakeohane"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubIcon className={styles["github-icon"]} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aaron-keohane-47112430/"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinIcon className={styles["linkedin-icon"]} />
-          </a>
-        </div>
       </div>
     </>
   )

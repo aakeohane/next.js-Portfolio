@@ -93,15 +93,6 @@
   position: relative;
 }
 
-.example-button::before {
-  content: "";
-  border: 2px solid var(--whale-blue);
-  inset: 0;
-  position: absolute;
-  filter: url(#scribbleBorder);
-  z-index: -1;
-}
-
 .github-link-container {
   display: flex;
   flex-direction: column;

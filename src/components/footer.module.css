@@ -8,36 +8,5 @@
 
 .footer-container div {
   font-size: 1.6rem;
-  color: var(--inkblot-black);
-}
-
-.social-icons-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0 0.5rem;
-}
-
-.twitter-icon path {
-  transition: 0.9s fill;
-}
-
-.twitter-icon:hover path {
-  fill: #1da1f2;
-}
-
-.github-icon path {
-  transition: 0.9s fill;
-}
-
-.github-icon:hover path {
-  fill: #6879d9;
-}
-
-.linkedin-icon path {
-  transition: 0.9s fill;
-}
-
-.linkedin-icon:hover path {
-  fill: #0e76a8;
+  color: var(--whale-blue);
 }

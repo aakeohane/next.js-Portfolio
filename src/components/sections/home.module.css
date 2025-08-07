@@ -78,28 +78,26 @@
   width: 100%;
 }
 
+.bio-container {
+  padding-bottom: 1rem;
+}
+
 .bio {
-  font-size: calc(1.1rem + 1vw);
-  line-height: 1.1;
-  color: var(--inkblot-black);
-  text-indent: 50%;
+  font-size: calc(0.7rem + 1vw);
+  line-height: 1.3;
+  letter-spacing: -0.05em;
+  color: var(--whale-blue);
+  text-indent: 40%;
   position: relative;
   z-index: -1;
+  font-family: "Buckwheat", sans-serif;
 }
 
 .work-button {
-  margin-top: 1rem;
+  margin: 0 1em 0 0;
   position: relative;
   font-size: calc(1.5rem + 1vw);
-}
-
-.work-button::before {
-  content: "";
-  border: 2px solid var(--whale-blue);
-  inset: 0;
-  position: absolute;
-  filter: url(#scribbleBorder);
-  z-index: -1;
+  float: right;
 }
 
 /* Media Queries */
@@ -119,11 +117,9 @@
     height: 100vh;
   }
 
-  .bio {
+  /* .bio {
     font-size: calc(1.4rem + 1vw);
-    line-height: 1.25;
-    /* font-family: "Buckwheat", sans-serif; */
-  }
+  } */
 
   .title-container {
     line-height: 12;

@@ -36,17 +36,8 @@
 }
 
 .resume-button {
-  margin-top: 1rem;
+  margin: 0.5rem 0 1rem 0;
   position: relative;
-}
-
-.resume-button::before {
-  content: "";
-  border: 2px solid var(--whale-blue);
-  inset: 0;
-  position: absolute;
-  filter: url(#scribbleBorder);
-  z-index: -1;
 }
 
 .drop {

@@ -41,10 +41,9 @@ const Work = (props) => {
   return (
     <section id="work" data-section>
       <div className={styles["work-container"]}>
-        <h1>
+        <h1 className={styles["title"]}> 
           My Projects
         </h1>
-        <p className={`${bebasNeueFontClass}`}></p>
         <div className={styles["work-card-container"]}>
           {props.allWerkData.map(({ image, title, slug, description, order }) => {
             return (

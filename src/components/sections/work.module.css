@@ -14,4 +14,8 @@
     gap: 20px;
     align-items: center;
   }
+
+  .title {
+    margin-bottom: 1rem;
+  }
 }
