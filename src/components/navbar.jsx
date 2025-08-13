@@ -120,7 +120,7 @@ const Navbar = (props) => {
             immediateRender: false,
             scrollTrigger: {
               trigger: '#K',
-              start: isDesktop ? 2500 : 3000,
+              start: isDesktop ? 2500 : 2800,
               end: '+=125',
               scrub: true
             }
@@ -132,7 +132,7 @@ const Navbar = (props) => {
             autoAlpha: 1,
             immediateRender: false,
             scrollTrigger: {
-              start: isDesktop ? 2575 : 3075 ,
+              start: isDesktop ? 2575 : 2875 ,
               end: '+=200',
               scrub: true
             }
