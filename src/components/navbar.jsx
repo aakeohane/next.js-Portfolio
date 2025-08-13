@@ -97,31 +97,53 @@ const Navbar = (props) => {
         }
       });
 
-      // fromTo needed so that my logo name can reappear on contact page
-      gsap.fromTo("#K", {
-        xPercent: -34
-      }, {
-        xPercent: 0,
-        // immediate render false so animation doesnt reset
-        immediateRender: false,
-        scrollTrigger: {
-          start: 2500,
-          end: 2625,
-          scrub: true
-        }
-      })
+      // mm referring to matching media for when the start triggers change depending on width of device
+      let mm = gsap.matchMedia(),
+      breakPoint = 769;
 
-      gsap.fromTo("#letters", {
-        autoAlpha: 0
-      }, {
-        autoAlpha: 1,
-        immediateRender: false,
-        scrollTrigger: {
-          start: 2575,
-          end: 2725,
-          scrub: true
+      mm.add(
+        {
+          // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+          isDesktop: `(min-width: ${breakPoint}px)`,
+          isMobile: `(max-width: ${breakPoint - 1}px)`,
+        },
+        (context) => {
+          // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+          // not using isMobile boolean, but could come in handy later and it makes code more readable
+          let { isDesktop, isMobile } = context.conditions;
+
+          gsap.fromTo("#K", {
+            xPercent: -34
+          }, {
+            xPercent: 0,
+            // immediate render false so animation doesnt reset
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: '#K',
+              start: isDesktop ? 2500 : 3000,
+              end: '+=125',
+              scrub: true
+            }
+          })
+
+          gsap.fromTo("#letters", {
+            autoAlpha: 0
+          }, {
+            autoAlpha: 1,
+            immediateRender: false,
+            scrollTrigger: {
+              start: isDesktop ? 2575 : 3075 ,
+              end: '+=200',
+              scrub: true
+            }
+          })
+          
+          return () => {
+            // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
+            // it'll automatically call context.revert() - do NOT do that here . Only put custom cleanup code here.
+          };
         }
-      })
+      );
 
 
     // must do this for proper webpack build if not 'client' component
