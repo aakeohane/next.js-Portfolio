@@ -11,7 +11,7 @@ const Home = () => {
     if (typeof window !== "undefined") {
         if (e) e.preventDefault()
         scrollToElement(target, {
-          offset: -280, // Offsets fixed header
+          offset: -75, // Offsets fixed header
           ease: 'in-expo',
           duration: 1000,
         })
@@ -65,7 +65,7 @@ const Home = () => {
             <Link
               onClick={(e) => smoothLinkClick(e, '#work')}
               href="/#work"
-            >Projects
+            >My Projects
             </Link>
           </button>
         </div>

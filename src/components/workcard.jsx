@@ -2,10 +2,10 @@
 import Link from "next/link";
 import Image from "next/image"
 import styles from "./workcard.module.css"
-import { forwardRef, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
+const Workcard = ({order, title, image, slug, windowWidth, ref}) => {
 
   const [hover, setHover] = useState(false)
   const [bodyLocked, setBodyLocked] = useState(false)
@@ -91,6 +91,6 @@ const Workcard = forwardRef(({order, title, image, slug, windowWidth}, ref) => {
         </svg>
       </Link>
   );
-})
+}
 
 export default Workcard;
