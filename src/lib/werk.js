@@ -131,14 +131,14 @@ const werk = [
       ],
     "description": `I made this for fun to see if I could duplicate the infamous Wordle game. It seemed simple at first, however, I ran into a few issues
     that I was able to solve and learned a lot in the process. I used a tutorial for the keyboard implementation as I have never done that before, however, the
-    logic for solving the problem was enhanced and I embelllished the CSS`,
+    logic for solving the problem was enhanced and I embellished the CSS`,
   },
 ]
 
 // use this to filter based on some sort of criteria
 const getAllWerkData = () => {
   // returns project in numerical order and doesnt include any projects that have 0 as an order meaning I dont want to include them in my project list
-  const projectOrder = werk.sort((a,b) => a.order - b.order).filter((item) => item.order !== "0");
+  const projectOrder = werk.sort((a,b) => a.order - b.order).filter((project) => project.order !== "0");
   return projectOrder
 }
 

@@ -248,23 +248,24 @@ const Navbar = (props) => {
         >
           <Image
             alt="personal logo" 
-            id="aaron"
-            src={aaron}
+            id="A"
+            src={InitialA}
             width={logoSize}
-            className={styles["nav-logo-aaron"]}
+            className={styles["nav-logo-A"]}
           />
           <Image
             alt="personal logo" 
-            src={logo}
+            id="letters"
+            src={NameBody}
             width={logoSize}
-            className={styles["nav-logo-square"]}
+            className={styles["nav-logo-letters"]}
           />
           <Image
             alt="personal logo" 
-            src={keohane}
-            id="keohane"
+            src={InitialK}
+            id="K"
             width={logoSize}
-            className={styles["nav-logo-keohane"]}
+            className={styles["nav-logo-K"]}
           />
         </Link>
       </nav>

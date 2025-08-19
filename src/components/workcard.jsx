@@ -41,6 +41,8 @@ const Workcard = ({order, title, image, slug, windowWidth, ref}) => {
   const hoverContainer = {
     transition: 'transform 1.25s ease-out',
     transform: hover ? 'scale(.95)' : null,
+    filter: (windowWidth > 700) ? hover ? ' url(#squiggle)' : '' : null
+   
   }
 
   return (
