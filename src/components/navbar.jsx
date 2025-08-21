@@ -6,8 +6,6 @@ import NameBody from 'public/images/BodyOfName.png'
 import InitialA from 'public/images/Initial-A.png'
 import InitialK from 'public/images/Initial-K.png'
 import scrollToElement from 'scroll-to-element'
-import { blastimoFontClass } from '@/app/layout'
-
 import gsap from 'gsap'
 import { useState, useRef, useContext } from 'react'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -110,33 +108,33 @@ const Navbar = (props) => {
         (context) => {
           // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
           // not using isMobile boolean, but could come in handy later and it makes code more readable
-          let { isDesktop, isMobile } = context.conditions;
+          // let { isDesktop, isMobile } = context.conditions;
 
-          gsap.fromTo("#K", {
-            xPercent: -34
-          }, {
-            xPercent: 0,
-            // immediate render false so animation doesnt reset
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: '#K',
-              start: isDesktop ? 2500 : 2800,
-              end: '+=125',
-              scrub: true
-            }
-          })
+          // gsap.fromTo("#K", {
+          //   xPercent: -34
+          // }, {
+          //   xPercent: 0,
+          //   // immediate render false so animation doesnt reset
+          //   immediateRender: false,
+          //   scrollTrigger: {
+          //     trigger: '#K',
+          //     start: isDesktop ? 2500 : 2800,
+          //     end: '+=125',
+          //     scrub: true
+          //   }
+          // })
 
-          gsap.fromTo("#letters", {
-            autoAlpha: 0
-          }, {
-            autoAlpha: 1,
-            immediateRender: false,
-            scrollTrigger: {
-              start: isDesktop ? 2575 : 2875 ,
-              end: '+=200',
-              scrub: true
-            }
-          })
+          // gsap.fromTo("#letters", {
+          //   autoAlpha: 0
+          // }, {
+          //   autoAlpha: 1,
+          //   immediateRender: false,
+          //   scrollTrigger: {
+          //     start: isDesktop ? 2575 : 2875 ,
+          //     end: '+=200',
+          //     scrub: true
+          //   }
+          // })
           
           return () => {
             // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
@@ -160,9 +158,41 @@ const Navbar = (props) => {
     }
   }, [])
 
+  useGSAP(() => {
+    
+      gsap.fromTo("#K", {
+        xPercent: -34
+      }, {
+        xPercent: 0,
+        // immediate render false so animation doesnt reset
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: '#contact',
+          start: "top center",
+          toggleActions: "play none none reverse",
+        }
+      })
+
+      gsap.fromTo("#letters", {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: '#contact',
+          start: "top center",
+          toggleActions: "play none none reverse",
+        }
+      })
+    
+
+  });
+
+  
+
   const activeStyle = {
     color: 'var(--whale-yellow)',
-    transition: '2s'
+    transition: '1s'
   };
 
   let logoSize = (props.windowWidth > 500) ? 200 : 150
@@ -184,7 +214,6 @@ const Navbar = (props) => {
   
   return (
     <div id='my-nav' 
-    className={blastimoFontClass}
     >
       { !isParRoute ?
       <nav>

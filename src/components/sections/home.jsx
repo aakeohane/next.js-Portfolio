@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
+import Image from "next/image";
+import nautilus from "public/images/nautilus-v1.png"
 
 
 const Home = () => {
@@ -50,17 +52,22 @@ const Home = () => {
   return (
     <section id="home" data-section style={{}}>
       <div  className={styles["main-content"]}>
-        <div className={styles["title-container"]}>
-          {/* <div className={styles.hidden}><span id="artist" className={`${blastimoFontClass} ${styles.artist}`}>ArTist<span className={styles.artista}>.</span></span></div>
-          <div className={styles.hidden}><span id="biologist" className={`${blowbrushFontClass} ${styles.biologist}`}>BiolOgist<span className={styles.period}>.</span></span></div><br></br>
-          <div className={styles["hidden-two"]}><span id="developer" className={`${bebasNeueFontClass} ${styles.developer}`}>Web Developer<span className={styles.period}>.</span></span></div><br></br> */}
+        <div className={styles["nautilus-container"]}>
+          <Image
+            alt="personal logo" 
+            src={nautilus}
+            className={styles["nautilus"]}
+            priority={true}
+            id="nautilus"
+            fill={true}
+          />
         </div>
       
         <div className={styles["bio-container"]}>
-          <p id="biography" className={`${styles.bio}`}>
-            A web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
-            you can be sure I will think imaginatively when finding yours. 
-          </p>
+          <h1 id="biography" className={`${styles.bio}`}>
+            I am a web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
+            you can be sure I will think imaginatively when finding yours. I love the ocean, watercolor, and typography. 
+          </h1>
           <button id="work-bttn" className={styles['work-button']} >
             <Link
               onClick={(e) => smoothLinkClick(e, '#work')}
