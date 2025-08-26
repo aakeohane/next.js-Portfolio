@@ -16,6 +16,7 @@ const Navbar = (props) => {
 // using context here similar to redux or global state management, had to go 
 // client side in order for navbar component to recognize when modal was open
   const { isOpen, isParRoute, parRoute } = useContext(ModalContext)
+  
 
 
   useGSAP(() => {
@@ -42,7 +43,8 @@ const Navbar = (props) => {
   const [activeSection, setActiveSection] = useState(null);
   const sections = useRef([]);
 
-  
+  gsap.registerPlugin(ScrollTrigger);
+
   const handleScroll = () => {
     const pageYOffset = window.scrollY;
     let newActiveSection = null;
@@ -59,11 +61,7 @@ const Navbar = (props) => {
     setActiveSection(newActiveSection);
   };
 
-
   useGSAP(() => {
-
-      gsap.registerPlugin(ScrollTrigger);
-
       
       gsap.from("#my-nav", {
         translateY: [-50, 0],
@@ -81,112 +79,71 @@ const Navbar = (props) => {
           trigger: "#letters",
           start: 50,
           end: 200,
-          scrub: true,
+          scrub: 2,
         }
       });
 
       gsap.to("#K", {
         xPercent: -34,
+        immediateRender: false,
         scrollTrigger: {
           trigger: "#K",
           start: 125,
           end: 250,
-          scrub: true,
+          scrub: 2,
         }
       });
 
-      // mm referring to matching media for when the start triggers change depending on width of device
-      let mm = gsap.matchMedia(),
-      breakPoint = 769;
-
-      mm.add(
-        {
-          // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-          isDesktop: `(min-width: ${breakPoint}px)`,
-          isMobile: `(max-width: ${breakPoint - 1}px)`,
-        },
-        (context) => {
-          // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-          // not using isMobile boolean, but could come in handy later and it makes code more readable
-          // let { isDesktop, isMobile } = context.conditions;
-
-          // gsap.fromTo("#K", {
-          //   xPercent: -34
-          // }, {
-          //   xPercent: 0,
-          //   // immediate render false so animation doesnt reset
-          //   immediateRender: false,
-          //   scrollTrigger: {
-          //     trigger: '#K',
-          //     start: isDesktop ? 2500 : 2800,
-          //     end: '+=125',
-          //     scrub: true
-          //   }
-          // })
-
-          // gsap.fromTo("#letters", {
-          //   autoAlpha: 0
-          // }, {
-          //   autoAlpha: 1,
-          //   immediateRender: false,
-          //   scrollTrigger: {
-          //     start: isDesktop ? 2575 : 2875 ,
-          //     end: '+=200',
-          //     scrub: true
-          //   }
-          // })
-          
-          return () => {
-            // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
-            // it'll automatically call context.revert() - do NOT do that here . Only put custom cleanup code here.
-          };
-        }
-      );
-
-
-    // must do this for proper webpack build if not 'client' component
-    if (typeof window !== "undefined") {
-      window.onscroll = () => {
-        setOffset(window.scrollY)
-      }
-      sections.current = document.querySelectorAll('[data-section');
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, [])
-
-  useGSAP(() => {
-    
       gsap.fromTo("#K", {
-        xPercent: -34
+        xPercent: -34,
+        
       }, {
         xPercent: 0,
-        // immediate render false so animation doesnt reset
         immediateRender: false,
+        overwrite: "auto",
         scrollTrigger: {
           trigger: '#contact',
           start: "top center",
+          end: "top top",
           toggleActions: "play none none reverse",
+          scrub: 2
         }
       })
 
       gsap.fromTo("#letters", {
-        autoAlpha: 0
+        autoAlpha: 0,
       }, {
         autoAlpha: 1,
         immediateRender: false,
+        overwrite: "auto",
         scrollTrigger: {
           trigger: '#contact',
           start: "top center",
+          end: "top top",
           toggleActions: "play none none reverse",
+          scrub: 2
         }
       })
-    
 
-  });
+      // must do this for proper webpack build if not 'client' component
+      if (typeof window !== "undefined") {
+        window.onscroll = () => {
+          setOffset(window.scrollY)
+        }
+        sections.current = document.querySelectorAll('[data-section');
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
+
+  }, [])
+
+
+
+ 
+  
 
   
 
@@ -218,7 +175,7 @@ const Navbar = (props) => {
       { !isParRoute ?
       <nav>
         <Link 
-          onClick={e => smoothLinkClick(e, '#home')} 
+          onClick={e => {smoothLinkClick(e, '#home')}} 
           href={"/#home"}
           className={styles["logo-container"]}
         >
