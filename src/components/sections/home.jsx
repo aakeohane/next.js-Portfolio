@@ -29,6 +29,12 @@ const Home = () => {
         delay: 2
       })
 
+      gsap.from("#biography", {
+        translateY: [20, 0],
+        opacity: 0,
+        delay: 2.5
+      })
+
       let tl = gsap.timeline({repeat: -1, repeatDelay: 5})
       
       const feTurbulence = document.querySelector("#displacementFilter feTurbulence")
