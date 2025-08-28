@@ -47,8 +47,20 @@ const About = () => {
       <feTurbulence type="fractalNoise" baseFrequency=".1" numOctaves="2" />
       <feDisplacementMap in="SourceGraphic" scale="4" />
     </filter>
+    <filter id="displacementFilter">
+      <feTurbulence  id="turbulence" type="turbulence"
+        baseFrequency="0 0"
+        numOctaves="100"
+        result="noise"  />
+      <feDisplacementMap id="displacement" in="SourceGraphic"
+        in2="noise"
+        scale="8"
+        xChannelSelector="R"
+        yChannelSelector="G"/>
+    </filter>  
   </defs>
 </svg>
+
           <button className={styles["resume-button"]}>
             <Link                        
               href="files/keohane-resume.pdf"

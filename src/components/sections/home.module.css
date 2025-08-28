@@ -9,66 +9,28 @@
   width: 100vw;
   padding: 0 20px 0 20px;
 }
+.logo-name {
+  filter: url("#displacementFilter");
+  width: 20vw;
+}
+
+.flex-container-left {
+  flex: 1;
+  position: relative;
+}
 
 .nautilus-container {
-  position: relative;
+  position: absolute;
+  z-index: -10;
+  left: -100%;
+  transform: translateX(20px);
+  top: 30vh;
+  height: 100vh;
+  width: 100vw;
 }
 
-.developer {
-  font-size: calc(3rem + 3vw);
-  letter-spacing: 0;
-  display: inline-block;
-  position: relative;
-  z-index: -1;
-  animation: typing 1.5s steps(25, end), blink 1.5s step-end infinite;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 4px solid var(--whale-yellow);
-  margin: 0 auto;
-  /* padding-top: 1vh; */
-}
-
-.biologist {
-  font-size: calc(3rem + 3vw);
-  letter-spacing: 1px;
-  display: inline-block;
-  position: relative;
-  z-index: -1;
-}
-
-.artist {
-  font-size: calc(4rem + 3vw);
-  letter-spacing: 1px;
-  display: inline-block;
-  position: relative;
-  z-index: -1;
-}
-
-.artista {
-  font-size: 80px;
-  line-height: 0;
-  color: var(--whale-yellow);
-  padding-top: 20px;
-}
-
-.period {
-  color: var(--whale-yellow);
-}
-
-.hidden {
-  display: inline-block;
-  overflow: hidden;
-  margin-top: -1.5vh;
-  line-height: 1;
-  width: 100%;
-}
-
-/* seperate hidden line to keep line height correct for web developer */
-.hidden-two {
-  display: inline-block;
-  overflow: hidden;
-  margin-top: -1.5vh;
-  line-height: 1;
+.nautilus {
+  display: none;
 }
 
 .right-container {
@@ -101,6 +63,14 @@
 
 /* Media Queries */
 
+@media only screen and (min-width: 750px) and (max-width: 1000px) {
+  .nautilus-container {
+    height: 70vh;
+    top: 10vh;
+    transform: rotate(40deg) translateX(-10px);
+  }
+}
+
 @media only screen and (min-width: 750px) {
   .main-content {
     padding-bottom: 1.5rem;
@@ -115,10 +85,10 @@
     flex-direction: column;
   }
 
-  .nautilus-container {
-    flex: 1;
-    top: 25vh;
-    right: 15%;
+  .nautilus {
+    display: block;
+    object-fit: contain;
+    /* position: relative; */
   }
 
   .work-button {
