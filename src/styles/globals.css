@@ -160,22 +160,46 @@ button {
   line-height: 1;
   padding: 10px;
   letter-spacing: 1px;
-  transition: background-color 2s;
   position: relative;
+  background-size: cover;
+  background-position: center center; /* Or any other desired initial position */
+  background-repeat: no-repeat;
 }
 
-button:hover {
+/* button:hover {
   background-color: rgba(230, 179, 66, 0.2);
-  transition: background-color 2s;
-}
+  position: relative;
+  background-image: url(/images/button_watercolor-bg.png);
+} */
 
-button::after {
+/* button::after {
   content: "";
   border: 3px solid var(--whale-yellow);
   inset: 0;
   position: absolute;
   filter: url(#scribbleBorder);
   z-index: -2;
+} */
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/button_watercolor-bg.png");
+  z-index: -3;
+  opacity: 0;
+}
+
+button:hover::after {
+  background-image: url("/images/button_watercolor-bg.png"); /* Replace with your image path */
+  /* opacity: 0.9; */
+  z-index: -3;
 }
 
 button::before {
