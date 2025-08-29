@@ -198,7 +198,7 @@ button::after {
 
 button:hover::after {
   background-image: url("/images/button_watercolor-bg.png"); /* Replace with your image path */
-  /* opacity: 0.9; */
+  opacity: 1;
   z-index: -3;
 }
 

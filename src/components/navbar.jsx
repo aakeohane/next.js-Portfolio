@@ -75,11 +75,12 @@ const Navbar = (props) => {
 
       gsap.to("#letters", {
         autoAlpha: 0,
+        immediateRender: false,
         scrollTrigger: {
           trigger: "#letters",
           start: 50,
           end: 200,
-          scrub: 2,
+          scrub: 1,
         }
       });
 
@@ -90,7 +91,7 @@ const Navbar = (props) => {
           trigger: "#K",
           start: 125,
           end: 250,
-          scrub: 2,
+          scrub: 1,
         }
       });
 
@@ -100,7 +101,6 @@ const Navbar = (props) => {
       }, {
         xPercent: 0,
         immediateRender: false,
-        overwrite: "auto",
         scrollTrigger: {
           trigger: '#contact',
           start: "top center",
@@ -115,7 +115,6 @@ const Navbar = (props) => {
       }, {
         autoAlpha: 1,
         immediateRender: false,
-        overwrite: "auto",
         scrollTrigger: {
           trigger: '#contact',
           start: "top center",
