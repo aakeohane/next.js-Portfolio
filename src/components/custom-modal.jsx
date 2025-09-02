@@ -21,7 +21,6 @@ const CustomModal = ( { children } ) => {
   const body = document.getElementById('bodyEl')
 
 
-
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
   // usePreventScroll()
 
@@ -46,6 +45,7 @@ const CustomModal = ( { children } ) => {
     }
     // Animation for closing the modal
     else {
+
       gsap.fromTo(
         "#myModal",
         {autoAlpha: 1, xPercent: 0 },
@@ -71,6 +71,7 @@ const CustomModal = ( { children } ) => {
 
   return (
     <div className={styles["modal-container"]}>
+       
         <Modal
           ref={modalRef}
           className={styles["my-modal"]}

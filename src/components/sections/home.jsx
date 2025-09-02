@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import scrollToElement from 'scroll-to-element'
 import Link from 'next/link';
 import Image from "next/image";
-import nautilus from "public/images/nautilus-v1.png"
+import nautilus from "public/images/nautilus-v2.png"
 import name from "public/images/FullName.png"
 
 
@@ -35,6 +35,13 @@ const Home = () => {
         delay: 2.5
       })
 
+      gsap.from("#nautilus", {
+        translateY: [40],
+        translateX: [-20],
+        opacity: 0,
+        delay: 1
+      })
+
       let tl = gsap.timeline({repeat: -1, repeatDelay: 5})
       
       const feTurbulence = document.querySelector("#displacementFilter feTurbulence")
@@ -53,9 +60,6 @@ const Home = () => {
         duration: 5,
         ease:"sine.out",
       })
-
-      
-      
 
   }, [])
   

@@ -166,21 +166,6 @@ button {
   background-repeat: no-repeat;
 }
 
-/* button:hover {
-  background-color: rgba(230, 179, 66, 0.2);
-  position: relative;
-  background-image: url(/images/button_watercolor-bg.png);
-} */
-
-/* button::after {
-  content: "";
-  border: 3px solid var(--whale-yellow);
-  inset: 0;
-  position: absolute;
-  filter: url(#scribbleBorder);
-  z-index: -2;
-} */
-
 button::after {
   content: "";
   position: absolute;
@@ -197,8 +182,8 @@ button::after {
 }
 
 button:hover::after {
-  background-image: url("/images/button_watercolor-bg.png"); /* Replace with your image path */
-  opacity: 1;
+  background-image: url("/images/button_watercolor-bg.png");
+  opacity: 0.7;
   z-index: -3;
 }
 

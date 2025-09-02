@@ -16,8 +16,6 @@ const Navbar = (props) => {
 // using context here similar to redux or global state management, had to go 
 // client side in order for navbar component to recognize when modal was open
   const { isOpen, isParRoute, parRoute } = useContext(ModalContext)
-  
-
 
   useGSAP(() => {
     
@@ -72,6 +70,16 @@ const Navbar = (props) => {
       gsap.set("#K", {xPercent: 0, autoAlpha: 1}, )
       gsap.set("#letters", {xPercent: 0, autoAlpha: 1}, )
 
+      gsap.to("#K", {
+        xPercent: -34,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#K",
+          start: 125,
+          end: 250,
+          scrub: 1,
+        }
+      });
 
       gsap.to("#letters", {
         autoAlpha: 0,
@@ -84,20 +92,8 @@ const Navbar = (props) => {
         }
       });
 
-      gsap.to("#K", {
-        xPercent: -34,
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: "#K",
-          start: 125,
-          end: 250,
-          scrub: 1,
-        }
-      });
-
       gsap.fromTo("#K", {
         xPercent: -34,
-        
       }, {
         xPercent: 0,
         immediateRender: false,
@@ -138,13 +134,6 @@ const Navbar = (props) => {
       }
 
   }, [])
-
-
-
- 
-  
-
-  
 
   const activeStyle = {
     color: 'var(--whale-yellow)',
