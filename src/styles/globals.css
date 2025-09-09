@@ -25,7 +25,7 @@ html {
   --whale-blue: #04465d;
   /* --whale-blue: #222; */
   --inkblot-black: #222;
-  --light-inkblot-black: rgba(51, 51, 51, 0);
+  --light-inkblot-black: rgba(51, 51, 51, 0.9);
   --font-sourceSans: var(--font-sourceSans);
 }
 
@@ -164,6 +164,7 @@ button {
   background-size: cover;
   background-position: center center; /* Or any other desired initial position */
   background-repeat: no-repeat;
+  filter: url(#pFilter);
 }
 
 button::after {
@@ -173,7 +174,7 @@ button::after {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 2s;
+  transition: opacity 1s;
   background-size: cover;
   background-position: center;
   background-image: url("/images/button_watercolor-bg.png");

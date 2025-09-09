@@ -1,25 +1,58 @@
 import styles from './about.module.css'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 import Image from 'next/image';
-import profilePic from 'public/images/professional-portrait-v3-watercolor-v3.png'
+import portraitColor from 'public/images/professional-portrait-v3-watercolor-v3.png'
+import profilePic from 'public/images/professional-portrait-watercolor-bw.png'
+
 import Link from 'next/link';
 
 const About = () => {
+
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+
+    gsap.to("#portraitColor", {
+      maskPosition: "100% 0",
+      ease: 'steps(24)',
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: '#portraitColor',
+        start: "top 25%",
+        toggleActions: "play none none reverse",
+      }
+    })
+
+}, [])
 
   return (
     <section id="about" data-section>
       <div className={styles["about-container"]}>
         <div className={styles["portrait-container"]}>
-              <Image
-                alt="personal logo" 
-                src={profilePic}
-                className={styles["portrait"]}
-                priority={true}
-                id="portrait"
-                fill={true}
-              />
-                <div id="drop1" className={styles["drop"]}></div>
-                <div className={styles["drop"]}></div>
-                <div className={styles["drop"]}></div>
+          <Image
+            alt="personal logo" 
+            src={portraitColor}
+            className={styles["portrait-color"]}
+            priority={true}
+            id="portraitColor"
+            fill={true}
+          />
+          <Image
+            alt="personal logo" 
+            src={profilePic}
+            className={styles["portrait-bw"]}
+            priority={true}
+            id="portrait"
+            fill={true}
+          />
+          <div className={styles["drops"]}>
+            <div id="drop1" className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+          </div>
+          
         </div>
         <div className={styles["content-container"]}>
           <h1 className={styles["title"]}>How did I know I was destined for coding?</h1>

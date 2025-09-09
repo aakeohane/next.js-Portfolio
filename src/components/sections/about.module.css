@@ -28,11 +28,29 @@
   margin-top: -0.3em;
 }
 
-.portrait {
+.drops {
   position: relative;
+  z-index: 10;
+}
+
+.portrait-color {
+  position: absolute;
   z-index: -1;
   object-fit: cover;
-  opacity: 0.9;
+  mask-image: url("/images/final-mask-v1.png");
+  mask-size: cover;
+  mask-position: 0% 0%;
+}
+
+.portrait-bw {
+  position: absolute;
+  object-fit: cover;
+  opacity: 1;
+  z-index: -2;
+}
+
+.content-container {
+  position: relative;
 }
 
 .resume-button {
@@ -46,6 +64,7 @@
   background: transparent;
   width: fit-content;
   opacity: 0;
+  z-index: 10;
   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2),
     15px 25px 10px rgba(0, 0, 0, 0.2), 15px 20px 20px rgba(0, 0, 0, 0.1),
     inset -5px -5px 20px rgba(255, 255, 255, 0.5);
@@ -173,9 +192,12 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .portrait {
+  .portrait-color {
     object-fit: contain;
-    opacity: 0.9;
+  }
+
+  .portrait-bw {
+    object-fit: contain;
   }
 }
 
@@ -217,9 +239,13 @@
     height: 90vh;
   }
 
-  .portrait {
+  .portrait-color {
     object-fit: contain;
-    opacity: 0.9;
+    /* mask-size: contain; */
+  }
+
+  .portrait-bw {
+    object-fit: contain;
   }
 
   .content-container {
