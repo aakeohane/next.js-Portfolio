@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import Image from 'next/image';
-import portraitColor from 'public/images/professional-portrait-v3-watercolor-v3.png'
+import portraitColor from 'public/images/professional-portrait-watercolor-v3.png'
 import profilePic from 'public/images/professional-portrait-watercolor-bw.png'
 
 import Link from 'next/link';
@@ -14,13 +14,14 @@ const About = () => {
   useGSAP(() => {
 
     gsap.to("#portraitColor", {
-      maskPosition: "100% 0",
+      maskPosition: "100% 0%",
       ease: 'steps(24)',
-      immediateRender: false,
       scrollTrigger: {
         trigger: '#portraitColor',
-        start: "top 25%",
+        start: "top 50%",
+        end: "top 0%",
         toggleActions: "play none none reverse",
+        scrub: 1,
       }
     })
 
@@ -36,7 +37,7 @@ const About = () => {
             className={styles["portrait-color"]}
             priority={true}
             id="portraitColor"
-            fill={true}
+            // fill={true}
           />
           <Image
             alt="personal logo" 
@@ -44,7 +45,7 @@ const About = () => {
             className={styles["portrait-bw"]}
             priority={true}
             id="portrait"
-            fill={true}
+            // fill={true}
           />
           <div className={styles["drops"]}>
             <div id="drop1" className={styles["drop"]}></div>

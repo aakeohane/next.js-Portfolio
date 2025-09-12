@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: -1;
+  z-index: -3;
   margin: 0 -20px 0 -20px;
   height: 55vh;
   width: 100vw;
@@ -29,17 +29,18 @@
 }
 
 .drops {
-  position: relative;
+  position: absolute;
   z-index: 10;
 }
 
 .portrait-color {
   position: absolute;
-  z-index: -1;
   object-fit: cover;
-  mask-image: url("/images/final-mask-v1.png");
+  mask-image: url("/images/final-mask-v3.png");
   mask-size: cover;
   mask-position: 0% 0%;
+  mask-repeat: no-repeat;
+  z-index: -1;
 }
 
 .portrait-bw {
@@ -191,24 +192,32 @@
   border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
 }
 
-@media only screen and (min-width: 480px) {
-  .portrait-color {
-    object-fit: contain;
-  }
-
-  .portrait-bw {
-    object-fit: contain;
-  }
-}
-
-@media only screen and (min-width: 650px) {
+@media only screen and (max-width: 850px) {
   .portrait-container {
-    margin-top: -7.5em;
+    margin-top: -2.5em;
     height: 70vh;
   }
 }
+@media only screen and (max-width: 650px) {
+  .portrait-container {
+    margin-top: -2.5em;
+    height: 60vh;
+    width: 120vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .portrait-container {
+    height: 55vh;
+    width: 140vw;
+  }
+}
 
-@media only screen and (min-width: 850px) and (max-width: 1250px) {
+@media only screen and (min-width: 851px) and (max-width: 1250px) {
+  .portrait-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
   .drop:nth-child(2) {
     transform: scale(0.6) translate(45vh, -30vh);
   }
@@ -241,7 +250,7 @@
 
   .portrait-color {
     object-fit: contain;
-    /* mask-size: contain; */
+    mask-size: cover;
   }
 
   .portrait-bw {
