@@ -81,13 +81,7 @@ const Home = () => {
       
         <div className={styles["bio-container"]}>
           <div className={styles["logo-container"]}>
-            <Image
-              alt="personal logo" 
-              src={name}
-              className={styles["logo-name"]}
-              priority={true}
-              id="logoName"
-            />
+            
         </div>
           <h1 id="biography" className={`${styles.bio}`}>
             I am a web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 

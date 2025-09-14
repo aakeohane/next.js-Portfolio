@@ -36,7 +36,7 @@
 .portrait-color {
   position: absolute;
   object-fit: cover;
-  mask-image: url("/images/final-mask-v3.png");
+  mask-image: url("/images/final-mask-v4.png");
   mask-size: cover;
   mask-position: 0% 0%;
   mask-repeat: no-repeat;

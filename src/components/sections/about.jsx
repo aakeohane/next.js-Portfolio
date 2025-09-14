@@ -11,6 +11,7 @@ import Link from 'next/link';
 const About = () => {
 
   gsap.registerPlugin(ScrollTrigger);
+
   useGSAP(() => {
 
     gsap.to("#portraitColor", {
@@ -18,10 +19,50 @@ const About = () => {
       ease: 'steps(24)',
       scrollTrigger: {
         trigger: '#portraitColor',
-        start: "top 50%",
+        start: "top 25%",
         end: "top 0%",
         toggleActions: "play none none reverse",
-        scrub: 1,
+      }
+    })
+
+    gsap.from("#drops", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#portraitColor',
+        start: "top 25%",
+        end: "top 0%",
+        toggleActions: "play none none none",
+      }
+    })
+
+    gsap.from("#title", {
+      opacity: 0,
+      translateY: [20],
+      translateX: [-20],
+      scrollTrigger: {
+        trigger: '#title',
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      }
+    })
+
+    gsap.from("#description", {
+      opacity: 0,
+      translateY: [20],
+      translateX: [20],
+      scrollTrigger: {
+        trigger: '#description',
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      }
+    })
+
+    gsap.from("#resumeBtn", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#description',
+        start: "bottom 90%",
+        toggleActions: "play none none reverse",
       }
     })
 
@@ -35,20 +76,18 @@ const About = () => {
             alt="personal logo" 
             src={portraitColor}
             className={styles["portrait-color"]}
-            priority={true}
+            priority
             id="portraitColor"
-            // fill={true}
           />
           <Image
             alt="personal logo" 
             src={profilePic}
             className={styles["portrait-bw"]}
-            priority={true}
+            priority
             id="portrait"
-            // fill={true}
           />
-          <div className={styles["drops"]}>
-            <div id="drop1" className={styles["drop"]}></div>
+          <div id="drops" className={styles["drops"]}>
+            <div className={styles["drop"]}></div>
             <div className={styles["drop"]}></div>
             <div className={styles["drop"]}></div>
             <div className={styles["drop"]}></div>
@@ -56,8 +95,8 @@ const About = () => {
           
         </div>
         <div className={styles["content-container"]}>
-          <h1 className={styles["title"]}>How did I know I was destined for coding?</h1>
-          <p className={styles["filter"]}>
+          <h1 id="title" className={styles["title"]}>How did I know I was destined for coding?</h1>
+          <p id="description" className={styles["filter"]}>
             I am always the first to google the moment someone asks a question.
             Besides my googling talent, my academic background in the sciences 
             has prepared me to problem solve, critically evaluate, and think 
@@ -95,7 +134,7 @@ const About = () => {
   </defs>
 </svg>
 
-          <button className={styles["resume-button"]}>
+          <button id="resumeBtn" className={styles["resume-button"]}>
             <Link                        
               href="files/keohane-resume.pdf"
               target="_blank"

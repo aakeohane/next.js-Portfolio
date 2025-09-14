@@ -25,7 +25,6 @@ const ProjectDetails = ({slug, parRoute}) => {
             {/* if favicon image exists, display next to title else nothing */}
             {werk.favicon ? 
             <Image
-
               className={styles["favicon"]}
               alt="favicon for project" 
               src={werk.favicon}
@@ -88,7 +87,7 @@ const ProjectDetails = ({slug, parRoute}) => {
           sizes="100vw"
           width={300}
           height={100}
-          priority
+          loading="eager"
         />
       </div>
 
