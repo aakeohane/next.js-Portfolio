@@ -177,14 +177,22 @@ button::after {
   transition: opacity 1s;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/button_watercolor-bg.png");
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("/images/button-watercolor-v2.png");
   z-index: -3;
   opacity: 0;
 }
 
 button:hover::after {
-  background-image: url("/images/button_watercolor-bg.png");
-  opacity: 0.7;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("/images/button-watercolor-v2.png");
+  opacity: 0.5;
   z-index: -3;
 }
 

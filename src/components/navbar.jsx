@@ -102,7 +102,6 @@ const Navbar = (props) => {
           start: "top center",
           end: "top top",
           toggleActions: "play none none reverse",
-          scrub: 1
         }
       })
 
@@ -116,7 +115,6 @@ const Navbar = (props) => {
           start: "top center",
           end: "top top",
           toggleActions: "play none none reverse",
-          scrub: 1
         }
       })
 

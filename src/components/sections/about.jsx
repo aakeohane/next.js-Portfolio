@@ -38,7 +38,8 @@ const About = () => {
     gsap.from("#title", {
       opacity: 0,
       translateY: [20],
-      translateX: [-20],
+      translateX: [-40],
+      delay: 1.5,
       scrollTrigger: {
         trigger: '#title',
         start: "top 80%",
@@ -49,7 +50,8 @@ const About = () => {
     gsap.from("#description", {
       opacity: 0,
       translateY: [20],
-      translateX: [20],
+      translateX: [40],
+      delay: 1.5,
       scrollTrigger: {
         trigger: '#description',
         start: "top 80%",
