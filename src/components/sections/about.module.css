@@ -204,11 +204,28 @@
     height: 60vh;
     width: 120vw;
   }
+
+  .drop:nth-child(2) {
+    transform: scale(0.6) translate(45vh, -30vh);
+  }
+
+  .drop:nth-child(3) {
+    transform: scale(0.5) translate(30vh, -10vh);
+  }
+
+  .drop:nth-child(4) {
+    transform: scale(0.8) translate(110vw, 17vh);
+  }
 }
+
 @media only screen and (max-width: 480px) {
   .portrait-container {
     height: 55vh;
     width: 140vw;
+  }
+
+  .drop:nth-child(2) {
+    transform: scale(0.6) translate(30vh, -20vh);
   }
 }
 
