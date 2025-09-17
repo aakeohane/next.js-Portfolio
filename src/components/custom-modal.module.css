@@ -16,13 +16,34 @@
   top: 0;
   left: 0;
   visibility: hidden;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(/images/watercolor-paper-background-2.jpg);
+  background-image: url(/images/watercolor-paper-background-2.jpg);
   background-attachment: local;
   z-index: 51;
+}
+
+.transition-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.transition-layer .bg-layer {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  /* transform: translateY(-50%) translateX(-2%); */
+  height: 100%;
+  width: 2500%;
+  background-image: url("/images/ink.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
 }
 
 .my-overlay {
@@ -60,10 +81,10 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(220, 220, 220, 0.15);
+    /* background-color: rgba(220, 220, 220, 0.15); */
     /* glassomorphism */
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    z-index: 51;
+    z-index: 51; */
   }
 }

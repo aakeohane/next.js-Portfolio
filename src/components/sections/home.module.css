@@ -23,14 +23,9 @@
   position: absolute;
   z-index: 10;
   left: -115%;
-  /* transform: translateX(50px); */
   top: 10vh;
   height: 150vh;
   width: 110vw;
-}
-
-.nautilus {
-  display: none;
 }
 
 .right-container {
@@ -63,7 +58,7 @@
 
 /* Media Queries */
 
-@media only screen and (min-width: 750px) and (max-width: 1000px) {
+@media (max-width: 1000px) {
   .nautilus-container {
     height: 70vh;
     top: 10vh;
@@ -72,6 +67,16 @@
 }
 
 @media only screen and (min-width: 750px) {
+  .nautilus-container {
+    position: absolute;
+    z-index: 10;
+    left: -115%;
+    top: 10vh;
+    height: 150vh;
+    width: 110vw;
+    transform: rotate(0deg) translateX(0px);
+  }
+
   .main-content {
     padding-bottom: 1.5rem;
     display: flex;
@@ -88,7 +93,6 @@
   .nautilus {
     display: block;
     object-fit: contain;
-    /* position: relative; */
   }
 
   .work-button {
@@ -99,23 +103,32 @@
   }
 }
 
+@media (max-width: 750px) {
+  .nautilus-container {
+    position: absolute;
+    transform: rotate(50deg);
+    top: 15vh;
+    left: -60vw;
+  }
+
+  .nautilus {
+    display: block;
+    object-fit: contain;
+  }
+}
+
+/* @media (max-width: 480px) {
+  .nautilus-container {
+    position: absolute;
+    transform: rotate(50deg);
+    top: 15vh;
+    left: -60vw;
+  }
+
+  .nautilus {
+    display: block;
+    object-fit: contain;
+  }
+} */
+
 /* Animations */
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--whale-yellow);
-  }
-}
