@@ -23,6 +23,7 @@
   mask-size: cover;
   mask-position: 0% 0%;
   mask-repeat: no-repeat;
+  cursor: auto;
 }
 
 .my-overlay {
@@ -31,17 +32,24 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 51;
+  background-color: rgba(220, 220, 220, 0.15);
+  /* glassomorphism */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 50;
+  cursor: pointer;
 }
 
 /* exit button */
 .topright {
-  position: fixed;
+  position: absolute;
   right: 4vw;
   top: 2vh;
   z-index: 100;
+  cursor: pointer;
 }
 
+/* everything greater than 480px */
 @media only screen and (min-width: 480px) {
   .my-modal {
     position: fixed;
@@ -52,19 +60,5 @@
     height: 100%;
     top: 0;
     left: 12.5%;
-  }
-
-  .my-overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(220, 220, 220, 0.15);
-    /* glassomorphism */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 51;
-    transition: backdrop-filter 500ms ease-in-out;
   }
 }

@@ -48,7 +48,7 @@ const CustomModal = ( { children } ) => {
       gsap.fromTo(
         exRef.current,
         {autoAlpha: 0},
-        {autoAlpha: 1, delay: .25}
+        {autoAlpha: 1, delay: 2.5}
       )
       
     }
@@ -56,33 +56,16 @@ const CustomModal = ( { children } ) => {
     else {
 
       gsap.fromTo(
-          ".my-overlay",
-          {autoAlpha: 0 },
-          {autoAlpha: 1, delay: 2  }
-        )
-
-      gsap.fromTo(
         "#myModal", 
         {maskPosition: "100% 0%"},
         {maskPosition: "0% 0%", ease: 'steps(24)', duration: 2}
       )
-
-      // gsap.fromTo(
-      //   "#myModal",
-      //   {autoAlpha: 1 },
-      //   {autoAlpha: 0, delay: 5 }
-      // )
-
-      // gsap.to(
-      //   "#myModal",
-      //   {autoAlpha: 0, duration: 5  }
-      // )
       
-      // gsap.fromTo(
-      //   exRef.current,
-      //   {autoAlpha: 1},
-      //   {autoAlpha: 0,}
-      // )
+      gsap.fromTo(
+        exRef.current,
+        {autoAlpha: 1},
+        {autoAlpha: 0,}
+      )
     };
   }, [isOpen]);
         
@@ -114,9 +97,9 @@ const CustomModal = ( { children } ) => {
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
         >
-            <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
-              <FaWindowClose size={28}/>
-            </div>
+          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
+            <FaWindowClose size={28}/>
+          </div>
               {children}
         </Modal>
         
