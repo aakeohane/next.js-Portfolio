@@ -6,7 +6,6 @@ import Modal from 'react-modal';
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
-import { createPortal } from "react-dom";
 
 const CustomModal = ( { children } ) => {
 
@@ -18,18 +17,8 @@ const CustomModal = ( { children } ) => {
 
   const exRef = useRef(null)
   const modalRef = useRef(null)
-  const overlayRef =useRef(null)
 
   const body = document.getElementById('bodyEl')
-
-  const setOverlayRef = (node) => {
-    overlayRef.current = node;
-    // You can now access the overlay DOM node via overlayRef.current
-    if (overlayRef.current) {
-      
-      overlayRef.current.id = 'myOverlay';
-    }
-  };
 
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
@@ -42,34 +31,57 @@ const CustomModal = ( { children } ) => {
   useGSAP(() => {
 
     if (isOpen) {
-      
+
+
       gsap.fromTo(
         "#myModal",
         {autoAlpha: 0 },
-        {autoAlpha: 1, delay: 1.4  }
+        {autoAlpha: 1  }
       )
-      // gsap.fromTo(
-      //   exRef.current,
-      //   {autoAlpha: 0},
-      //   {autoAlpha: 1, delay: .25}
-      // )
 
-      gsap.to("#bgLayer", {
-        xPercent: -100,
-        ease: "steps(25)",
-        duration: 1.5
-      }
+      gsap.to("#myModal", {
+        maskPosition: "100% 0%",
+        ease: 'steps(24)',
+        duration: 2
+      })
+      
+      gsap.fromTo(
+        exRef.current,
+        {autoAlpha: 0},
+        {autoAlpha: 1, delay: .25}
       )
-    
       
     }
     // Animation for closing the modal
     else {
 
+      gsap.fromTo(
+          ".my-overlay",
+          {autoAlpha: 0 },
+          {autoAlpha: 1, delay: 2  }
+        )
+
+      gsap.fromTo(
+        "#myModal", 
+        {maskPosition: "100% 0%"},
+        {maskPosition: "0% 0%", ease: 'steps(24)', duration: 2}
+      )
+
       // gsap.fromTo(
       //   "#myModal",
-      //   {autoAlpha: 1, xPercent: 0 },
-      //   {autoAlpha: 1, xPercent: 120, ease: 'expo.out'  }
+      //   {autoAlpha: 1 },
+      //   {autoAlpha: 0, delay: 5 }
+      // )
+
+      // gsap.to(
+      //   "#myModal",
+      //   {autoAlpha: 0, duration: 5  }
+      // )
+      
+      // gsap.fromTo(
+      //   exRef.current,
+      //   {autoAlpha: 1},
+      //   {autoAlpha: 0,}
       // )
     };
   }, [isOpen]);
@@ -84,17 +96,13 @@ const CustomModal = ( { children } ) => {
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 300); // Adjust the delay as needed
+    }, 2000); // Adjust the delay as needed
 
   }
 
 
-  return createPortal(
-    <div className={styles["modal-container"]}>
-      { isOpen && 
-      <div className={styles["transition-layer"]}>
-        <div id="bgLayer" className={styles["bg-layer"]}></div>
-      </div>}
+  return(
+    <div id="modalContainer" className={styles["modal-container"]}>
         <Modal
           ref={modalRef}
           className={styles["my-modal"]}
@@ -105,7 +113,6 @@ const CustomModal = ( { children } ) => {
           overlayClassName={styles["my-overlay"]}
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
-          overlayRef={setOverlayRef}
         >
             <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
               <FaWindowClose size={28}/>
@@ -114,8 +121,7 @@ const CustomModal = ( { children } ) => {
         </Modal>
         
 
-    </div>,
-    document.getElementById('modal-root-id')
+    </div>
   );
 }
 export default CustomModal
