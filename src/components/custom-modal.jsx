@@ -41,14 +41,14 @@ const CustomModal = ( { children } ) => {
 
       gsap.to("#myModal", {
         maskPosition: "100% 0%",
-        ease: 'steps(24)',
-        duration: 2
+        ease: 'steps(30)',
+        duration: 5
       })
       
       gsap.fromTo(
         exRef.current,
         {autoAlpha: 0},
-        {autoAlpha: 1, delay: 2.5}
+        {autoAlpha: 1, delay: 1.5}
       )
       
     }
@@ -58,7 +58,7 @@ const CustomModal = ( { children } ) => {
       gsap.fromTo(
         "#myModal", 
         {maskPosition: "100% 0%"},
-        {maskPosition: "0% 0%", ease: 'steps(24)', duration: 2}
+        {maskPosition: "0% 0%", ease: 'steps(30)', duration: 1.5}
       )
       
       gsap.fromTo(
@@ -75,11 +75,12 @@ const CustomModal = ( { children } ) => {
     // Delay the navigation until after the modal transition
     setTimeout(() => {
       if (backButton) {
+        closeModal()
         router.back();
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 2000); // Adjust the delay as needed
+    }, 1500); // Adjust the delay as needed
 
   }
 

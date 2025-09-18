@@ -15,11 +15,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   background-image: url(/images/watercolor-paper-background-2.jpg);
   background-attachment: local;
   z-index: 51;
-  mask-image: url("/images/ink.png");
+  mask-image: url("/images/Ink-transition-final-v1.png");
   mask-size: cover;
   mask-position: 0% 0%;
   mask-repeat: no-repeat;
@@ -32,10 +32,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(220, 220, 220, 0.15);
+  /* background-color: rgba(220, 220, 220, 0.15); */
   /* glassomorphism */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  /* backdrop-filter: blur(6px); */
+  /* -webkit-backdrop-filter: blur(6px); */
   z-index: 50;
   cursor: pointer;
 }
@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-/* everything greater than 480px */
+/* everything above 480px */
 @media only screen and (min-width: 480px) {
   .my-modal {
     position: fixed;
