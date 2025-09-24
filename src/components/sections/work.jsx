@@ -1,5 +1,4 @@
 'use client'
-import { bebasNeueFontClass } from "@/app/layout"
 import styles from "./work.module.css"
 import Workcard from "../workcard"
 

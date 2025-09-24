@@ -1,14 +1,22 @@
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
-import { useRef, useContext } from 'react';
+import { useRef, useContext, useState } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
 
-const CustomModal = ( { children } ) => {
+const CustomModal = ( { children, width, height } ) => {
 
+  const [dynamicWidth, setDynamicWidth] = useState('')
+  const [dynamicHeight, setDynamicHeight] = useState('')
+
+  const frameProportion = 1.78, //png frame aspect ratio
+  frames = 30, //number of png frames
+  resize = false;
+
+  console.log(width, height)
 
   Modal.setAppElement('#modal-root-id')
   const {isOpen, openModal, closeModal } = useContext(ModalContext);
@@ -17,6 +25,17 @@ const CustomModal = ( { children } ) => {
 
   const exRef = useRef(null)
   const modalRef = useRef(null)
+  const overlayRef = useRef(null)
+
+  const setOverlayRef = (node) => {
+    overlayRef.current = node;
+    // You can now access the overlay DOM node via overlayRef.current
+    if (overlayRef.current) {
+      
+      overlayRef.current.id = 'myOverlay';
+    }
+  };
+
 
   const body = document.getElementById('bodyEl')
 
@@ -29,44 +48,41 @@ const CustomModal = ( { children } ) => {
   });
 
   useGSAP(() => {
+    const transitionLayer = document.getElementById("transitionLayer");
 
     if (isOpen) {
-
-
+      // Show the transition layer and animate the background
+      transitionLayer.style.display = "block";
       gsap.fromTo(
-        "#myModal",
-        {autoAlpha: 0 },
-        {autoAlpha: 1  }
-      )
-
-      gsap.to("#myModal", {
-        maskPosition: "100% 0%",
-        ease: 'steps(30)',
-        duration: 5
-      })
-      
+        "#transitionLayer",
+        { backgroundPosition: "0% 0%" }, // Start position
+        {
+          backgroundPosition: "100% 0%", // End position
+          ease: "steps(30)",
+          duration: 1,
+          onComplete: () => {
+            // Hide the transition layer after the animation
+            transitionLayer.style.display = "none";
+          },
+        }
+      );
+    } else {
+      // Show the transition layer and reverse the animation
+      transitionLayer.style.display = "block";
       gsap.fromTo(
-        exRef.current,
-        {autoAlpha: 0},
-        {autoAlpha: 1, delay: 1.5}
-      )
-      
+        "#transitionLayer",
+        { backgroundPosition: "100% 0%" }, // Start position
+        {
+          backgroundPosition: "0% 0%", // End position
+          ease: "steps(30)",
+          duration: 1,
+          onComplete: () => {
+            // Hide the transition layer after the animation
+            transitionLayer.style.display = "none";
+          },
+        }
+      );
     }
-    // Animation for closing the modal
-    else {
-
-      gsap.fromTo(
-        "#myModal", 
-        {maskPosition: "100% 0%"},
-        {maskPosition: "0% 0%", ease: 'steps(30)', duration: 1.5}
-      )
-      
-      gsap.fromTo(
-        exRef.current,
-        {autoAlpha: 1},
-        {autoAlpha: 0,}
-      )
-    };
   }, [isOpen]);
         
 
@@ -75,36 +91,36 @@ const CustomModal = ( { children } ) => {
     // Delay the navigation until after the modal transition
     setTimeout(() => {
       if (backButton) {
-        closeModal()
+        // closeModal()
         router.back();
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 1500); // Adjust the delay as needed
+    },2000); // Adjust the delay as needed
 
   }
 
 
-  return(
-    <div id="modalContainer" className={styles["modal-container"]}>
+  return (
+      <div className={styles["modal-container"]}>
+        <div id="transitionLayer" className={styles["transition-layer"]}></div>
         <Modal
           ref={modalRef}
           className={styles["my-modal"]}
           id="myModal"
-          isOpen={!modalRef.current?.open}
+          isOpen={isOpen}
           onAfterOpen={() => openModal()}
           contentLabel="Work Modal"
           overlayClassName={styles["my-overlay"]}
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
+          overlayRef={setOverlayRef}
         >
-          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
-            <FaWindowClose size={28}/>
-          </div>
+            <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
+              <FaWindowClose size={28}/>
+            </div>
               {children}
         </Modal>
-        
-
     </div>
   );
 }

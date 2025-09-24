@@ -4,9 +4,12 @@ import React, { createContext, useState } from 'react';
 export const ModalContext = createContext();
 
 export const MyProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    console.log("Opening modal...");
+    setIsOpen(true);
+  };
   const closeModal = () => setIsOpen(false);
 
   const [isParRoute, setIsParRoute] = useState(false);

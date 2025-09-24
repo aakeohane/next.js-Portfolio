@@ -9,21 +9,16 @@
 .my-modal {
   position: fixed;
   overflow: hidden;
-  overflow-y: scroll;
   overscroll-behavior: none;
-  width: 100vw;
-  height: 100%;
-  top: 0;
-  left: 0;
-  /* visibility: hidden; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  cursor: auto;
   background-image: url(/images/watercolor-paper-background-2.jpg);
   background-attachment: local;
-  z-index: 51;
-  mask-image: url("/images/Ink-transition-final-v1.png");
-  mask-size: cover;
-  mask-position: 0% 0%;
-  mask-repeat: no-repeat;
-  cursor: auto;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .my-overlay {
@@ -32,10 +27,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-  /* background-color: rgba(220, 220, 220, 0.15); */
+  background-color: rgba(220, 220, 220, 0.15);
   /* glassomorphism */
-  /* backdrop-filter: blur(6px); */
-  /* -webkit-backdrop-filter: blur(6px); */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 50;
   cursor: pointer;
 }
@@ -49,16 +44,27 @@
   cursor: pointer;
 }
 
+.transition-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60; /* Ensure it's below the modal */
+  width: 100vw;
+  height: 100%;
+  background-image: url("/images/Ink-transition-final-v1.png"); /* Use background image */
+  background-size: cover; /* Ensure the image covers the entire layer */
+  background-position: 0% 0%; /* Start position for the animation */
+  background-repeat: no-repeat;
+  pointer-events: none; /* Prevent interaction */
+  display: none; /* Initially hidden */
+}
+
 /* everything above 480px */
-@media only screen and (min-width: 480px) {
-  .my-modal {
-    position: fixed;
-    overflow: hidden;
-    overflow-y: scroll;
-    overscroll-behavior: none;
+@media screen and (min-width: 480px) {
+  .transition-layer {
     width: 75%;
-    height: 100%;
-    top: 0;
-    left: 12.5%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
   }
 }

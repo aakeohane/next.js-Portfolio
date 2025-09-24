@@ -2,8 +2,9 @@
 import Link from "next/link";
 import Image from "next/image"
 import styles from "./workcard.module.css"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ModalContext } from "@/app/context/provider"; // Import ModalContext
 
 const Workcard = ({order, title, image, slug, windowWidth, ref}) => {
 
@@ -14,10 +15,11 @@ const Workcard = ({order, title, image, slug, windowWidth, ref}) => {
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
-
+  const { openModal } = useContext(ModalContext);
 
   const handleClick = () => {
     setBodyLocked(true)
+    openModal()
   }
 
   useEffect(() => {

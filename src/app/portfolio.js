@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import Footer from '@/components/footer'
 import Home from '@/components/sections/home'
 import Header from '@/components/header'
+import CustomModal from '@/components/custom-modal';
 
 import watercolorJelly from 'public/images/jelly.png'
 import Image from 'next/image';
@@ -91,6 +92,8 @@ const Portfolio = ({allWerkData}) => {
           <Contact/>
         </div>
         <Footer />
+        <CustomModal>
+        </CustomModal>
       </main>}
     </>
   )
