@@ -34,16 +34,9 @@ const CustomModal = ( { children } ) => {
 
 
       gsap.fromTo(
-        "#myModal",
-        {autoAlpha: 0 },
-        {autoAlpha: 1  }
-      )
-
-      gsap.to("#myModal", {
-        maskPosition: "100% 0%",
-        ease: 'steps(30)',
-        duration: 5
-      })
+        "#myModal", 
+        {maskPosition: "0% 0%"},
+        {maskPosition: "100% 0%", ease: 'steps(30)', duration: 1.5})
       
       gsap.fromTo(
         exRef.current,
@@ -102,8 +95,8 @@ const CustomModal = ( { children } ) => {
             <FaWindowClose size={28}/>
           </div>
               {children}
+              
         </Modal>
-        
 
     </div>
   );
