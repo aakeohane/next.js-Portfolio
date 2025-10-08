@@ -210,9 +210,9 @@ section {
   align-self: center;
   width: 100vw;
   max-width: 500px;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(var(--vh, 5vh) * 100);
   height: fit-content;
-  padding-bottom: 2.5vh;
+  padding-bottom: 5.5vh;
 }
 
 a {
