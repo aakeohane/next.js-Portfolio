@@ -2,8 +2,8 @@
   position: absolute;
   z-index: -10;
   right: -100%;
-  transform: translateX(-180px);
-  top: 7.5vh;
+  transform: translateX(-140px);
+  top: 6.5vh;
   height: 100vh;
   width: 100vw;
 }

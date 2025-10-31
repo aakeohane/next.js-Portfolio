@@ -71,6 +71,9 @@ html {
   font-size: 40px;
   color: var(--whale-blue);
   animation: load 1s linear infinite alternate;
+  background-image: url(/images/whale-splashing.gif);
+  background-position: center;
+  background-size: contain;
 }
 
 #globalLoader-two {
@@ -87,14 +90,14 @@ html {
   display: flex;
 }
 
-#loader:before {
+/* #loader:before {
   content: "Loading...";
 }
 @keyframes load {
   to {
     opacity: 0;
   }
-}
+} */
 
 body {
   margin: 0;

@@ -22,19 +22,23 @@
 .nautilus-container {
   position: absolute;
   z-index: -1;
-  left: -115%;
-  top: 10vh;
-  height: 150vh;
-  width: 110vw;
+  width: 80vw;
 }
 
-.right-container {
-  bottom: 2vh;
-  max-width: 600px;
+.inkbleed-container {
   width: 100%;
 }
 
-.bio-container {
+.hero-main-text {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  transform: translate(40px, -5%) scale(1.5);
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.flex-container-right {
   padding-bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -58,23 +62,14 @@
 
 /* Media Queries */
 
-@media (max-width: 1000px) {
-  .nautilus-container {
-    height: 70vh;
-    top: 10vh;
-    transform: rotate(40deg) translateX(-10px);
-  }
-}
-
 @media only screen and (min-width: 750px) {
   .nautilus-container {
     position: absolute;
     z-index: 10;
-    left: -115%;
-    top: 10vh;
+    left: -50%;
+    top: 5vh;
     height: 150vh;
-    width: 110vw;
-    transform: rotate(0deg) translateX(0px);
+    width: 80vw;
   }
 
   .main-content {
@@ -84,10 +79,22 @@
     justify-content: flex-end;
   }
 
-  .bio-container {
-    flex: 1;
+  .flex-container-right {
     display: flex;
+    flex: 1;
     flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .hero-main-text {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    transform: translate(-50%, -25%) scale(2.5);
+    object-fit: contain;
+    opacity: 0.7;
+    padding: 0 20px;
   }
 
   .nautilus {
@@ -103,26 +110,34 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .hero-main-text {
+    transform: translate(-10%, -25%) scale(3);
+  }
+}
+
 /* this is targeting phone view */
 @media (max-width: 750px) {
   .nautilus-container {
     position: absolute;
-    transform: rotate(50deg);
-    top: 0vh;
-    left: -60vw;
-  }
-
-  .nautilus {
+    transform: rotate(40deg);
+    top: -10vh;
+    left: -25vw;
     display: none;
   }
 
-  .bio-container {
+  .nautilus {
+    display: block;
+    object-fit: contain;
+  }
+
+  .flex-container-right {
     padding-bottom: 0;
   }
 
   .bio {
-    font-size: calc(0.7rem + 1vw);
-    line-height: 1.3;
+    font-size: calc(0.8rem + 1vw);
+    line-height: 1.5;
     padding: 10px 0;
     text-indent: 40%;
   }

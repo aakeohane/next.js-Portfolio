@@ -9,6 +9,7 @@ import Home from '@/components/sections/home'
 import Header from '@/components/header'
 
 import watercolorJelly from 'public/images/jelly.png'
+import whaleGIF from 'public/images/splashing-optimized.gif'
 import Image from 'next/image';
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
@@ -69,14 +70,21 @@ const Portfolio = ({allWerkData}) => {
   return (
     <>
     {isLoading ? 
-      <div id="globalLoader">
-        <div id="loader"></div>
+      <div id="globalLoader" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        {/* <div id="loader"></div> */}
+        <Image
+            alt="watercolor jelly" 
+            src={whaleGIF}
+            // className={styles["jelly"]}
+            priority={true}
+            id="whale"
+          />
       </div>
       :
       <main>
         <Header windowWidth={size.width} />
         <div id="fake-body" style={{ overflow: "hidden", position: "relative", width: "100vw", display: 'flex', flexDirection: 'column'}}>
-          <Home/>
+          <Home windowWidth={size.width}/>
           <div className={styles["jelly-container"]}>
           <Image
             alt="watercolor jelly" 
