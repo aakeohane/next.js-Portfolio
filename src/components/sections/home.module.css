@@ -135,11 +135,15 @@
     padding-bottom: 0;
   }
 
+  .hero-main-text {
+    transform: translate(10%, -2.5%) scale(1.5);
+  }
+
   .bio {
     font-size: calc(0.8rem + 1vw);
     line-height: 1.5;
-    padding: 10px 0;
-    text-indent: 40%;
+    padding: 30px 0;
+    text-indent: 0;
   }
 
   .work-button {

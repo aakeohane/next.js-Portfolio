@@ -22,7 +22,7 @@ const Home = (props) => {
     }
   }
 
-  let inkbleed = (props.windowWidth > 5000) ? "/images/inkbleed-desktop.gif"  : "/images/inkbleed-phone.gif"
+  let inkbleed = (props.windowWidth > 5000) ? "/images/inkbleed-desktop.gif"  : "/images/inkbleed-main.gif"
   
   useGSAP(() => {
       
