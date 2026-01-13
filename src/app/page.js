@@ -1,7 +1,6 @@
 import { getAllWerkData } from '@/lib/werk';
 import Portfolio from './portfolio';
 
-
 export const metadata = {
   title: 'Aaron Keohane',
   description: 'Portfolio of work, contact info and about Aaron Keohane',

@@ -73,10 +73,10 @@ const Portfolio = ({allWerkData}) => {
       <div id="globalLoader" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         {/* <div id="loader"></div> */}
         <Image
-            alt="watercolor jelly" 
+            alt="loading icon" 
             src={whaleGIF}
-            // className={styles["jelly"]}
             priority={true}
+            unoptimized={true}
             id="whale"
           />
       </div>

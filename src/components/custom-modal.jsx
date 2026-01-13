@@ -9,9 +9,11 @@ import { ModalContext } from "@/app/context/provider";
 
 const CustomModal = ( { children } ) => {
 
-
   Modal.setAppElement('#modal-root-id')
-  const {isOpen, openModal, closeModal } = useContext(ModalContext);
+  const {isOpen, openModal, closeModal, windowWidth } = useContext(ModalContext);
+
+
+  console.log(windowWidth)
 
   const router = useRouter()
 
@@ -19,7 +21,6 @@ const CustomModal = ( { children } ) => {
   const modalRef = useRef(null)
 
   const body = document.getElementById('bodyEl')
-
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
   // usePreventScroll()
@@ -32,26 +33,41 @@ const CustomModal = ( { children } ) => {
 
     if (isOpen) {
 
-
-      gsap.fromTo(
+      
+      (windowWidth > 1250) ? gsap.fromTo(
         "#myModal", 
         {maskPosition: "0% 0%"},
         {maskPosition: "100% 0%", ease: 'steps(30)', duration: 1.5})
       
-      gsap.fromTo(
-        exRef.current,
-        {autoAlpha: 0},
-        {autoAlpha: 1, delay: 1.5}
-      )
-      
+        :
+
+        gsap.fromTo(
+          "#myModal",
+          {autoAlpha: 1, xPercent: -150 },
+          {autoAlpha: 1, xPercent: -50, duration: 1, ease: 'expo.in'  }
+        )
+
+        gsap.fromTo(
+          exRef.current,
+          {autoAlpha: 0},
+          {autoAlpha: 1, delay: .5}
+        )
     }
     // Animation for closing the modal
     else {
 
-      gsap.fromTo(
+      (windowWidth > 1250) ? gsap.fromTo(
         "#myModal", 
         {maskPosition: "100% 0%"},
         {maskPosition: "0% 0%", ease: 'steps(30)', duration: 1.5}
+      )
+
+      :
+
+      gsap.fromTo(
+        "#myModal",
+        {autoAlpha: 1, xPercent: -50 },
+        {autoAlpha: 1, xPercent: 150, duration: 1, ease: 'expo.in'  }
       )
       
       gsap.fromTo(
