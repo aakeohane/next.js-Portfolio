@@ -38,19 +38,17 @@ const Home = (props) => {
         delay: 2.5
       })
 
-      gsap.set("#squid", {xPercent: 0, yPercent:0, autoAlpha: 1}, )
+      gsap.from("#squid", {
+        translateX: [-100],
+        opacity: 0,
+        delay: 3.5
+      })
 
-      gsap.to("#squid", {
-        xPercent: 34,
-        yPercent: 50,
-        immediateRender: false,
-        scrollTrigger: {
-          // trigger: "#K",
-          start: 125,
-          end: 250,
-          scrub: 1,
-        }
-        })
+      gsap.from("#titles", {
+        opacity: 0,
+        delay: 3.5
+      })
+
 
       let tl = gsap.timeline({repeat: -1, repeatDelay: 5})
       
@@ -78,22 +76,13 @@ const Home = (props) => {
       <div  className={styles["main-content"]}>
         <div className={styles["flex-container-left"]}>
           <div className={styles["nautilus-container"]}>
-            <Image src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />
-            
-              {/* <Image
-                alt="personal logo" 
-                src={nautilus}
-                className={styles["nautilus"]}
-                priority={true}
-                id="nautilus"
-                fill={true}
-              /> */}  
+            <Image id="squid" src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />  
           </div>
         </div>
       
         <div className={styles["flex-container-right"]}>
           <div className={styles["inkbleed-container"]}>
-            <Image src={inkbleed} fill={true} className={styles["hero-main-text"]} unoptimized={true} />
+            <Image id="titles" src={inkbleed} fill={true} className={styles["hero-main-text"]} unoptimized={true} />
           </div>
 
           <h1 id="biography" className={`${styles.bio}`}>
