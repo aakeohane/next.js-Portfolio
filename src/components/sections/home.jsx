@@ -38,14 +38,16 @@ const Home = (props) => {
         delay: 2.5
       })
 
-      gsap.from("#squid", {
-        translateX: [-100],
+      gsap.from("#nautilus", {
+        translateX: [-200],
+        duration: 2,
         opacity: 0,
         delay: 3.5
       })
 
       gsap.from("#titles", {
         opacity: 0,
+        duration: 4,
         delay: 3.5
       })
 
@@ -76,7 +78,7 @@ const Home = (props) => {
       <div  className={styles["main-content"]}>
         <div className={styles["flex-container-left"]}>
           <div className={styles["nautilus-container"]}>
-            <Image id="squid" src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />  
+            <Image id="nautilus" src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />  
           </div>
         </div>
       
