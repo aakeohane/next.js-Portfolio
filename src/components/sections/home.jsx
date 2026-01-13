@@ -78,7 +78,7 @@ const Home = (props) => {
       <div  className={styles["main-content"]}>
         <div className={styles["flex-container-left"]}>
           <div className={styles["nautilus-container"]}>
-            <Image src="/images/nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />
+            <Image src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />
             
               {/* <Image
                 alt="personal logo" 
