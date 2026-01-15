@@ -112,7 +112,7 @@
 
 @media (min-width: 1000px) {
   .hero-main-text {
-    transform: translate(-10%, -25%) scale(3);
+    transform: translate(-30%, -25%) scale(3);
   }
 }
 
