@@ -104,7 +104,7 @@ const About = () => {
           </p>
           <p id="description" className={styles["filter"]}>
             Sustainability and environmental advocacy are important to me, and I aim to reflect those values in the work I create. Whether I’m experimenting with watercolor, refining a layout, or working toward a zero-waste lifestyle, I’m always inspired by the natural world—especially the ocean.
-            When I’m not obsessing over responsive breakpoints or experimenting with new design ideas, you can usually find me on the tennis courts recharging and enjoying some friendly competition.
+            When I’m not obsessing over responsive breakpoints, you can find me on the tennis courts.
             Curious to learn more? Take a peek at my CV below.
           </p>
 
