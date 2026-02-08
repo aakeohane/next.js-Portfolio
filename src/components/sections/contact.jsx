@@ -38,7 +38,7 @@ const Contact = () => {
         />
         <button className={styles["resume-button"]}>
             <Link                       
-              href="files/keohane-resume.pdf"
+              href="files/Keohane_Resume_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >Resume

@@ -88,8 +88,9 @@ const Home = (props) => {
           </div>
 
           <h1 id="biography" className={`${styles.bio}`}>
-            I am a web developer based in sunny San Diego. Passionate about always finding a solution, with a strong multi-disciplinary background, 
-            you can be sure I will think imaginatively when finding yours. I love the ocean, watercolor, and typography. 
+            I’m Aaron, a curious, design-loving web developer with a background in science and marketing. 
+            I enjoy building thoughtful digital experiences utilizing typography and clean, intuitive design. 
+            My work is inspired by my love for the ocean, sustainability, and the world around us. 
           </h1>
           <button id="work-bttn" className={styles['work-button']} >
             <Link

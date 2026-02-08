@@ -41,7 +41,7 @@
   overflow: hidden;
   overflow-y: scroll;
   overscroll-behavior: none;
-  /* background-image: url(/images/watercolor-paper-background-2.jpg); */
+  background-image: url(/images/watercolor-paper-background-2.jpg);
   background-attachment: local;
   z-index: 51;
 }

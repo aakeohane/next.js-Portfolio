@@ -99,15 +99,13 @@ const About = () => {
         <div className={styles["content-container"]}>
           <h1 id="title" className={styles["title"]}>How did I know I was destined for coding?</h1>
           <p id="description" className={styles["filter"]}>
-            I am always the first to google the moment someone asks a question.
-            Besides my googling talent, my academic background in the sciences 
-            has prepared me to problem solve, critically evaluate, and think 
-            imaginatively when facing technical challenges. Thankfully, my seemingly 
-            perpetual need to know is the perfect characteristic for someone in the 
-            tech field and I am ready to keep on learning! I aim to inspire positive 
-            environmental change through my work. I love the ocean, typography and 
-            living a zero waste lifestyle. When I'm not obsessing about responsive 
-            design, you can find me on the tennis courts. Take a peak at my CV below.
+            I’ve always been the person who immediately Googles the answer the moment there is any uncertainty. With an academic background in the sciences, I learned to approach problems with a blend of critical thinking, creativity, and perseverance. That mindset translated naturally into web development, where I found that I love creating digital experiences just as much as I love understanding how they work.
+            My journey from marketing into tech opened the door to something I genuinely enjoy: combining logic and artistry. I’m passionate about thoughtful web design, expressive typography, and the small design details that quietly shape how people feel online.
+          </p>
+          <p id="description" className={styles["filter"]}>
+            Sustainability and environmental advocacy are important to me, and I aim to reflect those values in the work I create. Whether I’m experimenting with watercolor, refining a layout, or working toward a zero-waste lifestyle, I’m always inspired by the natural world—especially the ocean.
+            When I’m not obsessing over responsive breakpoints or experimenting with new design ideas, you can usually find me on the tennis courts recharging and enjoying some friendly competition.
+            Curious to learn more? Take a peek at my CV below.
           </p>
 
 {/* lofi inkbleed text effect for paragaph */}
@@ -135,10 +133,9 @@ const About = () => {
     </filter>  
   </defs>
 </svg>
-
           <button id="resumeBtn" className={styles["resume-button"]}>
             <Link                        
-              href="files/keohane-resume.pdf"
+              href="files/Keohane_Resume_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >Resume
