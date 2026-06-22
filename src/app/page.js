@@ -5,6 +5,14 @@ export const metadata = {
   title: 'Aaron Keohane',
   description: 'Portfolio of work, contact info and about Aaron Keohane',
 }
+
+export const viewport = {
+  themeColor: 'black',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover',
+}
  
 export default function Page() {
   // grab project info from lib and pass to portfolio

@@ -1,32 +1,32 @@
 .main-content {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   color: var(--whale-blue);
   position: relative;
   height: 100vh;
   height: 100svh;
   width: 100vw;
-  padding: 0 20px 0 20px;
-}
-.logo-name {
-  filter: url("#displacementFilter");
-  width: 20vw;
+  padding: 0 7.5rem 0 7.5rem;
 }
 
-.flex-container-left {
-  flex: 1;
-  position: relative;
+.column {
+  width: 50%;
 }
 
-.nautilus-container {
-  position: absolute;
-  z-index: -1;
-  width: 80vw;
+.column:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: auto;
 }
 
-.inkbleed-container {
-  width: 100%;
+.name-container {
+  padding-bottom: 2.5rem;
+}
+
+.bioContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
 }
 
 .hero-main-text {
@@ -38,53 +38,30 @@
   opacity: 0.7;
 }
 
-.flex-container-right {
-  padding-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
 .bio {
   font-size: calc(0.7rem + 1vw);
   line-height: 1.3;
   color: var(--whale-blue);
-  padding: 10px 0;
-  text-indent: 40%;
+  padding: 2.5rem 0;
+  text-indent: 30%;
   position: relative;
   z-index: -1;
+  filter: blur(1px) url(#pFilter);
 }
 
 .work-button {
   padding: 1rem 1.5rem 1rem 1.5rem;
-  font-size: calc(1.5rem + 1vw);
+  font-size: calc(0.75rem + 1vw);
+  color: var(--whale-yellow);
+  filter: brightness(0.8);
 }
 
 /* Media Queries */
 
 @media only screen and (min-width: 750px) {
-  .nautilus-container {
-    position: absolute;
-    z-index: 10;
-    left: -50%;
-    top: 5vh;
-    height: 150vh;
-    width: 80vw;
-  }
-
   .main-content {
     padding-bottom: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
-  .flex-container-right {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
+    /* display: flex; */
   }
 
   .hero-main-text {
@@ -97,46 +74,25 @@
     padding: 0 20px;
   }
 
-  .nautilus {
-    display: block;
-    object-fit: contain;
-  }
-
   .work-button {
     margin: 0 5rem 0 0;
     position: relative;
-    font-size: calc(1.5rem + 1vw);
+    /* font-size: calc(1.5rem + 1vw); */
     align-self: flex-end;
-  }
-}
-
-@media (min-width: 1000px) {
-  .hero-main-text {
-    transform: translate(-30%, -25%) scale(3);
   }
 }
 
 /* this is targeting phone view */
 @media (max-width: 750px) {
-  .nautilus-container {
-    position: absolute;
-    transform: rotate(40deg);
-    top: -10vh;
-    left: -25vw;
-    display: none;
+  .main-content {
+    padding-bottom: 0.5rem;
+    flex-direction: column;
   }
 
-  .nautilus {
-    display: block;
-    object-fit: contain;
-  }
-
-  .flex-container-right {
-    padding-bottom: 0;
-  }
-
-  .hero-main-text {
-    transform: translate(10%, -10.5%) scale(1.5);
+  .bioContainer {
+    display: flex;
+    order: 1; /* pushes to bottom */
+    justify-content: flex-end;
   }
 
   .bio {
@@ -151,5 +107,6 @@
     font-size: calc(1.25rem + 1vw);
     margin-right: 1rem;
     margin-top: -1rem;
+    align-self: flex-end;
   }
 }

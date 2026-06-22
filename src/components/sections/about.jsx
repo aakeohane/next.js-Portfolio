@@ -75,14 +75,14 @@ const About = () => {
       <div className={styles["about-container"]}>
         <div className={styles["portrait-container"]}>
           <Image
-            alt="personal logo" 
+            alt="colored in profile pic" 
             src={portraitColor}
             className={styles["portrait-color"]}
             priority
             id="portraitColor"
           />
           <Image
-            alt="personal logo" 
+            alt="black and white profile pic" 
             src={profilePic}
             className={styles["portrait-bw"]}
             priority

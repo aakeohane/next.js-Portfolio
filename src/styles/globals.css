@@ -106,7 +106,8 @@ p {
 button {
   border-radius: 3px;
   font-family: "Blastimo", "Open Sans", sans-serif;
-  font-size: calc(1.25rem + 1vw);
+  font-family: "Buckwheat", sans-serif;
+  /* font-size: calc(1.25rem + 1vw); */
   color: var(--inkblot-black);
   height: fit-content;
   width: fit-content;
@@ -131,10 +132,8 @@ button::after {
   transition: opacity 0.5s;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url("/images/button-watercolor-v2.png");
   z-index: -3;
   opacity: 0;

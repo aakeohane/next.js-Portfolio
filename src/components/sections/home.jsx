@@ -5,8 +5,9 @@ import scrollToElement from 'scroll-to-element'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from 'next/link';
 import Image from "next/image";
-import name from "public/images/FullName.png"
-import MovingNautilus from '../moving-nautilus';
+import Aaron from "public/images/Aaron.png"
+import Keohane from "public/images/Keohane.png"
+// import MovingNautilus from '../moving-nautilus';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = (props) => {
@@ -76,31 +77,43 @@ const Home = (props) => {
   return (
     <section id="home" data-section style={{}}>
       <div  className={styles["main-content"]}>
-        <div className={styles["flex-container-left"]}>
-          <div className={styles["nautilus-container"]}>
-            <Image id="nautilus" src="/images/Nautilus-tentacles.gif" fill={true} className={styles["nautilus"]} unoptimized={true} />  
+        <div className={`${styles.column}`}>
+          <div className={styles["name-container"]}>
+            <Image
+              alt="watercolor stylized name - Aaron" 
+              src={Aaron}
+              className={styles["name-watercolor"]}
+              priority
+              height={150}
+              id="Aaron"
+            />
+            <Image
+              alt="watercolor stylized name - Keohane" 
+              src={Keohane}
+              className={styles["name-watercolor"]}
+              priority
+              height={150}
+              id="Keohane"
+            />
           </div>
-        </div>
-      
-        <div className={styles["flex-container-right"]}>
-          <div className={styles["inkbleed-container"]}>
-            <Image id="titles" src={inkbleed} fill={true} className={styles["hero-main-text"]} unoptimized={true} />
-          </div>
+          <div className={`${styles.bioContainer}`}>
 
-          <h1 id="biography" className={`${styles.bio}`}>
-            I’m Aaron, a curious, design-loving web developer with a background in science and marketing. 
-            I enjoy building thoughtful digital experiences utilizing typography and clean, intuitive design. 
-            My work is inspired by my love for the ocean, sustainability, and the world around us. 
-          </h1>
-          <button id="work-bttn" className={styles['work-button']} >
-            <Link
-              onClick={(e) => smoothLinkClick(e, '#work')}
-              href="/#work"
-            >My Projects
-            </Link>
-          </button>
+            <p id="biography" className={`${styles.bio}`}>
+              I’m Aaron, a curious, design-loving web developer with a background in science and marketing. 
+              Inspired by my love for the ocean, sustainability, and the world around us. 
+            </p>
+            <button id="work-bttn" className={styles['work-button']} >
+              <Link
+                onClick={(e) => smoothLinkClick(e, '#work')}
+                href="/#work"
+              >My Projects
+              </Link>
+            </button>
+          </div>
         </div>
-        
+        <div className={`${styles.column}`}>
+          {/* blank column */}
+        </div>
       </div>
           
     </section>
