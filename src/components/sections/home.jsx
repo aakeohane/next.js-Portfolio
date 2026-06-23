@@ -106,7 +106,7 @@ const Home = (props) => {
               <Link
                 onClick={(e) => smoothLinkClick(e, '#work')}
                 href="/#work"
-              >My Projects
+              >View Work
               </Link>
             </button>
           </div>
