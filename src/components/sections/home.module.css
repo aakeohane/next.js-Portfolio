@@ -38,11 +38,12 @@
 }
 
 .work-button {
-  padding: 1rem 1.5rem 1rem 1.5rem;
-  font-size: calc(0.75rem + 1vw);
-  color: var(--whale-yellow);
-  filter: brightness(0.8);
+  /* padding: 1rem 0rem 1rem 0rem; */
+  margin: 0.5rem 0 1rem 0;
+  /* font-size: calc(0.4rem + 1vw); */
+  color: var(--whale-blue);
   align-self: flex-end;
+  /* letter-spacing: 0.5em; */
 }
 
 /* Media Queries */
