@@ -7,7 +7,6 @@ import Modal from 'react-modal';
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
-import { CgEventbrite } from "react-icons/cg";
 
 const CustomModal = ( { children } ) => {
 
@@ -23,6 +22,8 @@ const CustomModal = ( { children } ) => {
   const modalRef = useRef(null)
 
   const body = document.getElementById('bodyEl')
+
+  const overlayRef = useRef(null);
 
   // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
   // usePreventScroll()
@@ -79,7 +80,19 @@ const CustomModal = ( { children } ) => {
       )
     };
   }, [isOpen]);
-        
+  
+
+  useGSAP(() => {
+    if (!overlayRef.current) return;
+
+    if (isOpen) {
+      
+      gsap.to(overlayRef.current, { backdropFilter: 'blur(5px)', duration: 3 });
+    } else {
+      
+      gsap.to(overlayRef.current, { backdropFilter: 'blur(0px)', duration: 3 });
+    }
+  }, [isOpen]);
 
   function onModalHide(backButton) {
     closeModal()
@@ -91,7 +104,7 @@ const CustomModal = ( { children } ) => {
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 1500); // Adjust the delay as needed
+    }, 3000); // Adjust the delay as needed
   }
 
     function handleKeyDown(event) {
@@ -107,9 +120,15 @@ const CustomModal = ( { children } ) => {
           className={styles["my-modal"]}
           id="myModal"
           isOpen={!modalRef.current?.open}
+          // closeTimeoutMS={10000}
           onAfterOpen={() => openModal()}
           contentLabel="Work Modal"
-          overlayClassName={styles["my-overlay"]}
+          overlayRef={(node) => (overlayRef.current = node)}
+          overlayClassName={{
+          base: styles["my-overlay"],
+          afterOpen: styles['my-overlay--after-open'],
+          beforeClose: styles['my-overlay--before-close']
+        }}
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
         >
