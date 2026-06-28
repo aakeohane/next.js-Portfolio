@@ -111,9 +111,7 @@ const CustomModal = ( { children } ) => {
             <FaWindowClose size={28}/>
           </div>
               {children}
-              
         </Modal>
-
     </div>
   );
 }

@@ -88,7 +88,7 @@
 }
 
 .example-button {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   /* font-size: calc(0.55rem + 1vw); */
   position: relative;
 }
@@ -141,7 +141,12 @@
   margin: 15px 0 15px 0;
 }
 
+/* Phone view */
 @media only screen and (max-width: 480px) {
+  .example-link-container {
+    padding-bottom: 2.5rem; /* safe area to avoid browser interaction */
+  }
+
   .github-link-container {
     .example-button {
       margin-left: 7.5px;

@@ -99,13 +99,16 @@ const About = () => {
         <div className={styles["content-container"]}>
           <h1 id="title" className={styles["title"]}>How did I know I was destined for coding?</h1>
           <p id="description" className={styles["filter"]}>
-            I’ve always been the person who immediately Googles the answer the moment there is any uncertainty. With an academic background in the sciences, I learned to approach problems with a blend of critical thinking, creativity, and perseverance. That mindset translated naturally into web development, where I found that I love creating digital experiences just as much as I love understanding how they work.
-            My journey from marketing into tech opened the door to something I genuinely enjoy: combining logic and artistry. I’m passionate about thoughtful web design, expressive typography, and the small design details that shape an online experience.
+            I’ve always been the person who immediately Googles the answer the moment there is any uncertainty. I found that I love creating digital experiences just as much as I love understanding how they work.
+           I’m passionate about thoughtful web design, expressive typography, and the small design details that shape an online experience.
           </p>
           <p id="description" className={styles["filter"]}>
             Sustainability and environmental advocacy are important to me, and I aim to reflect those values in the work I create. Whether I’m experimenting with watercolor, refining a layout, or working toward a zero-waste lifestyle, I’m always inspired by the natural world—especially the ocean.
             When I’m not obsessing over responsive breakpoints, you can find me on the tennis courts.
-            Curious to learn more? Take a peek at my CV below.
+            Curious to learn more? Take a peek at my resume below.
+          </p>
+          <p id="description" className={styles["filter"]}>
+            Curious to learn more? Take a peek at my resume below.
           </p>
 
 {/* lofi inkbleed text effect for paragaph */}

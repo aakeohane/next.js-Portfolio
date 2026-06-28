@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import ReactDOM from 'react-dom';
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import { MyProvider } from './context/provider';
@@ -6,6 +7,8 @@ import { Source_Sans_3 } from 'next/font/google';
 
 
 export default function RootLayout({ children, modal }) {  
+
+  ReactDOM.preload('/images/watercolor-paper-background-lightyellow.v3.png', { as: 'image' });
 
   return (
     <html lang='en' className={`${sourceSans.variable}`} >

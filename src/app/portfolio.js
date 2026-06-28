@@ -68,7 +68,7 @@ const Portfolio = ({allWerkData}) => {
   }, [!isLoading])
 
   return (
-    <>
+    <div>
     {isLoading ? 
       <div id="globalLoader" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         {/* <div id="loader"></div> */}
@@ -100,7 +100,7 @@ const Portfolio = ({allWerkData}) => {
         </div>
         <Footer />
       </main>}
-    </>
+    </div>
   )
 }
 
