@@ -1,11 +1,13 @@
 import gsap from "gsap";
 import styles from "./custom-modal.module.css"
 import { useRef, useContext } from 'react';
-import { FaWindowClose } from "react-icons/fa";
+import Image from "next/image";
+import closeIcon from "public/images/x-button.png";
 import Modal from 'react-modal'; 
 import { useRouter } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { ModalContext } from "@/app/context/provider";
+import { CgEventbrite } from "react-icons/cg";
 
 const CustomModal = ( { children } ) => {
 
@@ -90,9 +92,13 @@ const CustomModal = ( { children } ) => {
       // turns body scroll back on
       body.style.overflow = 'auto';
     }, 1500); // Adjust the delay as needed
-
   }
 
+    function handleKeyDown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      onModalHide(event);
+    }
+  };
 
   return(
     <div id="modalContainer" className={styles["modal-container"]}>
@@ -107,10 +113,17 @@ const CustomModal = ( { children } ) => {
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
         >
-          <div className={styles["topright"]} onClick={onModalHide} ref={exRef}>
-            <FaWindowClose size={28}/>
+          <div role="button" className={styles["closeButton"]} onKeyDown={handleKeyDown} onClick={onModalHide} ref={exRef}>
+            <Image
+              alt="close icon" 
+              src={closeIcon}
+              height={35}
+              tabIndex={0} 
+              className={styles["close-icon"]}
+              priority
+            />
           </div>
-              {children}
+          {children}
         </Modal>
     </div>
   );
