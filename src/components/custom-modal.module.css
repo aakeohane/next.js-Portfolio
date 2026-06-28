@@ -49,6 +49,9 @@
   box-shadow: none;
   outline: none;
   visibility: hidden;
+  /* Force hardware acceleration */
+  will-change: transform;
+  /* transform: translateZ(0); */
 }
 
 @media only screen and (min-width: 1250px) {

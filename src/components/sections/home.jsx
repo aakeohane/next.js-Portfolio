@@ -115,7 +115,7 @@ const Home = (props) => {
               Inspired by my love for the ocean, sustainability, and the world around us. 
             </p>
             <button id="work-bttn" className={styles['work-button']} onClick={(e) => smoothLinkClick(e, '#work')} href="/#work" >
-              Work
+              WORK
             </button>
           </div>
         </div>

@@ -35,8 +35,8 @@ const CustomModal = ( { children } ) => {
 
       (windowWidth > 1250) ? gsap.fromTo(
         "#myModal", 
-        {maskPosition: "0% 0%"},
-        {maskPosition: "100% 0%", ease: 'steps(30)', duration: 1.5})
+        {autoAlpha: 1, maskPosition: "0% 0%"},
+        {autoAlpha: 1, maskPosition: "100% 0%", ease: 'steps(30)', duration: 1.5})
       
         :
 

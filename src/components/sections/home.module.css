@@ -38,12 +38,10 @@
 }
 
 .work-button {
-  /* padding: 1rem 0rem 1rem 0rem; */
-  margin: -1.5rem 2rem 1rem 0;
+  margin: 1rem 2rem 0 0;
   font-size: calc(1.5rem + 1vw);
   color: var(--whale-blue);
   align-self: flex-end;
-  /* letter-spacing: 0.5em; */
 }
 
 /* Media Queries */
@@ -85,8 +83,6 @@
   }
 
   .work-button {
-    padding: 1rem 0.75rem 0.75rem 0.75rem;
-    margin: 0;
-    margin-top: -3rem;
+    margin: -3rem 1rem 0 0;
   }
 }

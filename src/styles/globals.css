@@ -104,19 +104,14 @@ p {
 }
 
 button {
-  /* border-radius: 3px; */
   font-family: "Buckwheat", sans-serif;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
   color: var(--whale-blue);
   text-align: center;
-  padding: 1rem 0.75rem 0.75rem 0.75rem;
+  padding: 1.5rem;
   position: relative;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow: hidden;
-  /* Scale the image to fit the button container properly */
-
-  /* filter: url(#pFilter); */
+  line-height: 1;
+  letter-spacing: -0.08em;
 }
 
 button::after {
@@ -126,41 +121,27 @@ button::after {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s;
-  background-size: cover;
-  background-position: center;
-  background-image: url("/images/button-watercolor.png");
+  background-image: url("/images/refined-watercolor-button.png");
   background-size: contain;
-
-  /* Prevent the image from repeating if the button is larger than the file */
   background-repeat: no-repeat;
-
-  /* Center the image within the button boundaries */
-  background-position: center;
-
-  /* Remove default browser button styling */
-  border: none;
   background-color: transparent;
-  z-index: -3;
-  opacity: 0.8;
+  background-position: center;
+  transition: background-image 1s;
+  z-index: -1;
+  opacity: 0.7;
 }
 
 button:hover::after {
-  /* background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("/images/button-watercolor-v2.png"); */
-  /* opacity: 0.5; */
-  z-index: -3;
+  background-image: url("/images/blue-watercolor-hover.png");
+  transition: background-image opacity 1s;
+  opacity: 0.8;
+  z-index: -1;
 }
 
-button::before {
-  content: "";
-  /* border: 2px solid var(--whale-blue); */
-  /* inset: 0; */
-  position: absolute;
-  /* filter: url(#scribbleBorder); */
+button:focus::after {
+  background-image: url("/images/blue-watercolor-hover.png");
+  transition: background-image opacity 1s;
+  opacity: 0.8;
   z-index: -1;
 }
 
