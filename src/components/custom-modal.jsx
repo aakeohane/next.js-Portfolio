@@ -25,9 +25,6 @@ const CustomModal = ( { children } ) => {
 
   const overlayRef = useRef(null);
 
-  // nifty aria trick to actually remove body scroll when using phone on safari, EVERYTHING else does not work
-  // usePreventScroll()
-
   gsap.config({
     nullTargetWarn: false,
   });
@@ -36,7 +33,6 @@ const CustomModal = ( { children } ) => {
 
     if (isOpen) {
 
-      
       (windowWidth > 1250) ? gsap.fromTo(
         "#myModal", 
         {maskPosition: "0% 0%"},
@@ -90,7 +86,7 @@ const CustomModal = ( { children } ) => {
       gsap.to(overlayRef.current, { backdropFilter: 'blur(5px)', duration: 3 });
     } else {
       
-      gsap.to(overlayRef.current, { backdropFilter: 'blur(0px)', duration: 3 });
+      gsap.to(overlayRef.current, { backdropFilter: 'blur(0px)', duration: 2 });
     }
   }, [isOpen]);
 
@@ -104,7 +100,7 @@ const CustomModal = ( { children } ) => {
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 3000); // Adjust the delay as needed
+    }, 2000); // Adjust the delay as needed
   }
 
     function handleKeyDown(event) {
@@ -120,15 +116,10 @@ const CustomModal = ( { children } ) => {
           className={styles["my-modal"]}
           id="myModal"
           isOpen={!modalRef.current?.open}
-          // closeTimeoutMS={10000}
           onAfterOpen={() => openModal()}
           contentLabel="Work Modal"
           overlayRef={(node) => (overlayRef.current = node)}
-          overlayClassName={{
-          base: styles["my-overlay"],
-          afterOpen: styles['my-overlay--after-open'],
-          beforeClose: styles['my-overlay--before-close']
-        }}
+          overlayClassName={styles["my-overlay"]}
           onRequestClose={onModalHide}
           onAfterClose={(e) => {onModalHide(e)}}
         >

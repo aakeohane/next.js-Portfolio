@@ -32,7 +32,7 @@ const Navbar = (props) => {
         gsap.fromTo(
           "#my-nav",
           {autoAlpha: 0, yPercent: -120 },
-          {autoAlpha: 1, yPercent: 0, duration: 1, delay: 2  }
+          {autoAlpha: 1, yPercent: 0, duration: 1, delay: 1  }
         )
       };
   }, [isOpen]);

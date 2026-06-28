@@ -18,8 +18,6 @@
   left: 0;
   z-index: 50;
   cursor: pointer;
-  transform: translate3d(0, 0, 0);
-  will-change: transform, opacity;
 }
 
 /* exit button */
@@ -50,8 +48,7 @@
   border: none;
   box-shadow: none;
   outline: none;
-  backface-visibility: hidden;
-  /* padding-top: 2.5rem; */
+  visibility: hidden;
 }
 
 @media only screen and (min-width: 1250px) {
