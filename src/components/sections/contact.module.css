@@ -32,6 +32,8 @@
 .resume-button {
   position: relative;
   margin: 0.5em 0 0.5em 0;
+  font-size: calc(1.25rem + 1vw);
+  padding: 1.5rem;
 }
 
 .twitter-icon:hover {

@@ -41,7 +41,8 @@ const Contact = () => {
               href="files/Keohane_Resume_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
-            >Resume
+            >
+              <span>Resume</span>
             </Link>
         </button>
         <div className={styles["social-icons-container"]}>

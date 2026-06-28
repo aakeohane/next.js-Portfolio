@@ -114,6 +114,11 @@ button {
   letter-spacing: -0.08em;
 }
 
+button span {
+  display: inline-block;
+  transform: translateY(-6px);
+}
+
 button::after {
   content: "";
   position: absolute;

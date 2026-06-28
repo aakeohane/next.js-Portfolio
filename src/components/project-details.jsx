@@ -103,7 +103,8 @@ const ProjectDetails = ({slug, parRoute}) => {
                 key={werk.order}
                 href={werk.githubLink}
                 target="_blank"
-              >The Code
+              >
+                <span>The Code</span>
               </Link>
             </button>
               :
@@ -116,7 +117,8 @@ const ProjectDetails = ({slug, parRoute}) => {
                         key={link[0]}
                         href={link[1]}
                         target="_blank"
-                      >The Code
+                      >
+                        <span>The Code</span>
                       </Link>
                     </button>
                   </div>
@@ -132,7 +134,8 @@ const ProjectDetails = ({slug, parRoute}) => {
               <Link
                 href={werk.liveSiteLink}
                 target="_blank"
-                >Live Site
+                >
+                  <span>Live Site</span>
               </Link>
             </button>
               :
@@ -145,7 +148,8 @@ const ProjectDetails = ({slug, parRoute}) => {
                         key={link[0]}
                         href={link[1]}
                         target="_blank"
-                      >Live Site
+                      >
+                        <span>Live Site</span>
                       </Link>
                     </button>
                   </div>
