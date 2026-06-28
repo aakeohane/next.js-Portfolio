@@ -98,7 +98,7 @@ h3 {
 p {
   font-family: var(--font-sourceSans);
   color: var(--whale-blue);
-  font-size: calc(0.8rem + 1vw);
+  font-size: calc(0.7rem + 1vw);
   padding: 10px 0;
   filter: blur(0.5px) url(#pFilter);
 }
@@ -106,14 +106,14 @@ p {
 button {
   /* border-radius: 3px; */
   font-family: "Buckwheat", sans-serif;
-  /* font-size: calc(1.25rem + 1vw); */
-  /* color: var(--inkblot-black); */
-
+  font-size: calc(1rem + 1vw);
+  color: var(--whale-blue);
   text-align: center;
-  /* line-height: 1; */
-  padding: 10px;
-  /* letter-spacing: 1px; */
+  padding: 1rem 0.75rem 0.75rem 0.75rem;
   position: relative;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
   /* Scale the image to fit the button container properly */
 
   /* filter: url(#pFilter); */

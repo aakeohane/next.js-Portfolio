@@ -27,6 +27,18 @@ const Home = (props) => {
   
   useGSAP(() => {
       
+      gsap.from("#Aaron", {
+          opacity: 0,
+          duration: 5,
+          delay: 1
+      })
+
+      gsap.from("#Keohane", {
+          opacity: 0,
+          duration: 5,
+          delay: 1
+      })
+
       gsap.from("#work-bttn", {
         opacity: 0,
         duration: 2,
@@ -102,12 +114,8 @@ const Home = (props) => {
               I’m Aaron, a curious, design-loving web developer with a background in science and marketing. 
               Inspired by my love for the ocean, sustainability, and the world around us. 
             </p>
-            <button id="work-bttn" className={styles['work-button']} >
-              <Link
-                onClick={(e) => smoothLinkClick(e, '#work')}
-                href="/#work"
-              >View Work
-              </Link>
+            <button id="work-bttn" className={styles['work-button']} onClick={(e) => smoothLinkClick(e, '#work')} href="/#work" >
+              Work
             </button>
           </div>
         </div>

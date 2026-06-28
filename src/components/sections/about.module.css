@@ -56,9 +56,23 @@
   position: relative;
 }
 
+.description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 0 10px;
+}
+
 .resume-button {
-  margin: 0.5rem 2rem 1rem 2rem;
-  position: relative;
+  padding: 1rem 0.75rem 0.75rem 0.75rem;
+  font-family: "Buckwheat", sans-serif;
+  font-size: calc(1rem + 1vw);
+  color: var(--whale-blue);
+  background-position: center;
+  background-image: url("/images/button-watercolor.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .drop {

@@ -39,8 +39,8 @@
 
 .work-button {
   /* padding: 1rem 0rem 1rem 0rem; */
-  margin: 0.5rem 0 1rem 0;
-  /* font-size: calc(0.4rem + 1vw); */
+  margin: -1.5rem 2rem 1rem 0;
+  font-size: calc(1.5rem + 1vw);
   color: var(--whale-blue);
   align-self: flex-end;
   /* letter-spacing: 0.5em; */
@@ -63,6 +63,10 @@
     padding: 0 1rem;
   }
 
+  .bioContainer {
+    margin-bottom: -1.5rem;
+  }
+
   .column:first-child {
     flex-basis: 100%;
     grid-template-areas:
@@ -82,7 +86,7 @@
 
   .work-button {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
-    font-size: calc(1rem + 1vw);
-    margin-top: -1rem;
+    margin: 0;
+    margin-top: -3rem;
   }
 }
