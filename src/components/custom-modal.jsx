@@ -66,8 +66,8 @@ const CustomModal = ( { children } ) => {
 
       gsap.fromTo(
         "#myModal",
-        {autoAlpha: 1, xPercent: -50 },
-        {autoAlpha: 1, xPercent: 150, duration: 1, ease: 'expo.in'  }
+        { xPercent: -50 },
+        { xPercent: 150, duration: 1, ease: 'expo.in'  }
       )
       
       gsap.fromTo(

@@ -5,13 +5,13 @@ import localFont from 'next/font/local'
 import { MyProvider } from './context/provider';
 import { Source_Sans_3 } from 'next/font/google';
 
-export const metadata = {
-  title: 'Aaron Keohane',
-  description: 'Portfolio of work, contact info and about Aaron Keohane',
-}
 
-export const viewport = {
+export const Viewport = {
   themeColor: '#b4dde9',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#b4dde9' },
+    { media: '(prefers-color-scheme: dark)', color: '#b4dde9' },
+  ],
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
