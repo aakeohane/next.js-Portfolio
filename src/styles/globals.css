@@ -134,14 +134,14 @@ button::after {
 button:hover::after {
   background-image: url("/images/blue-watercolor-hover.png");
   transition: background-image opacity 1s;
-  opacity: 0.8;
+  opacity: 1;
   z-index: -1;
 }
 
 button:focus::after {
   background-image: url("/images/blue-watercolor-hover.png");
   transition: background-image opacity 1s;
-  opacity: 0.8;
+  opacity: 1;
   z-index: -1;
 }
 

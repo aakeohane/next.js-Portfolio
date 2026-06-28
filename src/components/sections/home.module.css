@@ -38,10 +38,11 @@
 }
 
 .work-button {
-  margin: 1rem 2rem 0 0;
+  margin: -1rem 2rem 0 0;
   font-size: calc(1.5rem + 1vw);
   color: var(--whale-blue);
   align-self: flex-end;
+  padding: 2rem;
 }
 
 /* Media Queries */
@@ -84,5 +85,6 @@
 
   .work-button {
     margin: -3rem 1rem 0 0;
+    padding: 1.25rem;
   }
 }
