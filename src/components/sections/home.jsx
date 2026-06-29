@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Image from "next/image";
 import Aaron from "public/images/Aaron.png"
 import Keohane from "public/images/Keohane.png"
-// import MovingNautilus from '../moving-nautilus';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = (props) => {
@@ -89,7 +88,7 @@ const Home = (props) => {
   return (
     <section id="home" data-section style={{}}>
       <div  className={styles["main-content"]}>
-        <div className={`${styles.column}`}>
+        <div className={styles["column"]}>
           <div className={styles["name-container"]}>
             <Image
               alt="watercolor stylized name - Aaron" 
@@ -108,18 +107,18 @@ const Home = (props) => {
               id="Keohane"
             />
           </div>
-          <div className={`${styles.bioContainer}`}>
+          <div className={styles["bio-container"]}>
 
-            <p id="biography" className={`${styles.bio}`}>
-              I’m Aaron, a curious, design-loving web developer with a background in science and marketing. 
-              Inspired by my love for the ocean, sustainability, and the world around us. 
+            <p id="biography" className={styles["bio"]}>
+              is a curious, design-loving web developer with a background in science and marketing.
+              Inspired by the ocean, sustainability, and the world around us. 
             </p>
-            <button id="work-bttn" className={styles['work-button']} onClick={(e) => smoothLinkClick(e, '#work')} href="/#work" >
+            <button id="work-bttn" className={styles["work-button"]} onClick={(e) => smoothLinkClick(e, '#work')} href="/#work" >
               <span>wOrk</span>
             </button>
           </div>
         </div>
-        <div className={`${styles.column}`}>
+        <div className={styles["column"]}>
           {/* blank column */}
         </div>
       </div>
