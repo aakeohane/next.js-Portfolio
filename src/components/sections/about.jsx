@@ -138,7 +138,7 @@ const About = () => {
               id="resumeBtn" 
               className={styles["resume-button"]}
             >
-            Resume
+            <span>Resume</span>
             </Link>
           </div>
           {/* lofi inkbleed text effect for paragaph */}

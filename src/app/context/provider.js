@@ -8,8 +8,9 @@ export const MyProvider = ({ children }) => {
   const [isParRoute, setIsParRoute] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false);
+
 
   // Function to toggle isParRoute
   const parRoute = () => setIsParRoute(!isParRoute);
@@ -19,18 +20,13 @@ export const MyProvider = ({ children }) => {
     const updateWindowWidth = () => {
       setWindowWidth(window.innerWidth);
     };
-
-    // Set initial window width
-    updateWindowWidth();
-
-    // Add event listener for window resize
+    updateWindowWidth()
     window.addEventListener('resize', updateWindowWidth);
 
-    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener('resize', updateWindowWidth);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <ModalContext.Provider value={{ isOpen, openModal, closeModal, parRoute, isParRoute, windowWidth }}>

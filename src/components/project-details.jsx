@@ -98,29 +98,30 @@ const ProjectDetails = ({slug, parRoute}) => {
             {
             // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.githubLink !== "object" ?
-            <button className={styles['example-button']}>
+            
               <Link
                 key={werk.order}
                 href={werk.githubLink}
                 target="_blank"
+                className={styles["example-button"]}
               >
                 <span>The Code</span>
               </Link>
-            </button>
+
               :
+
               Object.entries(werk.githubLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
                     <p>{link[0]}:</p>
-                    <button className={styles['example-button']}>
                       <Link
                         key={link[0]}
                         href={link[1]}
                         target="_blank"
+                        className={styles["example-button"]}
                       >
                         <span>The Code</span>
                       </Link>
-                    </button>
                   </div>
               )
               })
@@ -130,28 +131,28 @@ const ProjectDetails = ({slug, parRoute}) => {
             {
             // this is a one off instance to check for multiple links in library werk.js content
             typeof werk.liveSiteLink !== "object" ?
-            <button className={styles['example-button']}>
               <Link
                 href={werk.liveSiteLink}
                 target="_blank"
-                >
+                className={styles["example-button"]}
+              >
                   <span>Live Site</span>
               </Link>
-            </button>
+
               :
+
               Object.entries(werk.liveSiteLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
                     <p>{link[0]}:</p>
-                    <button className={styles['example-button']}>
                       <Link
                         key={link[0]}
                         href={link[1]}
                         target="_blank"
+                        className={styles["example-button"]}
                       >
                         <span>Live Site</span>
                       </Link>
-                    </button>
                   </div>
                 )
               })

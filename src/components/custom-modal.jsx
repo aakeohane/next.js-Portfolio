@@ -13,9 +13,6 @@ const CustomModal = ( { children } ) => {
   Modal.setAppElement('#modal-root-id')
   const {isOpen, openModal, closeModal, windowWidth } = useContext(ModalContext);
 
-
-  console.log(windowWidth)
-
   const router = useRouter()
 
   const exRef = useRef(null)
@@ -23,11 +20,11 @@ const CustomModal = ( { children } ) => {
 
   const body = document.getElementById('bodyEl')
 
-  const overlayRef = useRef(null);
+  const overlayRef = useRef(null)
 
   gsap.config({
     nullTargetWarn: false,
-  });
+  })
 
   useGSAP(() => {
 
@@ -75,7 +72,7 @@ const CustomModal = ( { children } ) => {
         {autoAlpha: 0,}
       )
     };
-  }, [isOpen]);
+  }, [isOpen])
   
 
   useGSAP(() => {
@@ -88,9 +85,10 @@ const CustomModal = ( { children } ) => {
       
       gsap.to(overlayRef.current, { backdropFilter: 'blur(0px)', duration: 2 });
     }
-  }, [isOpen]);
+  }, [isOpen])
 
-  function onModalHide(backButton) {
+
+  const onModalHide = (backButton) => {
     closeModal()
     // Delay the navigation until after the modal transition
     setTimeout(() => {
@@ -100,14 +98,20 @@ const CustomModal = ( { children } ) => {
       }
       // turns body scroll back on
       body.style.overflow = 'auto';
-    }, 2000); // Adjust the delay as needed
+      body.style.backgroundColor="#d9e9e6"
+    }, 2000); 
   }
 
-    function handleKeyDown(event) {
+  const openModal2 = () => {
+    openModal()
+    body.style.backgroundColor="#e9f1ef"
+  }
+
+  const handleKeyDown = (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
       onModalHide(event);
     }
-  };
+  }
 
   return(
     <div id="modalContainer" className={styles["modal-container"]}>
@@ -116,7 +120,7 @@ const CustomModal = ( { children } ) => {
           className={styles["my-modal"]}
           id="myModal"
           isOpen={!modalRef.current?.open}
-          onAfterOpen={() => openModal()}
+          onAfterOpen={openModal2}
           contentLabel="Work Modal"
           overlayRef={(node) => (overlayRef.current = node)}
           overlayClassName={styles["my-overlay"]}
