@@ -113,7 +113,7 @@ const ProjectDetails = ({slug, parRoute}) => {
               Object.entries(werk.githubLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
-                    <p>{link[0]}:</p>
+                    <p className={styles['description-one']}>{link[0]}:</p>
                       <Link
                         key={link[0]}
                         href={link[1]}
@@ -144,15 +144,15 @@ const ProjectDetails = ({slug, parRoute}) => {
               Object.entries(werk.liveSiteLink).map(link => {
                 return (
                   <div className={styles['github-link']}>
-                    <p>{link[0]}:</p>
-                      <Link
-                        key={link[0]}
-                        href={link[1]}
-                        target="_blank"
-                        className={styles["example-button"]}
-                      >
-                        <span>Live Site</span>
-                      </Link>
+                    <p className={styles['github-link-description']}>{link[0]}:</p>
+                    <Link
+                      key={link[0]}
+                      href={link[1]}
+                      target="_blank"
+                      className={styles["example-button"]}
+                    >
+                      <span>Live Site</span>
+                    </Link>
                   </div>
                 )
               })

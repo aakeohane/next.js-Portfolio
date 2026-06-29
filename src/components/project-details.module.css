@@ -140,10 +140,11 @@
 .github-link-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 
   .example-button {
-    margin-left: 40px;
+    margin-left: 0px;
   }
 }
 
@@ -191,11 +192,11 @@
     padding-bottom: 2.5rem; /* safe area to avoid browser interaction */
   }
 
-  .github-link-container {
-    .example-button {
-      margin-left: 7.5px;
-    }
+  .description-one {
+    padding-left: 50px;
+    margin-right: -40px;
   }
+
   .example-button {
     font-size: calc(1rem + 1vw);
     padding: 1.5rem;
