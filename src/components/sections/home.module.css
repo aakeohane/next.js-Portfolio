@@ -38,7 +38,7 @@
 }
 
 .work-button {
-  margin: 0 3rem 0 0;
+  margin: -1.5rem 3rem 0rem 0;
   font-size: calc(1.5rem + 1vw);
   color: var(--whale-blue);
   align-self: flex-end;

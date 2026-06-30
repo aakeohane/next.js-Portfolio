@@ -24,27 +24,28 @@ const Contact = () => {
         I am available for full-time employment, collaboration and freelance work.
         </p>
         <Image 
-          src={name}
-          width={300}
-          height={300}
-          alt="My Name"
+        src={name}
+        width={300}
+        height={300}
+        alt="My Name"
         />
-        <p className={styles["paragraph-font"]}>San Diego, California</p>
-        <Image 
-          className={styles["sun-emoji"]}  
-          src={sun}
-          width={100}
-          alt="Sun"
-        />
-        <button className={styles["resume-button"]}>
-            <Link                       
-              href="files/Keohane_Resume_2026.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Resume</span>
-            </Link>
-        </button>
+        <div className={styles["residence-container"]} >
+          <Image 
+            className={styles["sun-emoji"]}  
+            src={sun}
+            width={60}
+            alt="Sun"
+          />
+          <p className={styles["paragraph-font"]}>San Diego, California</p>
+        </div>
+        <Link                       
+          href="files/Keohane_Resume_2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles["resume-button"]}
+        >
+          <span>Resume</span>
+        </Link>
         <div className={styles["social-icons-container"]}>
             <a
               href="https://twitter.com/Aakeocaine"

@@ -12,8 +12,13 @@
   height: auto;
 }
 
+.residence-container {
+  display: flex;
+  align-items: center;
+}
+
 .sun-emoji {
-  transform: rotate(70deg);
+  transform: rotate(70deg) translateY(-10px);
 }
 
 .paragraph-font {
@@ -30,10 +35,50 @@
 }
 
 .resume-button {
+  font-family: "Buckwheat", sans-serif;
+  font-size: calc(1.5rem + 1vw);
+  color: var(--whale-blue);
+  text-align: center;
+  padding: 2.5rem;
   position: relative;
-  margin: 0.5em 0 0.5em 0;
-  font-size: calc(1.25rem + 1vw);
-  padding: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.resume-button span {
+  display: inline-block;
+  transform: translateY(-6px) translateX(4px);
+}
+
+.resume-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/refined-watercolor-button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  transition: background-image 1s;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.resume-button:hover::after {
+  background-image: url("/images/blue-watercolor-hover.png");
+  transition: background-image opacity 1s;
+  opacity: 1;
+  z-index: -1;
+}
+
+.resume-button:focus::after {
+  background-image: url("/images/blue-watercolor-hover.png");
+  transition: background-image opacity 1s;
+  opacity: 1;
+  z-index: -1;
 }
 
 .twitter-icon:hover {
