@@ -4,9 +4,12 @@ import Image from "next/image";
 import name from "public/images/FullName.png"
 import sun from "public/images/Sun-watercolor.png"
 import whale from "public/images/whale-watercolor.png"
+import twitterIcon from "public/images/TwitterX-splash-icon.png"
+import linkedInIcon from "public/images/LinkedIn-splash-iconv2.png"
+import githubIcon from "public/images/github-splash-icon.png"
 
 const Contact = () => {
-  const socialIconSize = "70"
+  const socialIconSize = "100"
   
   return (
     <section id="contact" className={styles["contact-container"]} data-section>
@@ -47,48 +50,49 @@ const Contact = () => {
           <span>Resume</span>
         </Link>
         <div className={styles["social-icons-container"]}>
-            <a
+            <Link
               href="https://twitter.com/Aakeocaine"
               aria-label="Twitter"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles["twitter-icon"]}  
+
             >
               <Image 
-                className={styles["twitter-icon"]}  
-                src='/images/svg/twitter.svg'
+                src={twitterIcon}
                 width={socialIconSize}
                 height={socialIconSize}
                 alt="Twitter Logo"
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://github.com/aakeohane"
               aria-label="GitHub"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles["github-icon"]}
             >
               <Image 
-                className={styles["github-icon"]}  
-                src='/images/svg/github.svg'
+                src={githubIcon}
                 width={socialIconSize}
                 height={socialIconSize}
                 alt="Github Logo"
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/in/aaron-keohane-47112430/"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles["linkedin-icon"]} 
             >
               <Image 
-                className={styles["linkedin-icon"]}  
-                src='/images/svg/linkedin.svg'
+                src={linkedInIcon}
                 width={socialIconSize}
                 height={socialIconSize}
                 alt="LinkedIn Logo"
               />
-            </a>
+            </Link>
           </div>
         </div>
     </section>
