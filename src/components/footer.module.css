@@ -1,12 +1,26 @@
 .footer-container {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+  padding: 10px 10px;
+  width: 100%;
 }
 
-.footer-container div {
+.footer-container > * {
+  flex: 1;
+  flex-basis: 0;
+}
+
+.footer-container:last-child {
   font-size: 1.6rem;
   color: var(--whale-blue);
+  text-align: right;
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 0.1rem;
 }

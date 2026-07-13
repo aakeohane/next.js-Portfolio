@@ -9,7 +9,7 @@ import linkedInIcon from "public/images/LinkedIn-splash-iconv2.png"
 import githubIcon from "public/images/github-splash-icon.png"
 
 const Contact = () => {
-  const socialIconSize = "100"
+  const socialIconSize = "50"
   
   return (
     <section id="contact" className={styles["contact-container"]} data-section>
