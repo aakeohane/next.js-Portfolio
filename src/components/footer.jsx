@@ -7,18 +7,18 @@ import linkedInIcon from "public/images/LinkedIn-splash-iconv2.png"
 import githubIcon from "public/images/github-splash-icon.png"
 import AKIcon from "public/images/AK.png"
 
-const socialIconSize = "30"
+const socialIconSize = "60"
 
 
 const Footer = () => {
   return (
     <>
       <div className={styles["footer-container"]}>
-        <div>
+        <div className={styles["AK-icon-container"]}>
           <Image 
             src={AKIcon}
-            width={socialIconSize*1.5}
-            height={socialIconSize*1.5}
+            width={socialIconSize}
+            height={socialIconSize}
             alt="AK Logo"
           />
         </div>
@@ -67,8 +67,8 @@ const Footer = () => {
               />
             </Link>
         </div>
-        <div className={`${blastimoFontClass}`}>
-          <span>©</span><span style={{fontSize: "1.25rem"}}>{new Date().getFullYear()}</span> Aaron Keohane
+        <div className={styles["name-container"]}>
+          <span style={{ position: "relative", top: "0.4rem", left: "0.25rem" }}>©</span><span style={{fontSize: "1.5rem", position: "relative", top: "0.25rem"}}>{new Date().getFullYear()}</span><span>Aaron Keohane</span>
         </div>
          
       </div>

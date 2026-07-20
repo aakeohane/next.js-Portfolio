@@ -9,7 +9,6 @@ import linkedInIcon from "public/images/LinkedIn-splash-iconv2.png"
 import githubIcon from "public/images/github-splash-icon.png"
 
 const Contact = () => {
-  const socialIconSize = "50"
   
   return (
     <section id="contact" className={styles["contact-container"]} data-section>
@@ -49,51 +48,7 @@ const Contact = () => {
         >
           <span>Resume</span>
         </Link>
-        <div className={styles["social-icons-container"]}>
-            <Link
-              href="https://twitter.com/Aakeocaine"
-              aria-label="Twitter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles["twitter-icon"]}  
 
-            >
-              <Image 
-                src={twitterIcon}
-                width={socialIconSize}
-                height={socialIconSize}
-                alt="Twitter Logo"
-              />
-            </Link>
-            <Link
-              href="https://github.com/aakeohane"
-              aria-label="GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles["github-icon"]}
-            >
-              <Image 
-                src={githubIcon}
-                width={socialIconSize}
-                height={socialIconSize}
-                alt="Github Logo"
-              />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/aaron-keohane-47112430/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles["linkedin-icon"]} 
-            >
-              <Image 
-                src={linkedInIcon}
-                width={socialIconSize}
-                height={socialIconSize}
-                alt="LinkedIn Logo"
-              />
-            </Link>
-          </div>
         </div>
     </section>
   )
