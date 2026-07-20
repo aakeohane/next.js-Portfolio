@@ -119,7 +119,12 @@ const Home = (props) => {
           </div>
         </div>
         <div className={styles["column"]}>
-          {/* blank column */}
+          <div id="drops" className={styles["drops"]}>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+            <div className={styles["drop"]}></div>
+          </div>
         </div>
       </div>
           
